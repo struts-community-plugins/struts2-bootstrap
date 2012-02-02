@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
+    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/> - Vertical Form</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Style-Type" content="text/css"/>
     <meta http-equiv="pragma" content="no-cache"/>
@@ -57,24 +57,17 @@
                     Form Layouts
                     </li>
                     <s:url var="index_url" action="index"/>
-                    <li class="active"><s:a href="%{index_url}">Horizontal Form Layout</s:a></li>
+                    <li><s:a href="%{index_url}">Horizontal Form Layout</s:a></li>
                     <s:url var="index_url" action="vertical"/>
-                    <li><s:a href="%{index_url}">Vertical Form Layout</s:a></li>
+                    <li class="active"><s:a href="%{index_url}">Vertical Form Layout</s:a></li>
                 </ul>
             </div>
         </div>
         <div class="span9">
 
-            <h1>Struts2 Bootstrap Plugin Showcase</h1>
+            <h1>Vertical Form Example</h1>
 
-            <p>Struts2 Bootstrap Plugin Examples for the head tag and the form elements.</p>
-
-            <s:actionerror theme="bootstrap"/>
-            <s:actionmessage theme="bootstrap"/>
-            <s:fielderror theme="bootstrap"/>
-
-
-            <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"
+            <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical"
                     label="A sample horizontal Form">
                 <s:textfield
                         label="Name"
