@@ -32,8 +32,16 @@ ${parameters.cssClass?default('')?html}"<#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
 >
+<label class="control-label"></label>
+<div class="controls">
+<#lt/>
 <#if parameters.label??>
-    <label class="checkbox" <#t/>
+<label class="checkbox<#rt/>
+<#if parameters.labelposition?default("") == 'inline'>
+ inline<#rt/>
+</#if>
+ ${parameters.cssClass?default('')?html}"<#rt/>
+
 <#if parameters.id??>
         for="${parameters.id?html}" <#t/>
 </#if>
@@ -46,11 +54,10 @@ ${parameters.label?html}<#t/>
  <span class="required">*</span><#t/>
 </#if>
 ${parameters.labelseparator?default("")?html}<#t/>
-<#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" /> 
+<#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" />
 
 </#if>
-<div class="controls">
-<#lt/>
+
 <#include "/${parameters.templateDir}/simple/checkbox.ftl" />
 <#if parameters.label??>
 </label><#t/>
