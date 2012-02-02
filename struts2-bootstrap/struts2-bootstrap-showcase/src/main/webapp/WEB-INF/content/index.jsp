@@ -32,7 +32,7 @@
                 <span class="i-bar"></span>
                 <span class="i-bar"></span>
             </a>
-            <a class="brand" href="#">Struts2 Bootstrap Plugin Showcase- <s:text name="showcase.version"/></a>
+            <a class="brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
 
             <div class="nav-collapse">
                 <ul class="nav">
@@ -107,9 +107,24 @@
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friends"/>
 
+                <s:checkboxlist
+                        tooltip="Checkboxes with inline position"
+                        labelposition="inline"
+                        label="Friends Inline"
+                        list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
+                        name="friendsInline"/>
+
                 <s:radio
                         tooltip="Choose your Best Friend"
                         label="Best Friend"
+                        list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
+                        name="bestFriend"
+                        cssErrorClass="foo"/>
+
+                <s:radio
+                        tooltip="Radio Buttons with inline position"
+                        label="Best Friend Inline"
+                        labelposition="inline"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriend"
                         cssErrorClass="foo"/>

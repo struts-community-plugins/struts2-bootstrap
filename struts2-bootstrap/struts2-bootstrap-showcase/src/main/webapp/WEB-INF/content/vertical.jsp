@@ -32,7 +32,7 @@
                 <span class="i-bar"></span>
                 <span class="i-bar"></span>
             </a>
-            <a class="brand" href="#">Struts2 Bootstrap Plugin Showcase- <s:text name="showcase.version"/></a>
+            <a class="brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
 
             <div class="nav-collapse">
                 <ul class="nav">
