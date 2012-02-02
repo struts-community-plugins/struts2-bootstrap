@@ -30,8 +30,12 @@
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-<label for="${parameters.id?html}${itemKeyStr?html}" class="radio"><#rt/>
-    ${itemValue}<#t/>
+<label for="${parameters.id?html}${itemKeyStr?html}" class="radio
+<#if parameters.labelposition?default("") == 'inline'>
+ inline<#rt/>
+</#if>
+"><#rt/>
+${itemValue}<#t/>
 <input type="radio"<#rt/>
 <#if parameters.name??>
  name="${parameters.name?html}"<#rt/>
