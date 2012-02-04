@@ -19,20 +19,26 @@
 
 package com.jgeppert.struts2.bootstrap.showcase;
 
+import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.convention.annotation.ParentPackage;
 
-import com.opensymphony.xwork2.ActionSupport;
-
 @ParentPackage(value = "showcase")
-public class Index extends ActionSupport {
+public class Echo extends ActionSupport {
 
-    private static final long serialVersionUID = 7353477345330099548L;
+    private String echo;
 
     public String execute() throws Exception {
 
-        addActionError("A sample Action Error Message!");
-        addActionMessage("A sample Action Message.");
-        addFieldError("error", "A sample Field Error!");
+        addActionMessage("Welcome "+echo+"!");
+
         return SUCCESS;
+    }
+
+    public String getEcho() {
+        return echo;
+    }
+
+    public void setEcho(String echo) {
+        this.echo = echo;
     }
 }

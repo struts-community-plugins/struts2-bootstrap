@@ -1,9 +1,10 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags" %>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/> - Inline and Search Form</title>
+    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/> - Advanced Examples</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="Content-Style-Type" content="text/css"/>
     <meta http-equiv="pragma" content="no-cache"/>
@@ -16,7 +17,9 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <sb:head/>
+
+    <sj:head jqueryui="false"/>
+    <sb:head compressed="false"/>
     <style>
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -105,7 +108,20 @@
                 <s:submit cssClass="btn-primary"/>
                 <s:submit cssClass="btn-danger"/>
             </s:form>
+
+            <h2>A Bootstrap Form with jQuery AJAX Form</h2>
+
+            <s:form action="echo" theme="bootstrap" cssClass="well form-vertical" label="AJAX Echo Form">
+                <s:textfield
+                        label="Enter your Name"
+                        name="echo"
+                        tooltip="Enter your Name here"/>
+
+                <sj:submit targets="result" effect="highlight" cssClass="btn-success"/>
+            </s:form>
+            <div id="result"></div>
         </div>
+
     </div>
 
     <footer class="footer">
