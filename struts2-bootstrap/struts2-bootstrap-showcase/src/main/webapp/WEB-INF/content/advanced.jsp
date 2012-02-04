@@ -19,7 +19,7 @@
     <![endif]-->
 
     <sj:head jqueryui="false"/>
-    <sb:head compressed="false"/>
+    <sb:head />
     <style>
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -86,6 +86,27 @@
                 <s:submit cssClass="btn-primary"/>
             </s:form>
 
+            <button onclick="$('#code1').collapse('toggle')" class="btn">Code Example for Inline Form</button>
+            <div id="code1" class="collapse in">
+                <pre>
+&lt;s:form theme=&quot;simple&quot; cssClass=&quot;well form-search&quot;&gt;
+    &lt;s:textfield
+            placeholder=&quot;Login&quot;
+            name=&quot;login&quot;
+            tooltip=&quot;Enter your Name here&quot;/&gt;
+
+    &lt;s:password
+            placeholder=&quot;Password&quot;
+            name=&quot;password&quot;/&gt;
+
+    &lt;s:submit cssClass=&quot;btn-primary&quot;/&gt;
+&lt;/s:form&gt;
+                </pre>
+            </div>
+            <script type="text/javascript">
+                $("#code1").collapse();
+            </script>
+
             <h2>Elements with Help Text, prepended text and appended text</h2>
 
             <s:form theme="bootstrap" cssClass="well form-vertical">
@@ -109,6 +130,35 @@
                 <s:submit cssClass="btn-danger"/>
             </s:form>
 
+            <button onclick="$('#code2').collapse('toggle')" class="btn">Code Example for Help Text, prepended text and appended text</button>
+            <div id="code2" class="collapse in">
+                <pre>
+&lt;s:form theme=&quot;bootstrap&quot; cssClass=&quot;well form-vertical&quot;&gt;
+    &lt;s:textfield
+            label=&quot;Name&quot;
+            name=&quot;name&quot;
+            helpText=&quot;This Textfield has an Help Text.&quot;
+            tooltip=&quot;Enter your Name here&quot;/&gt;
+
+    &lt;s:textfield
+            label=&quot;Textfield with prepended text&quot;
+            inputPrepend=&quot;@&quot;
+            name=&quot;prepend&quot;/&gt;
+
+    &lt;s:textfield
+            label=&quot;Textfield with appended text&quot;
+            inputAppend=&quot;$&quot;
+            name=&quot;append&quot;/&gt;
+
+    &lt;s:submit cssClass=&quot;btn-primary&quot;/&gt;
+    &lt;s:submit cssClass=&quot;btn-danger&quot;/&gt;
+&lt;/s:form&gt;
+                </pre>
+            </div>
+            <script type="text/javascript">
+                $("#code2").collapse();
+            </script>
+
             <h2>A Bootstrap Form with jQuery AJAX Form</h2>
 
             <s:form action="echo" theme="bootstrap" cssClass="well form-vertical" label="AJAX Echo Form">
@@ -120,6 +170,25 @@
                 <sj:submit targets="result" effect="highlight" cssClass="btn-success"/>
             </s:form>
             <div id="result"></div>
+
+            <button onclick="$('#code3').collapse('toggle')" class="btn">Code Example for AJAX Form</button>
+            <div id="code3" class="collapse in">
+                <pre>
+&lt;s:form action=&quot;echo&quot; theme=&quot;bootstrap&quot; cssClass=&quot;well form-vertical&quot; label=&quot;AJAX Echo Form&quot;&gt;
+    &lt;s:textfield
+            label=&quot;Enter your Name&quot;
+            name=&quot;echo&quot;
+            tooltip=&quot;Enter your Name here&quot;/&gt;
+
+    &lt;sj:submit targets=&quot;result&quot; effect=&quot;highlight&quot; cssClass=&quot;btn-success&quot;/&gt;
+&lt;/s:form&gt;
+&lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
+                </pre>
+            </div>
+            <script type="text/javascript">
+                $("#code3").collapse();
+            </script>
+
         </div>
 
     </div>
