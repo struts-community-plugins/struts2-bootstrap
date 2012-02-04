@@ -19,5 +19,26 @@
  */
 -->
 <#include "/${parameters.templateDir}/${parameters.theme}/controlheader.ftl" />
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputPrepend"]??)><#rt/>
+<#assign inputPrepend = parameters.dynamicAttributes.remove("inputPrepend")/><#rt/>
+</#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputAppend"]??)><#rt/>
+<#assign inputAppend = parameters.dynamicAttributes.remove("inputAppend")/><#rt/>
+</#if><#rt/>
+
+<#if inputPrepend??>
+<div class="input-prepend">
+    <span class="add-on">${inputPrepend?html}</span>
+</#if>
+<#if inputAppend??>
+<div class="input-append">
+</#if>
 <#include "/${parameters.templateDir}/simple/text.ftl" />
+<#if inputPrepend??>
+</div>
+</#if>
+<#if inputAppend??>
+    <span class="add-on">${inputAppend?html}</span>
+</div>
+</#if>
 <#include "/${parameters.templateDir}/${parameters.theme}/controlfooter.ftl" />

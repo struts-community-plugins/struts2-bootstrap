@@ -56,4 +56,6 @@ ${parameters.labelseparator?default("")?html}<#t/>
 <div class="controls">
 <#lt/>
 <#-- add the extra row -->
-
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
+<#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
+</#if><#rt/>

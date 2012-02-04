@@ -25,5 +25,8 @@ ${parameters.after?if_exists}<#t/>
     <span class="help-inline">${error?html}</span><#t/>
 </#list>
 </#if>
+<#if helpText??>
+<p class="help-block">${helpText?html}</p>
+</#if>
 </div>
 </div>
