@@ -60,7 +60,9 @@
                     <li class="active"><s:a href="%{index_url}">Horizontal Form Layout</s:a></li>
                     <s:url var="index_url" action="vertical"/>
                     <li><s:a href="%{index_url}">Vertical Form Layout</s:a></li>
-                </ul>
+                    <s:url var="advanced_url" action="advanced"/>
+                    <li><s:a href="%{advanced_url}">Advanced Examples</s:a></li>
+                 </ul>
             </div>
         </div>
         <div class="span9">
