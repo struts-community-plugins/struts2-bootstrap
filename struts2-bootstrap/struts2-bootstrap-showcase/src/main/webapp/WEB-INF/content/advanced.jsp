@@ -25,6 +25,11 @@
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
         }
     </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".collapse").collapse();
+        });
+    </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -103,9 +108,6 @@
 &lt;/s:form&gt;
                 </pre>
             </div>
-            <script type="text/javascript">
-                $("#code1").collapse();
-            </script>
 
             <h2>Elements with Help Text, prepended text and appended text</h2>
 
@@ -155,9 +157,6 @@
 &lt;/s:form&gt;
                 </pre>
             </div>
-            <script type="text/javascript">
-                $("#code2").collapse();
-            </script>
 
             <h2>A Bootstrap Form with jQuery AJAX Form</h2>
 
@@ -185,9 +184,36 @@
 &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
                 </pre>
             </div>
+
+            <h2>A Bootstrap Form with a simple Typeahead Input Field.</h2>
+
+            <s:form theme="bootstrap" cssClass="well form-horizontal" label="Form with Typeahead Input Field">
+                <s:textfield
+                        label="Choose a State"
+                        name="echo"
+                        tooltip="Choose a State here"
+                        data-provide="typeahead"
+                        data-source="[&quot;Alabama&quot;,&quot;Alaska&quot;,&quot;Arizona&quot;,&quot;Arkansas&quot;,&quot;California&quot;,&quot;Colorado&quot;,&quot;Connecticut&quot;,&quot;Delaware&quot;,&quot;Florida&quot;,&quot;Georgia&quot;,&quot;Hawaii&quot;,&quot;Idaho&quot;,&quot;Illinois&quot;,&quot;Indiana&quot;,&quot;Iowa&quot;,&quot;Kansas&quot;,&quot;Kentucky&quot;,&quot;Louisiana&quot;,&quot;Maine&quot;,&quot;Maryland&quot;,&quot;Massachusetts&quot;,&quot;Michigan&quot;,&quot;Minnesota&quot;,&quot;Mississippi&quot;,&quot;Missouri&quot;,&quot;Montana&quot;,&quot;Nebraska&quot;,&quot;Nevada&quot;,&quot;New Hampshire&quot;,&quot;New Jersey&quot;,&quot;New Mexico&quot;,&quot;New York&quot;,&quot;North Dakota&quot;,&quot;North Carolina&quot;,&quot;Ohio&quot;,&quot;Oklahoma&quot;,&quot;Oregon&quot;,&quot;Pennsylvania&quot;,&quot;Rhode Island&quot;,&quot;South Carolina&quot;,&quot;South Dakota&quot;,&quot;Tennessee&quot;,&quot;Texas&quot;,&quot;Utah&quot;,&quot;Vermont&quot;,&quot;Virginia&quot;,&quot;Washington&quot;,&quot;West Virginia&quot;,&quot;Wisconsin&quot;,&quot;Wyoming&quot;]"
+                        data-items="4"
+                 />
+            </s:form>
+
+            <button onclick="$('#code4').collapse('toggle')" class="btn">Code Example for Typeahead Input Field</button>
+            <div id="code4" class="collapse in">
+                <pre>
+&lt;s:form theme=&quot;bootstrap&quot; cssClass=&quot;well form-horizontal&quot; label=&quot;Form with Typeahead Input Field&quot;&gt;
+    &lt;s:textfield
+            label=&quot;Choose a State&quot;
+            name=&quot;echo&quot;
+            tooltip=&quot;Choose a State here&quot;
+            data-provide=&quot;typeahead&quot;
+            data-source=&quot;[&amp;quot;Alabama&amp;quot;,&amp;quot;Alaska&amp;quot;,&amp;quot;Arizona&amp;quot;,&amp;quot;Arkansas&amp;quot;,&amp;quot;California&amp;quot;,&amp;quot;Colorado&amp;quot;,&amp;quot;Connecticut&amp;quot;,&amp;quot;Delaware&amp;quot;,&amp;quot;Florida&amp;quot;,&amp;quot;Georgia&amp;quot;,&amp;quot;Hawaii&amp;quot;,&amp;quot;Idaho&amp;quot;,&amp;quot;Illinois&amp;quot;,&amp;quot;Indiana&amp;quot;,&amp;quot;Iowa&amp;quot;,&amp;quot;Kansas&amp;quot;,&amp;quot;Kentucky&amp;quot;,&amp;quot;Louisiana&amp;quot;,&amp;quot;Maine&amp;quot;,&amp;quot;Maryland&amp;quot;,&amp;quot;Massachusetts&amp;quot;,&amp;quot;Michigan&amp;quot;,&amp;quot;Minnesota&amp;quot;,&amp;quot;Mississippi&amp;quot;,&amp;quot;Missouri&amp;quot;,&amp;quot;Montana&amp;quot;,&amp;quot;Nebraska&amp;quot;,&amp;quot;Nevada&amp;quot;,&amp;quot;New Hampshire&amp;quot;,&amp;quot;New Jersey&amp;quot;,&amp;quot;New Mexico&amp;quot;,&amp;quot;New York&amp;quot;,&amp;quot;North Dakota&amp;quot;,&amp;quot;North Carolina&amp;quot;,&amp;quot;Ohio&amp;quot;,&amp;quot;Oklahoma&amp;quot;,&amp;quot;Oregon&amp;quot;,&amp;quot;Pennsylvania&amp;quot;,&amp;quot;Rhode Island&amp;quot;,&amp;quot;South Carolina&amp;quot;,&amp;quot;South Dakota&amp;quot;,&amp;quot;Tennessee&amp;quot;,&amp;quot;Texas&amp;quot;,&amp;quot;Utah&amp;quot;,&amp;quot;Vermont&amp;quot;,&amp;quot;Virginia&amp;quot;,&amp;quot;Washington&amp;quot;,&amp;quot;West Virginia&amp;quot;,&amp;quot;Wisconsin&amp;quot;,&amp;quot;Wyoming&amp;quot;]&quot;
+            data-items=&quot;4&quot;
+     /&gt;
+&lt;/s:form&gt;
+                </pre>
+            </div>
             <script type="text/javascript">
-                $("#code3").collapse();
-            </script>
 
         </div>
 
