@@ -213,8 +213,6 @@
 &lt;/s:form&gt;
                 </pre>
             </div>
-            <script type="text/javascript">
-
         </div>
 
     </div>
