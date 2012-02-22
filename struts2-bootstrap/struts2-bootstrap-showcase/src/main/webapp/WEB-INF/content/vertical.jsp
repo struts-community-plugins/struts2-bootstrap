@@ -58,9 +58,11 @@
                     </li>
                     <s:url var="index_url" action="index"/>
                     <li><s:a href="%{index_url}">Horizontal Form Layout</s:a></li>
-                    <s:url var="index_url" action="vertical"/>
-                    <li class="active"><s:a href="%{index_url}">Vertical Form Layout</s:a></li>
-                    <s:url var="advanced_url" action="advanced"/>
+                    <s:url var="vertical_url" action="vertical"/>
+                    <li class="active"><s:a href="%{vertical_url}">Vertical Form Layout</s:a></li>
+                    <s:url var="validation_url" action="validation"/>
+                    <li><s:a href="%{validation_url}">Client Validation</s:a></li>
+                     <s:url var="advanced_url" action="advanced"/>
                     <li><s:a href="%{advanced_url}">Advanced Examples</s:a></li>
                </ul>
             </div>

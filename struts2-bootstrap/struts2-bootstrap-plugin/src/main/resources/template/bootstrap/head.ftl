@@ -22,10 +22,13 @@
 <#if parameters.compressed?default(true)>
   <#assign jsFile="bootstrap.min.js">
   <#assign cssFile="bootstrap.min.css">
+  <#assign validationFile="validation.min.js">
 <#else>
   <#assign jsFile="bootstrap.js">
   <#assign cssFile="bootstrap.css">
+  <#assign validationFile="validation.js">
 </#if>
 
 	<script type="text/javascript" src="${base}/struts/bootstrap/js/${jsFile}"></script>
+    <script type="text/javascript" src="${base}/struts/bootstrap/js/${validationFile}"></script>
    	<link id="bootstrap_styles" rel="stylesheet" href="${base}/struts/bootstrap/css/${cssFile}" type="text/css"/>
