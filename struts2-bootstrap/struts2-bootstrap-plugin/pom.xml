@@ -22,8 +22,8 @@
                         uri=/struts-bootstrap-tags,
                         tlibVersion=${tlib.version},
                         jspVersion=2.0,
-                        shortName=sj,
-                        displayName="Struts2 jQuery Tags",
+                        shortName=sb,
+                        displayName="Struts2 Bootstrap Tags",
                         outFile=${basedir}/target/classes/META-INF/struts-bootstrap-tags.tld,
                         description="Struts2 Tags for Bootstrap Theme.",
                         outTemplatesDir=${basedir}/src/site/docs
