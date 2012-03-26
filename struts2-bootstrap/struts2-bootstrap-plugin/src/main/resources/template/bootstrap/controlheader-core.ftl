@@ -28,9 +28,9 @@
 	if the label position is top,
 	then give the label it's own row in the table
 -->
-<div class="control-group<#rt/> 
+<div class="control-group <#rt/>
 <#if hasFieldErrors> 
- error<#rt/> 
+ error <#rt/>
 </#if>
 ${parameters.cssClass?default('')?html}"<#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
