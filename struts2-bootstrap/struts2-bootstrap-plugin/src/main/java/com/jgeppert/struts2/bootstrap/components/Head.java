@@ -29,21 +29,21 @@ import org.apache.struts2.views.annotations.StrutsTagSkipInheritance;
 import com.opensymphony.xwork2.util.ValueStack;
 
 /**
- * <!-- START SNIPPET: notice --> 
- * 
+ * <!-- START SNIPPET: notice -->
+ * <p/>
  * <p>
  * The "head" tag renders required JavaScript
  * code to configure Bootstrap and is required in order to use any of the tags
- * included in the Bootstrap plugin.</p> 
- * 
+ * included in the Bootstrap plugin.</p>
+ * <p/>
  * <!-- END SNIPPET: notice -->
- * 
- * 
+ * <p/>
+ * <p/>
  * <p/>
  * <b>Examples</b>
- * 
+ * <p/>
  * <!-- START SNIPPET: example1 -->
- * 
+ * <p/>
  * <pre>
  * &lt;%@ taglib prefix=&quot;sb&quot; uri=&quot;/struts-bootstrap-tags&quot; %&gt;
  * &lt;head&gt;
@@ -51,11 +51,11 @@ import com.opensymphony.xwork2.util.ValueStack;
  *   &lt;sb:head/&gt;
  * &lt;/head&gt;
  * </pre>
- * 
+ * <p/>
  * <!-- END SNIPPET: example1 -->
- * 
+ * <p/>
  * <!-- START SNIPPET: example2 -->
- * 
+ * <p/>
  * <pre>
  * &lt;%@ taglib prefix=&quot;sb&quot; uri=&quot;/struts-bootstrap-tags&quot; %&gt;
  * &lt;head&gt;
@@ -63,49 +63,73 @@ import com.opensymphony.xwork2.util.ValueStack;
  *   &lt;sb:head compressed=&quot;false&quot;/&gt;
  * &lt;/head&gt;
  * </pre>
- * 
+ * <p/>
  * <!-- END SNIPPET: example2 -->
- * 
+ *
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
- * 
  */
 @StrutsTag(name = "head", tldBodyContent = "empty", tldTagClass = "com.jgeppert.struts2.bootstrap.views.jsp.ui.HeadTag", description = "Render a chunk of HEAD for your HTML file", allowDynamicAttributes = false)
 @StrutsTagSkipInheritance
 public class Head extends org.apache.struts2.components.Head {
-  public static final String    TEMPLATE     = "head";
-  protected String              compressed;
+    public static final String TEMPLATE = "head";
+    protected String compressed;
+    protected String includeStyles;
+    protected String includeStylesResponsive;
+    protected String includeScripts;
+    protected String includeScriptsValidation;
 
-  public Head(ValueStack stack, HttpServletRequest request, HttpServletResponse response) {
-    super(stack, request, response);
-  }
+    public Head(ValueStack stack, HttpServletRequest request, HttpServletResponse response) {
+        super(stack, request, response);
+    }
 
-  protected String getDefaultTemplate()
-  {
-    return TEMPLATE; 
-  }
+    protected String getDefaultTemplate() {
+        return TEMPLATE;
+    }
 
-  public void evaluateParams()
-  {
-    super.evaluateParams();
-    if (this.compressed != null) addParameter("compressed", findValue(this.compressed, Boolean.class));
-  }
+    public void evaluateParams() {
+        super.evaluateParams();
+        if (this.compressed != null) addParameter("compressed", findValue(this.compressed, Boolean.class));
+        if (this.includeStyles != null) addParameter("includeStyles", findValue(this.includeStyles, Boolean.class));
+        if (this.includeStylesResponsive != null)
+            addParameter("includeStylesResponsive", findValue(this.includeStylesResponsive, Boolean.class));
+        if (this.includeScripts != null) addParameter("includeScripts", findValue(this.includeScripts, Boolean.class));
+        if (this.includeScriptsValidation != null)
+            addParameter("includeScriptsValidation", findValue(this.includeScriptsValidation, Boolean.class));
+    }
 
-  @Override
-  @StrutsTagSkipInheritance
-  public void setTheme(String theme)
-  {
-    super.setTheme(theme);
-  }
+    @Override
+    @StrutsTagSkipInheritance
+    public void setTheme(String theme) {
+        super.setTheme(theme);
+    }
 
-  @Override
-  public String getTheme()
-  {
-    return "bootstrap";
-  }
+    @Override
+    public String getTheme() {
+        return "bootstrap";
+    }
 
-  @StrutsTagAttribute(description = "use compressed version of bootstrap resources", defaultValue = "true", type = "Boolean")
-  public void setCompressed(String compressed)
-  {
-    this.compressed = compressed;
-  }
+    @StrutsTagAttribute(description = "use compressed version of bootstrap resources", defaultValue = "true", type = "Boolean")
+    public void setCompressed(String compressed) {
+        this.compressed = compressed;
+    }
+
+    @StrutsTagAttribute(description = "include bootstrap responsive styles", defaultValue = "true", type = "Boolean")
+    public void setIncludeStyles(String includeStyles) {
+        this.includeStyles = includeStyles;
+    }
+
+    @StrutsTagAttribute(description = "include bootstrap styles", defaultValue = "false", type = "Boolean")
+    public void setIncludeStylesResponsive(String includeStylesResponsive) {
+        this.includeStylesResponsive = includeStylesResponsive;
+    }
+
+    @StrutsTagAttribute(description = "include bootstrap scripts", defaultValue = "true", type = "Boolean")
+    public void setIncludeScripts(String includeScripts) {
+        this.includeScripts = includeScripts;
+    }
+
+    @StrutsTagAttribute(description = "include bootstrap validation scripts", defaultValue = "true", type = "Boolean")
+    public void setIncludeScriptsValidation(String includeScriptsValidation) {
+        this.includeScriptsValidation = includeScriptsValidation;
+    }
 }

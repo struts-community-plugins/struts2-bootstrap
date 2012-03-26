@@ -29,32 +29,52 @@ import com.jgeppert.struts2.bootstrap.components.Head;
 import com.opensymphony.xwork2.util.ValueStack;
 
 /**
- * 
- * @see Head
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
- * 
+ * @see Head
  */
 public class HeadTag extends AbstractUITag {
 
-  private static final long serialVersionUID = 6876765769175246030L;
+    private static final long serialVersionUID = 6876765769175246030L;
 
-  protected String          compressed;
+    protected String compressed;
+    protected String includeStyles;
+    protected String includeStylesResponsive;
+    protected String includeScripts;
+    protected String includeScriptsValidation;
 
-  public Component getBean(ValueStack stack, HttpServletRequest req, HttpServletResponse res)
-  {
-    return new Head(stack, req, res);
-  }
+    public Component getBean(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
+        return new Head(stack, req, res);
+    }
 
-  protected void populateParams()
-  {
-    super.populateParams();
+    protected void populateParams() {
+        super.populateParams();
 
-    Head head = (Head) component;
-    head.setCompressed(compressed);
-  }
+        Head head = (Head) component;
+        head.setCompressed(compressed);
+        head.setIncludeStyles(includeStyles);
+        head.setIncludeStylesResponsive(includeStylesResponsive);
+        head.setIncludeScripts(includeScripts);
+        head.setIncludeScriptsValidation(includeScriptsValidation);
+    }
 
-  public void setCompressed(String compressed)
-  {
-    this.compressed = compressed;
-  }
+    public void setCompressed(String compressed) {
+        this.compressed = compressed;
+    }
+
+    public void setIncludeStyles(String includeStyles) {
+        this.includeStyles = includeStyles;
+    }
+
+    public void setIncludeStylesResponsive(String includeStylesResponsive) {
+        this.includeStylesResponsive = includeStylesResponsive;
+    }
+
+    public void setIncludeScripts(String includeScripts) {
+        this.includeScripts = includeScripts;
+    }
+
+    public void setIncludeScriptsValidation(String includeScriptsValidation) {
+        this.includeScriptsValidation = includeScriptsValidation;
+    }
+
 }

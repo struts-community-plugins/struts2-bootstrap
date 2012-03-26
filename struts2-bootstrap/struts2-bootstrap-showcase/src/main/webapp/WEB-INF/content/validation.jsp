@@ -19,7 +19,7 @@
     <![endif]-->
 
     <sj:head jqueryui="false"/>
-    <sb:head/>
+    <sb:head includeScripts="true" includeScriptsValidation="true"/>
 
     <style>
         body {
