@@ -46,10 +46,10 @@ ${parameters.label?html}<#t/>
  <span class="required">*</span><#t/>
 </#if>
 ${parameters.labelseparator?default("")?html}<#t/>
-<#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" /> 
+<#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 </label><#t/>
 </#if>
 <div class="controls">
 <#lt/>
-<#include "/${parameters.templateDir}/${parameters.theme}/simple/radiomap.ftl" />
-<#include "/${parameters.templateDir}/${parameters.theme}/controlfooter.ftl" /><#nt/>
+<#include "/${parameters.templateDir}/bootstrap/simple/radiomap.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

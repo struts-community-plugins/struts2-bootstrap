@@ -18,7 +18,7 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.theme}/controlheader.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputPrepend"]??)><#rt/>
 <#assign inputPrepend = parameters.dynamicAttributes.remove("inputPrepend")/><#rt/>
 </#if><#rt/>
@@ -41,4 +41,4 @@
     <span class="add-on">${inputAppend?html}</span>
 </div>
 </#if>
-<#include "/${parameters.templateDir}/${parameters.theme}/controlfooter.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />

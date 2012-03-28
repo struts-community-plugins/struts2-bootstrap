@@ -54,7 +54,7 @@ ${parameters.label?html}<#t/>
  <span class="required">*</span><#t/>
 </#if>
 ${parameters.labelseparator?default("")?html}<#t/>
-<#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 
 </#if>
 
@@ -62,4 +62,4 @@ ${parameters.labelseparator?default("")?html}<#t/>
 <#if parameters.label??>
 </label><#t/>
 </#if>
-<#include "/${parameters.templateDir}/${parameters.theme}/controlfooter.ftl" /><#nt/>
+<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

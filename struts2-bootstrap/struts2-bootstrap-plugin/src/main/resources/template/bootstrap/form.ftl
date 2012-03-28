@@ -27,4 +27,4 @@
   </#if>
 </#if>
 >
-<#include "/${parameters.templateDir}/${parameters.theme}/control.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/control.ftl" />

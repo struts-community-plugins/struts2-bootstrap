@@ -48,9 +48,9 @@ ${parameters.labelseparator?default("")?html}<#t/>
 </#if>
 <div class="controls">
 <#lt/>
-<#include "/${parameters.templateDir}/${parameters.theme}/simple/checkboxlist.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
 
 <#if parameters.label??>
 </label><#t/>
 </#if>
-<#include "/${parameters.templateDir}/${parameters.theme}/controlfooter.ftl" /><#nt/>
+<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
