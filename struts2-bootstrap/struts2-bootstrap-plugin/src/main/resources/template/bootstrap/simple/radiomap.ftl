@@ -18,7 +18,9 @@
  * under the License.
  */
 -->
+<#assign itemCount = 0/>
 <@s.iterator value="parameters.list">
+    <#assign itemCount = itemCount + 1/>
     <#if parameters.listKey??>
         <#assign itemKey = stack.findValue(parameters.listKey)/>
     <#else>
@@ -30,17 +32,17 @@
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-<label for="${parameters.id?html}${itemKeyStr?html}" class="radio
+<label for="${parameters.name?html}-${itemCount}" class="radio <#rt/>
 <#if parameters.labelposition?default("") == 'inline'>
  inline<#rt/>
 </#if>
-"><#rt/>
+">
 ${itemValue}<#t/>
 <input type="radio"<#rt/>
 <#if parameters.name??>
  name="${parameters.name?html}"<#rt/>
 </#if>
- id="${parameters.id?html}${itemKeyStr?html}"<#rt/>
+ id="${parameters.name?html}-${itemCount}"<#rt/>
 <#if tag.contains(parameters.nameValue?default(''), itemKeyStr)>
  checked="checked"<#rt/>
 </#if>

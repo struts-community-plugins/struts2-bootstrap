@@ -24,7 +24,7 @@
 	    <span class="errorMessage">${error?html}</span><#t/>
 	</#list>
 </#if>
-<div class="control-group<#rt/> 
+<div class="control-group <#rt/>
 <#if hasFieldErrors> 
  error<#rt/> 
 </#if>
@@ -33,11 +33,7 @@ ${parameters.cssClass?default('')?html}"<#rt/>
 </#if>
 >
 <#if parameters.label??>
-    <label class="control-label" <#t/>
-<#if parameters.id??>
-        for="${parameters.id?html}" <#t/>
-</#if>
-    ><#t/>
+    <label class="control-label">
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
         <span class="required">*</span><#t/>
 </#if>
@@ -47,7 +43,7 @@ ${parameters.label?html}<#t/>
 </#if>
 ${parameters.labelseparator?default("")?html}<#t/>
 <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
-</label><#t/>
+</label><#rt/>
 </#if>
 <div class="controls">
 <#lt/>

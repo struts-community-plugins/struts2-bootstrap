@@ -42,15 +42,11 @@ ${parameters.label?html}<#t/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
  <span class="required">*</span><#t/>
 </#if>
-${parameters.labelseparator?default("")?html}<#t/>
+${parameters.labelseparator?default("")?html}<#rt/>
 <#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" /> 
-</label><#t/>
+</label><#rt/>
 </#if>
 <div class="controls">
 <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
-
-<#if parameters.label??>
-</label><#t/>
-</#if>
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

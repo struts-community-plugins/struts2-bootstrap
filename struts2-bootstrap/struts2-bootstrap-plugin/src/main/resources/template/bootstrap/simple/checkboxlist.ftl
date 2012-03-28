@@ -33,12 +33,12 @@
             <#assign itemValue = stack.findString('top')/>
     </#if>
     <#assign itemKeyStr=itemKey.toString() />
-<label for="${parameters.name?html}-${itemCount}" class="checkbox
+<label for="${parameters.name?html}-${itemCount}" class="checkbox <#rt/>
 <#if parameters.labelposition?default("") == 'inline'>
  inline<#rt/>
 </#if>
-"><#rt/>
-${itemValue?html}
+">
+${itemValue?html}<#rt/>
 
 <input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}"
        id="${parameters.name?html}-${itemCount}"<#rt/>
@@ -54,15 +54,9 @@ ${itemValue?html}
     <#include "/${parameters.templateDir}/simple/css.ftl" />
     <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
     <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-        />
+        /><#rt/>
 </label>
 </@s.iterator>
     <#else>
     &nbsp;
 </#if>
-<input type="hidden" id="__multiselect_${parameters.id?html}" name="__multiselect_${parameters.name?html}"
-       value=""<#rt/>
-<#if parameters.disabled?default(false)>
-       disabled="disabled"<#rt/>
-</#if>
-        />

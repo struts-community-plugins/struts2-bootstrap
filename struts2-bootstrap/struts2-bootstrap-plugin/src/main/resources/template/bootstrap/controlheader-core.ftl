@@ -39,19 +39,19 @@ ${parameters.cssClass?default('')?html}"<#rt/>
 <#if parameters.label??>
     <label class="control-label" <#t/>
 <#if parameters.id??>
-        for="${parameters.id?html}" <#t/>
+        for="${parameters.id?html}" <#rt/>
 </#if>
-    ><#t/>
+    ><#rt/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-        <span class="required">*</span><#t/>
+        <span class="required">*</span><#rt/>
 </#if>
 ${parameters.label?html}<#t/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
- <span class="required">*</span><#t/>
+ <span class="required">*</span><#rt/>
 </#if>
-${parameters.labelseparator?default("")?html}<#t/>
+${parameters.labelseparator?default("")?html}<#rt/>
 <#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" /> 
-</label><#t/>
+</label><#rt/>
 </#if>
 <div class="controls">
 <#lt/>
