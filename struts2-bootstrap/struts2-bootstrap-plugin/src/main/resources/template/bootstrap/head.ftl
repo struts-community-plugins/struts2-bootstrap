@@ -41,5 +41,5 @@
    	<link id="bootstrap_styles" rel="stylesheet" href="${base}/struts/bootstrap/css/${cssFile}" type="text/css"/>
 </#if>
 <#if parameters.includeStylesResponsive?default(false)>
-    <link id="bootstrap_responsive_styles" rel="stylesheet" href="${base}/struts/bootstrap/css/${cssFile}" type="text/css"/>
+    <link id="bootstrap_responsive_styles" rel="stylesheet" href="${base}/struts/bootstrap/css/${responsiveFile}" type="text/css"/>
 </#if>
