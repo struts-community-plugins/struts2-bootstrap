@@ -34,9 +34,6 @@ ${parameters.cssClass?default('')?html}"<#rt/>
 >
 <#if parameters.label??>
     <label class="control-label" <#t/>
-<#if parameters.id??>
-        for="${parameters.id?html}" <#t/>
-</#if>
     ><#t/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
         <span class="required">*</span><#t/>
