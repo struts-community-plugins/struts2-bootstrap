@@ -5,13 +5,9 @@
 <html lang="en">
 <head>
     <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/> - Client Validation</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="Content-Style-Type" content="text/css"/>
-    <meta http-equiv="pragma" content="no-cache"/>
-    <meta http-equiv="cache-control" content="no-cache"/>
-    <meta http-equiv="expires" content="0"/>
-    <meta http-equiv="keywords" content="struts2, twitter, bootstrap, plugin, showcase"/>
-    <meta http-equiv="description" content="A Showcase for the Struts2 Bootstrap Plugin"/>
+    <meta charset="utf-8"/>
+    <meta name="keywords" content="struts2, twitter, bootstrap, plugin, showcase" />
+    <meta name="description" content="A Showcase for the Struts2 Bootstrap Plugin" />
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -21,7 +17,7 @@
     <sj:head jqueryui="false"/>
     <sb:head includeScripts="true" includeScriptsValidation="true"/>
 
-    <style>
+    <style type="text/css">
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
         }
