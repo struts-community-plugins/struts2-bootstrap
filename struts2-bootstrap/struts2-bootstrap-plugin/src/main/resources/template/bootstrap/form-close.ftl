@@ -18,5 +18,5 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/${parameters.theme}/control-close.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/control-close.ftl" />
 <#include "/${parameters.templateDir}/simple/form-close.ftl" />

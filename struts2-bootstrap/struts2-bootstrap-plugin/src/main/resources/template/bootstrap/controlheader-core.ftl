@@ -50,7 +50,7 @@ ${parameters.label?html}<#t/>
  <span class="required">*</span><#rt/>
 </#if>
 ${parameters.labelseparator?default("")?html}<#rt/>
-<#include "/${parameters.templateDir}/${parameters.theme}/tooltip.ftl" /> 
+<#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 </label><#rt/>
 </#if>
 <div class="controls">
