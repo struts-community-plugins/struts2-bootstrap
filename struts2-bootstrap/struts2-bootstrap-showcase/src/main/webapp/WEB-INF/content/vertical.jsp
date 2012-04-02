@@ -60,6 +60,8 @@
                     <li><s:a href="%{validation_url}">Client Validation</s:a></li>
                      <s:url var="advanced_url" action="advanced"/>
                     <li><s:a href="%{advanced_url}">Advanced Examples</s:a></li>
+                    <s:url var="jquery_url" action="jquery"/>
+                    <li><s:a href="%{jquery_url}">Struts2 jQuery UI Form Elements</s:a></li>
                </ul>
             </div>
         </div>
