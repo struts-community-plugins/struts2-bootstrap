@@ -32,10 +32,7 @@
 <#if hasFieldErrors> 
  error <#rt/>
 </#if>
-${parameters.cssClass?default('')?html}"<#rt/>
-<#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
-</#if>
->
+"><#rt/>
 <#if parameters.label??>
     <label class="control-label" <#t/>
 <#if parameters.id??>
