@@ -70,6 +70,8 @@
                     <li><s:a href="%{advanced_url}">Advanced Examples</s:a></li>
                     <s:url var="jquery_url" action="jquery"/>
                     <li class="active"><s:a href="%{jquery_url}">Struts2 jQuery UI Form Elements</s:a></li>
+                    <s:url var="custom_url" action="custom"/>
+                    <li><s:a href="%{custom_url}">With Custom Theme</s:a></li>
                 </ul>
             </div>
         </div>

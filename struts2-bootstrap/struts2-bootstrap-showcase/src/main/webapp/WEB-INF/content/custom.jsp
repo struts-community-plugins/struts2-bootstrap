@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/> - Vertical Form</title>
+    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
     <meta charset="utf-8"/>
     <meta name="keywords" content="struts2, twitter, bootstrap, plugin, showcase" />
     <meta name="description" content="A Showcase for the Struts2 Bootstrap Plugin" />
@@ -12,7 +12,8 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <sb:head includeScripts="false" includeScriptsValidation="false" includeStylesResponsive="true"/>
+    <sb:head includeScripts="true" includeStyles="false" includeStylesResponsive="true"/>
+    <link rel="stylesheet" href="styles/bootstrap-superhero.css" type="text/css"/>
     <style type="text/css">
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -55,27 +56,45 @@
                     <s:url var="index_url" action="index"/>
                     <li><s:a href="%{index_url}">Horizontal Form Layout</s:a></li>
                     <s:url var="vertical_url" action="vertical"/>
-                    <li class="active"><s:a href="%{vertical_url}">Vertical Form Layout</s:a></li>
+                    <li><s:a href="%{vertical_url}">Vertical Form Layout</s:a></li>
                     <s:url var="validation_url" action="validation"/>
                     <li><s:a href="%{validation_url}">Client Validation</s:a></li>
-                     <s:url var="advanced_url" action="advanced"/>
+                    <s:url var="advanced_url" action="advanced"/>
                     <li><s:a href="%{advanced_url}">Advanced Examples</s:a></li>
                     <s:url var="jquery_url" action="jquery"/>
                     <li><s:a href="%{jquery_url}">Struts2 jQuery UI Form Elements</s:a></li>
                     <s:url var="custom_url" action="custom"/>
-                    <li><s:a href="%{custom_url}">With Custom Theme</s:a></li>
-               </ul>
+                    <li class="active"><s:a href="%{custom_url}">With Custom Theme</s:a></li>
+                 </ul>
             </div>
         </div>
         <div class="span9">
 
-            <h1>Vertical Form Example</h1>
+            <h1>With Custom Theme</h1>
 
-            <s:form enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical" label="A sample horizontal Form">
+            <p>An example how to use a custom theme.</p>
+
+            <pre>
+                &lt;sb:head includeScripts=&quot;true&quot; includeStyles=&quot;false&quot; includeStylesResponsive=&quot;true&quot;/&gt;
+                &lt;link rel=&quot;stylesheet&quot; href=&quot;styles/bootstrap-superhero.css&quot; type=&quot;text/css&quot;/&gt;
+            </pre>
+
+            <s:actionerror theme="bootstrap"/>
+            <s:actionmessage theme="bootstrap"/>
+            <s:fielderror theme="bootstrap"/>
+
+
+            <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"
+                    label="A sample horizontal Form">
                 <s:textfield
                         label="Name"
                         name="name"
+                        cssClass="input-xlarge"
                         tooltip="Enter your Name here"/>
+
+                <s:textfield
+                        label="Textfield with Error"
+                        name="error"/>
 
                 <s:textarea
                         tooltip="Enter your Biography"
@@ -99,11 +118,26 @@
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friends"/>
 
+                <s:checkboxlist
+                        tooltip="Checkboxes with inline position"
+                        labelposition="inline"
+                        label="Friends Inline"
+                        list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
+                        name="friendsInline"/>
+
                 <s:radio
                         tooltip="Choose your Best Friend"
                         label="Best Friend"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriend"
+                        cssErrorClass="foo"/>
+
+                <s:radio
+                        tooltip="Radio Buttons with inline position"
+                        label="Best Friend Inline"
+                        labelposition="inline"
+                        list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
+                        name="bestFriendInline"
                         cssErrorClass="foo"/>
 
                 <s:checkbox
@@ -149,10 +183,10 @@
                 <s:textarea
                         label="Your Thougths"
                         name="thoughts"
+                        cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
-
                 <div class="form-actions">
-                    <s:submit cssClass="btn btn-primary"/>
+                    <s:submit cssClass="btn"/>
                 </div>
             </s:form>
         </div>
