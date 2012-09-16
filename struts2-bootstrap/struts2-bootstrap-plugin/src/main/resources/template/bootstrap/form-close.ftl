@@ -20,3 +20,10 @@
 -->
 <#include "/${parameters.templateDir}/bootstrap/control-close.ftl" />
 <#include "/${parameters.templateDir}/simple/form-close.ftl" />
+<script type="text/javascript">
+if(typeof jQuery != 'undefined') {
+    if(typeof jQuery.fn.tooltip == 'function') {
+        jQuery('i.s2b_tooltip').tooltip();
+    }
+}
+</script>
