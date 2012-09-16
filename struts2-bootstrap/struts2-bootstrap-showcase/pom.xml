@@ -3,8 +3,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-		<groupId>com.jgeppert.struts2.bootstrap</groupId>
-		<artifactId>bootstrap</artifactId>
+        <groupId>com.jgeppert.struts2.bootstrap</groupId>
+        <artifactId>bootstrap</artifactId>
         <version>1.5.0</version>
     </parent>
     <artifactId>struts2-bootstrap-showcase</artifactId>
@@ -37,11 +37,11 @@
             <version>${struts2.version}</version>
         </dependency>
 
-		<dependency>
-		    <groupId>javassist</groupId>
-		    <artifactId>javassist</artifactId>
-		    <version>3.8.0.GA</version>
-		</dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.8.0.GA</version>
+        </dependency>
 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -76,20 +76,42 @@
     </dependencies>
 
     <build>
-     	<resources>
-      		<resource>
-        		<directory>src/main/resources</directory>
-        		<filtering>true</filtering>
-      		</resource>
-	    </resources>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.mortbay.jetty</groupId>
-                <artifactId>maven-jetty-plugin</artifactId>
-                <version>6.1.22</version>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>8.1.5.v20120716</version>
                 <configuration>
+                    <systemProperties>
+                        <systemProperty>
+                            <name>log4j.configuration</name>
+                            <value>file:${basedir}/src/main/resources/log4j.properties</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>slf4j</name>
+                            <value>false</value>
+                        </systemProperty>
+                    </systemProperties>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
+                    <webAppConfig>
+                        <contextPath>/struts2-bootstrap-showcase</contextPath>
+                        <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
+                    </webAppConfig>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>log4j</groupId>
+                        <artifactId>log4j</artifactId>
+                        <version>1.2.16</version>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
 
