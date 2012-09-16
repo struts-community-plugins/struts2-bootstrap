@@ -149,7 +149,9 @@
                         name="thoughts"
                         tooltip="Enter your thoughts here"/>
 
-                <s:submit cssClass="btn"/>
+                <div class="form-actions">
+                    <s:submit cssClass="btn btn-primary"/>
+                </div>
             </s:form>
         </div>
     </div>

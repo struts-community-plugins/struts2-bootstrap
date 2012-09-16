@@ -81,6 +81,7 @@
                 <s:textfield
                         label="Name"
                         name="name"
+                        cssClass="input-xlarge"
                         tooltip="Enter your Name here"/>
 
                 <s:textfield
@@ -174,9 +175,11 @@
                 <s:textarea
                         label="Your Thougths"
                         name="thoughts"
+                        cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
-
-                <s:submit cssClass="btn"/>
+                <div class="form-actions">
+                    <s:submit cssClass="btn"/>
+                </div>
             </s:form>
         </div>
     </div>

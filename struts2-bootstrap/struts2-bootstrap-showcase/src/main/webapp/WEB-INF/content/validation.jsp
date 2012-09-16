@@ -111,8 +111,10 @@
                         label="Accept the Agreement?"
                         name="agree"/>
 
+                <div class="form-actions">
+                    <sj:submit cssClass="btn btn-inverse" formIds="validationForm" validate="true" validateFunction="bootstrapValidation"/>
+                </div>
 
-                <sj:submit cssClass="btn" formIds="validationForm" validate="true" validateFunction="bootstrapValidation"/>
             </s:form>
         </div>
     </div>
