@@ -104,7 +104,7 @@
                         <contextPath>/struts2-bootstrap-showcase</contextPath>
                         <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
                     </webAppConfig>
-                </configuration>
+               </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>log4j</groupId>

@@ -106,9 +106,9 @@ public class Languages extends ActionSupport {
     public String execute() throws Exception {
         if (term != null && term.length() > 1) {
             ArrayList<String> tmp = new ArrayList<String>();
-            for (int i = 0; i < staticLanguages.length; i++) {
-                if (StringUtils.contains(staticLanguages[i].toLowerCase(), term.toLowerCase())) {
-                    tmp.add(staticLanguages[i]);
+            for (String staticLanguage : staticLanguages) {
+                if (StringUtils.contains(staticLanguage.toLowerCase(), term.toLowerCase())) {
+                    tmp.add(staticLanguage);
                 }
             }
             languages = tmp.toArray(new String[tmp.size()]);

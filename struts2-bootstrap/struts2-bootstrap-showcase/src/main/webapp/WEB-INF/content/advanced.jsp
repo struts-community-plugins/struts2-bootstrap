@@ -21,11 +21,6 @@
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
         }
     </style>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".collapse").collapse();
-        });
-    </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -93,8 +88,8 @@
                 <s:submit cssClass="btn-primary"/>
             </s:form>
 
-            <button onclick="$('#code1').collapse('toggle')" class="btn">Code Example for Inline Form</button>
-            <div id="code1" class="collapse in">
+            <button  id="code1btn" class="btn">Code Example for Inline Form</button>
+            <div id="code1" class="collapse">
                 <pre>
 &lt;s:form theme=&quot;simple&quot; cssClass=&quot;well form-search&quot;&gt;
     &lt;s:textfield
@@ -134,8 +129,8 @@
                 <s:submit cssClass="btn-danger"/>
             </s:form>
 
-            <button onclick="$('#code2').collapse('toggle')" class="btn">Code Example for Help Text, prepended text and appended text</button>
-            <div id="code2" class="collapse in">
+            <button  id="code2btn" class="btn">Code Example for Help Text, prepended text and appended text</button>
+            <div id="code2" class="collapse">
                 <pre>
 &lt;s:form theme=&quot;bootstrap&quot; cssClass=&quot;well form-vertical&quot;&gt;
     &lt;s:textfield
@@ -172,8 +167,8 @@
             </s:form>
             <div id="result"></div>
 
-            <button onclick="$('#code3').collapse('toggle')" class="btn">Code Example for AJAX Form</button>
-            <div id="code3" class="collapse in">
+            <button  id="code3btn" class="btn">Code Example for AJAX Form</button>
+            <div id="code3" class="collapse">
                 <pre>
 &lt;s:form action=&quot;echo&quot; theme=&quot;bootstrap&quot; cssClass=&quot;well form-vertical&quot; label=&quot;AJAX Echo Form&quot;&gt;
     &lt;s:textfield
@@ -200,8 +195,8 @@
                  />
             </s:form>
 
-            <button onclick="$('#code4').collapse('toggle')" class="btn">Code Example for Typeahead Input Field</button>
-            <div id="code4" class="collapse in">
+            <button  id="code4btn" class="btn">Code Example for Typeahead Input Field</button>
+            <div id="code4" class="collapse">
                 <pre>
 &lt;s:form theme=&quot;bootstrap&quot; cssClass=&quot;well form-horizontal&quot; label=&quot;Form with Typeahead Input Field&quot;&gt;
     &lt;s:textfield
@@ -227,5 +222,23 @@
 
 </div>
 <!-- /container -->
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".collapse").collapse();
+        $("#code1btn").click(function () {
+            $('#code1').collapse('toggle')
+        });
+        $("#code2btn").click(function () {
+            $('#code2').collapse('toggle')
+        });
+        $("#code3btn").click(function () {
+            $('#code3').collapse('toggle')
+        });
+        $("#code4btn").click(function () {
+            $('#code4').collapse('toggle')
+        });
+    });
+</script>
 </body>
 </html>

@@ -21,11 +21,6 @@
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
         }
     </style>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".collapse").collapse();
-        });
-    </script>
 </head>
 <body>
 <div class="navbar navbar-fixed-top">
@@ -97,7 +92,7 @@
                  />
             </s:form>
 
-            <button onclick="$('#code1').collapse('toggle')" class="btn">Code Example</button>
+            <button id="code1btn" class="btn">Code Example</button>
             <div id="code1" class="collapse in">
                 <pre>
                     &lt;s:form action=&quot;echo&quot; theme=&quot;bootstrap&quot; cssClass=&quot;form-horizontal&quot; label=&quot;Form with jQuery UI Elements&quot;&gt;
@@ -131,5 +126,13 @@
 
 </div>
 <!-- /container -->
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".collapse").collapse();
+        $("#code1btn").click(function () {
+            $('#code1').collapse('toggle')
+        });
+    });
+</script>
 </body>
 </html>
