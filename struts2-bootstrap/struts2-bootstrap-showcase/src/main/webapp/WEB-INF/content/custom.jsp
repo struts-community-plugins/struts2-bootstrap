@@ -13,7 +13,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <sb:head includeScripts="true" includeStyles="false" includeStylesResponsive="true"/>
-    <link rel="stylesheet" href="styles/bootstrap-superhero.css" type="text/css"/>
+    <link rel="stylesheet" href="<s:url value="/styles/bootstrap-superhero.css" />" type="text/css"/>
     <style type="text/css">
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -75,8 +75,8 @@
             <p>An example how to use a custom theme.</p>
 
             <pre>
-                &lt;sb:head includeScripts=&quot;true&quot; includeStyles=&quot;false&quot; includeStylesResponsive=&quot;true&quot;/&gt;
-                &lt;link rel=&quot;stylesheet&quot; href=&quot;styles/bootstrap-superhero.css&quot; type=&quot;text/css&quot;/&gt;
+    &lt;sb:head includeScripts=&quot;true&quot; includeStyles=&quot;false&quot; includeStylesResponsive=&quot;true&quot;/&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;&lt;s:url value=&quot;/styles/bootstrap-superhero.css&quot; /&gt;&quot; type=&quot;text/css&quot;/&gt;
             </pre>
 
             <s:actionerror theme="bootstrap"/>
