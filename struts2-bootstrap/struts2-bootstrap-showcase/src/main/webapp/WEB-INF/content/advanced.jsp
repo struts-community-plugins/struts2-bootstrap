@@ -106,7 +106,7 @@
                 </pre>
             </div>
 
-            <h2>Elements with Help Text, prepended text and appended text</h2>
+            <h2>Elements with Help Text, prepended text and appended text or prepended icon and appended icon</h2>
 
             <s:form theme="bootstrap" cssClass="well form-vertical">
                 <s:textfield
@@ -124,6 +124,16 @@
                         label="Textfield with appended text"
                         inputAppend="$"
                         name="append"/>
+
+                <s:textfield
+                        label="Textfield with prepended icon"
+                        inputPrependIcon="envelope"
+                        name="prependIcon"/>
+
+                <s:textfield
+                        label="Textfield with appended icon"
+                        inputAppendIcon="user"
+                        name="appendIcon"/>
 
                 <s:submit cssClass="btn-primary"/>
                 <s:submit cssClass="btn-danger"/>
