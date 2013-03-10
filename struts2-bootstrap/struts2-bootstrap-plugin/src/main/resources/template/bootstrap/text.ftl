@@ -25,20 +25,34 @@
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputAppend"]??)><#rt/>
 <#assign inputAppend = parameters.dynamicAttributes.remove("inputAppend")/><#rt/>
 </#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputPrependIcon"]??)><#rt/>
+<#assign inputPrependIcon = parameters.dynamicAttributes.remove("inputPrependIcon")/><#rt/>
+</#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputAppendIcon"]??)><#rt/>
+<#assign inputAppendIcon = parameters.dynamicAttributes.remove("inputAppendIcon")/><#rt/>
+</#if><#rt/>
 
 <#if inputPrepend??>
 <div class="input-prepend">
     <span class="add-on">${inputPrepend?html}</span>
 </#if>
-<#if inputAppend??>
+<#if inputPrependIcon??>
+<div class="input-prepend">
+    <span class="add-on"><i class="icon-${inputPrependIcon?html}"></i></span>
+</#if>
+<#if (inputAppend?? || inputAppendIcon??)>
 <div class="input-append">
 </#if>
 <#include "/${parameters.templateDir}/simple/text.ftl" />
-<#if inputPrepend??>
+<#if (inputPrepend?? || inputPrependIcon??)>
 </div>
 </#if>
 <#if inputAppend??>
     <span class="add-on">${inputAppend?html}</span>
+</div>
+</#if>
+<#if inputAppendIcon??>
+    <span class="add-on"><i class="icon-${inputAppendIcon?html}"></i></span>
 </div>
 </#if>
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
