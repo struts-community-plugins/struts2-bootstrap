@@ -26,7 +26,7 @@ ${parameters.after?if_exists}<#t/>
 </#list>
 </#if>
 <#if helpText??>
-<p class="help-block">${helpText?html}</p>
+<span class="help-block">${helpText?html}</span>
 </#if>
 </div>
 </div>

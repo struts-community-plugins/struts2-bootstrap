@@ -24,10 +24,6 @@
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 
-<#--
-	if the label position is top,
-	then give the label it's own row in the table
--->
 <div class="control-group <#rt/>
 <#if hasFieldErrors> 
  error <#rt/>
@@ -52,7 +48,6 @@ ${parameters.labelseparator?default("")?html}<#rt/>
 </#if>
 <div class="controls">
 <#lt/>
-<#-- add the extra row -->
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
 <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
 </#if><#rt/>
