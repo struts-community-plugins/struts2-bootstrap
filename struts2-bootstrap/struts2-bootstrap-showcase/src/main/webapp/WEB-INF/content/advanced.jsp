@@ -85,7 +85,7 @@
                         placeholder="Password"
                         name="password"/>
 
-                <s:submit cssClass="btn-primary"/>
+                <s:submit cssClass="btn btn-primary"/>
             </s:form>
 
             <button  id="code1btn" class="btn">Code Example for Inline Form</button>
