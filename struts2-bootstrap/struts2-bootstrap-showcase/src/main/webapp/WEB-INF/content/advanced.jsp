@@ -101,7 +101,7 @@
             placeholder=&quot;Password&quot;
             name=&quot;password&quot;/&gt;
 
-    &lt;s:submit cssClass=&quot;btn-primary&quot;/&gt;
+    &lt;s:submit cssClass=&quot;btn btn-primary&quot;/&gt;
 &lt;/s:form&gt;
                 </pre>
             </div>
@@ -135,8 +135,8 @@
                         inputAppendIcon="user"
                         name="appendIcon"/>
 
-                <s:submit cssClass="btn-primary"/>
-                <s:submit cssClass="btn-danger"/>
+                <s:submit cssClass="btn btn-primary"/>
+                <s:submit cssClass="btn btn-danger"/>
             </s:form>
 
             <button  id="code2btn" class="btn">Code Example for Help Text, prepended text and appended text</button>
@@ -159,8 +159,8 @@
             inputAppend=&quot;$&quot;
             name=&quot;append&quot;/&gt;
 
-    &lt;s:submit cssClass=&quot;btn-primary&quot;/&gt;
-    &lt;s:submit cssClass=&quot;btn-danger&quot;/&gt;
+    &lt;s:submit cssClass=&quot;btn btn-primary&quot;/&gt;
+    &lt;s:submit cssClass=&quot;btn btn-danger&quot;/&gt;
 &lt;/s:form&gt;
                 </pre>
             </div>
@@ -173,7 +173,7 @@
                         name="echo"
                         tooltip="Enter your Name here"/>
 
-                <sj:submit targets="result" effect="highlight" cssClass="btn-success"/>
+                <sj:submit targets="result" effect="highlight" cssClass="btn btn-success"/>
             </s:form>
             <div id="result"></div>
 
