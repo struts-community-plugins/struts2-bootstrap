@@ -87,11 +87,13 @@
                 <s:textfield
                         label="Username"
                         name="user"
+                        requiredLabel="true"
                         tooltip="Enter your Username here"/>
 
                 <s:password
                         label="Password"
                         name="password"
+                        requiredLabel="true"
                         tooltip="Enter your Password here"/>
 
                 <s:textarea
