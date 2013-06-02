@@ -23,7 +23,7 @@
         <dependency>
             <groupId>com.jgeppert.struts2.jquery</groupId>
             <artifactId>struts2-jquery-plugin</artifactId>
-            <version>3.5.1</version>
+            <version>3.6.0</version>
         </dependency>
 
         <dependency>
@@ -35,12 +35,6 @@
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-json-plugin</artifactId>
             <version>${struts2.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.8.0.GA</version>
         </dependency>
 
         <dependency>
