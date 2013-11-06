@@ -12,7 +12,23 @@
     <packaging>jar</packaging>
 
    <build>
-        <plugins>
+       <resources>
+           <resource>
+               <directory>src/main/resources</directory>
+               <filtering>true</filtering>
+               <includes>
+                   <include>template/bootstrap/head.ftl</include>
+               </includes>
+           </resource>
+           <resource>
+               <directory>src/main/resources</directory>
+               <filtering>false</filtering>
+               <excludes>
+                   <exclude>template/bootstrap/head.ftl</exclude>
+               </excludes>
+           </resource>
+       </resources>
+       <plugins>
             <plugin>
                 <groupId>org.apache.myfaces.tobago</groupId>
                 <artifactId>maven-apt-plugin</artifactId>
