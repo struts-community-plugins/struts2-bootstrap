@@ -74,7 +74,6 @@ public class Head extends org.apache.struts2.components.Head {
     public static final String TEMPLATE = "head";
     protected String compressed;
     protected String includeStyles;
-    protected String includeStylesResponsive;
     protected String includeScripts;
     protected String includeScriptsValidation;
 
@@ -90,8 +89,6 @@ public class Head extends org.apache.struts2.components.Head {
         super.evaluateParams();
         if (this.compressed != null) addParameter("compressed", findValue(this.compressed, Boolean.class));
         if (this.includeStyles != null) addParameter("includeStyles", findValue(this.includeStyles, Boolean.class));
-        if (this.includeStylesResponsive != null)
-            addParameter("includeStylesResponsive", findValue(this.includeStylesResponsive, Boolean.class));
         if (this.includeScripts != null) addParameter("includeScripts", findValue(this.includeScripts, Boolean.class));
         if (this.includeScriptsValidation != null)
             addParameter("includeScriptsValidation", findValue(this.includeScriptsValidation, Boolean.class));
@@ -116,11 +113,6 @@ public class Head extends org.apache.struts2.components.Head {
     @StrutsTagAttribute(description = "include bootstrap responsive styles", defaultValue = "true", type = "Boolean")
     public void setIncludeStyles(String includeStyles) {
         this.includeStyles = includeStyles;
-    }
-
-    @StrutsTagAttribute(description = "include bootstrap styles", defaultValue = "false", type = "Boolean")
-    public void setIncludeStylesResponsive(String includeStylesResponsive) {
-        this.includeStylesResponsive = includeStylesResponsive;
     }
 
     @StrutsTagAttribute(description = "include bootstrap scripts", defaultValue = "true", type = "Boolean")

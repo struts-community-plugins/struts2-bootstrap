@@ -38,7 +38,6 @@ public class HeadTag extends AbstractUITag {
 
     protected String compressed;
     protected String includeStyles;
-    protected String includeStylesResponsive;
     protected String includeScripts;
     protected String includeScriptsValidation;
 
@@ -52,7 +51,6 @@ public class HeadTag extends AbstractUITag {
         Head head = (Head) component;
         head.setCompressed(compressed);
         head.setIncludeStyles(includeStyles);
-        head.setIncludeStylesResponsive(includeStylesResponsive);
         head.setIncludeScripts(includeScripts);
         head.setIncludeScriptsValidation(includeScriptsValidation);
     }
@@ -63,10 +61,6 @@ public class HeadTag extends AbstractUITag {
 
     public void setIncludeStyles(String includeStyles) {
         this.includeStyles = includeStyles;
-    }
-
-    public void setIncludeStylesResponsive(String includeStylesResponsive) {
-        this.includeStylesResponsive = includeStylesResponsive;
     }
 
     public void setIncludeScripts(String includeScripts) {

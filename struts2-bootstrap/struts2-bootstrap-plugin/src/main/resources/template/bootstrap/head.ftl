@@ -22,12 +22,10 @@
 <#if parameters.compressed?default(true)>
   <#assign jsFile="bootstrap.min.js">
   <#assign cssFile="bootstrap.min.css">
-  <#assign responsiveFile="bootstrap-responsive.min.css">
   <#assign validationFile="validation.min.js">
 <#else>
   <#assign jsFile="bootstrap.js">
   <#assign cssFile="bootstrap.css">
-  <#assign responsiveFile="bootstrap-responsive.css">
   <#assign validationFile="validation.js">
 </#if>
 
@@ -39,7 +37,4 @@
 </#if>
 <#if parameters.includeStyles?default(true)>
    	<link id="bootstrap_styles" rel="stylesheet" href="${base}/struts/bootstrap/css/${cssFile}" type="text/css"/>
-</#if>
-<#if parameters.includeStylesResponsive?default(false)>
-    <link id="bootstrap_responsive_styles" rel="stylesheet" href="${base}/struts/bootstrap/css/${responsiveFile}" type="text/css"/>
 </#if>
