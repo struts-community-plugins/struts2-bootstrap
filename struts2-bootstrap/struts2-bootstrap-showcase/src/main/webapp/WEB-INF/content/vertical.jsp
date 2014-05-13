@@ -71,7 +71,7 @@
 
             <h1>Vertical Form Example</h1>
 
-            <s:form enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical" label="A sample horizontal Form">
+            <s:form enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical" label="A sample vertical Form">
                 <s:textfield
                         label="Name"
                         name="name"
