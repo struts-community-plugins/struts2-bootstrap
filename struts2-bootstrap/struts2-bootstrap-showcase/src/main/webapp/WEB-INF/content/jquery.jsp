@@ -1,13 +1,15 @@
+<!DOCTYPE html>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags" %>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
-<!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/> - With Struts2 jQuery Plugin</title>
-    <meta charset="utf-8"/>
-    <meta name="keywords" content="struts2, twitter, bootstrap, plugin, showcase, jquery" />
-    <meta name="description" content="A Showcase for the Struts2 Bootstrap Plugin" />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="struts2, twitter, bootstrap, plugin, showcase" />
+    <meta name="description" content="Struts2 jQuery Plugin Integration - A Showcase for the Struts2 Bootstrap Plugin" />
+    <title>jQuery Plugin Integration - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
