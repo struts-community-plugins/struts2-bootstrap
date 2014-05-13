@@ -23,33 +23,31 @@
     </style>
 </head>
 <body>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="i-bar"></span>
-                <span class="i-bar"></span>
-                <span class="i-bar"></span>
-            </a>
-            <a class="brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
 
-            <div class="nav-collapse">
-                <ul class="nav">
-                    <s:url var="index_url" action="index"/>
-                    <li class="active"><s:a href="%{index_url}">Home</s:a></li>
-                    <s:url var="about_url" action="about"/>
-                    <li><s:a href="%{about_url}">About</s:a></li>
-                    <li><a href="http://code.google.com/p/struts2-bootstrap/">Project</a></li>
-                </ul>
-            </div>
-            <!--/.nav-collapse -->
-        </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
     </div>
-</div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+            <s:url var="index_url" action="index"/>
+            <li class="active"><s:a href="%{index_url}">Home</s:a></li>
+            <s:url var="about_url" action="about"/>
+            <li><s:a href="%{about_url}">About</s:a></li>
+            <li><a href="http://code.google.com/p/struts2-bootstrap/">Project</a></li>
+        </ul>
+    </div>
+</nav>
 
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span3">
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
             <div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header">
@@ -70,7 +68,7 @@
                  </ul>
             </div>
         </div>
-        <div class="span9">
+        <div class="col-md-9">
 
             <h1>With Custom Theme</h1>
 
