@@ -24,13 +24,13 @@
         <repository>
             <id>struts2-bootstrap.staging</id>
             <name>Struts2 Bootstrap Plugin Staging Repository</name>
-            <url>http://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
         </repository>
         <snapshotRepository>
             <id>struts2-bootstrap.snapshots</id>
             <uniqueVersion>false</uniqueVersion>
             <name>Struts2 Bootstrap Plugin Snapshots and Test Builds Repository</name>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
