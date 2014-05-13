@@ -12,7 +12,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <sb:head includeScripts="true" includeStyles="false" includeStylesResponsive="true"/>
+    <sb:head includeScripts="true" includeStyles="false"/>
     <link rel="stylesheet" href="<s:url value="/styles/bootstrap-superhero.css" />" type="text/css"/>
     <style type="text/css">
         body {
