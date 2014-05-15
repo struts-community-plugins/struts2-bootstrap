@@ -38,9 +38,9 @@
 					 id="${parameters.id?html}"<#rt/>
 					</#if>
 					<#if parameters.cssClass??>
-					 class="alert alert-error ${parameters.cssClass?html}"<#rt/>
+					 class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
 					<#else>
-					 class="alert alert-error actionError"<#rt/>
+					 class="alert alert-danger actionError"<#rt/>
 					</#if>
 					<#if parameters.cssStyle??>
 					 style="margin${parameters.cssStyle?html}"<#rt/>
@@ -65,9 +65,9 @@
 					 id="${parameters.id?html}"<#rt/>
 					</#if>
 					<#if parameters.cssClass??>
-					 class="alert alert-error ${parameters.cssClass?html}"<#rt/>
+					 class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
 					<#else>
-					 class="alert alert-error actionError"<#rt/>
+					 class="alert alert-danger actionError"<#rt/>
 					</#if>
 					<#if parameters.cssStyle??>
 					 style="margin${parameters.cssStyle?html}"<#rt/>

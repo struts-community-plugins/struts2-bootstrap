@@ -19,5 +19,5 @@
  */
 -->
 <#if parameters.tooltip??><#t/>
-	<i class="icon-info-sign s2b_tooltip" title="${parameters.tooltip?html}"></i>
+	<i class="glyphicon glyphicon-info-sign s2b_tooltip" title="${parameters.tooltip?html}"></i>
 </#if><#t/>

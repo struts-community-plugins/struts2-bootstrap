@@ -32,12 +32,12 @@
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-<label for="${parameters.name?html}-${itemCount}" class="radio <#rt/>
-<#if parameters.labelposition?default("") == 'inline'>
- inline<#rt/>
-</#if>
-">
-${itemValue}<#t/>
+    <#if parameters.labelposition?default("") == 'inline'>
+<div class="radio-inline">
+    <#else>
+<div class="radio">
+    </#if>
+<label for="${parameters.name?html}-${itemCount}" class="radio">
 <input type="radio"<#rt/>
 <#if parameters.name??>
  name="${parameters.name?html}"<#rt/>
@@ -68,5 +68,7 @@ ${itemValue}<#t/>
 <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
 <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
 /><#rt/>
+${itemValue}<#t/>
 </label>
+</div>
 </@s.iterator>

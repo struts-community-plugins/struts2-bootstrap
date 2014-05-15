@@ -24,16 +24,15 @@
 	    <span class="errorMessage">${error?html}</span><#t/>
 	</#list>
 </#if>
-<div class="control-group <#rt/>
-<#if hasFieldErrors> 
- error<#rt/> 
+<div class="form-group <#rt/>
+<#if hasFieldErrors>
+ has-error has-feedback<#rt/>
 </#if>
-${parameters.cssClass?default('')?html}"<#rt/>
+ ${parameters.cssClass?default('')?html}"><#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
->
 <#if parameters.label??>
-    <label class="control-label">
+    <label class="col-sm-3 control-label">
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
         <span class="required">*</span><#t/>
 </#if>
@@ -45,7 +44,7 @@ ${parameters.labelseparator?default("")?html}<#t/>
 <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 </label><#rt/>
 </#if>
-<div class="controls">
+<div class="col-sm-9">
 <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/radiomap.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

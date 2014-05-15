@@ -24,13 +24,13 @@
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 
-<div class="control-group <#rt/>
+<div class="form-group <#rt/>
 <#if hasFieldErrors> 
- error <#rt/>
+ has-error has-feedback<#rt/>
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="control-label" <#t/>
+    <label class="col-sm-3 control-label" <#t/>
 <#if parameters.id??>
         for="${parameters.id?html}" <#rt/>
 </#if>
@@ -46,8 +46,8 @@ ${parameters.labelseparator?default("")?html}<#rt/>
 <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 </label><#rt/>
 </#if>
-<div class="controls">
 <#lt/>
+<div class="col-sm-9">
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
 <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
 </#if><#rt/>

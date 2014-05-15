@@ -24,31 +24,31 @@
 	    <span class="errorMessage">${error?html}</span><#t/>
 	</#list>
 </#if>
-<div class="control-group<#rt/> 
+<div class="form-group<#rt/>
 <#if hasFieldErrors> 
- error<#rt/> 
+ has-error has-feedback<#rt/>
 </#if>
-${parameters.cssClass?default('')?html}"<#rt/>
+${parameters.cssClass?default('')?html}"><#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
->
-<label class="control-label"></label>
-<div class="controls">
+<div class="col-sm-3"></div>
+<div class="col-sm-9">
 <#lt/>
-<#if parameters.label??>
-<label class="checkbox<#rt/>
 <#if parameters.labelposition?default("") == 'inline'>
- inline<#rt/>
+<div class="checkbox-inline">
+<#else>
+<div class="checkbox">
 </#if>
- ${parameters.cssClass?default('')?html}"<#rt/>
-
+<#if parameters.label??>
+<label
 <#if parameters.id??>
         for="${parameters.id?html}" <#t/>
 </#if>
-    ><#t/>
+><#t/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
         <span class="required">*</span><#t/>
 </#if>
+ <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
 ${parameters.label?html}<#t/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
  <span class="required">*</span><#t/>
@@ -58,8 +58,8 @@ ${parameters.labelseparator?default("")?html}<#t/>
 
 </#if>
 
-<#include "/${parameters.templateDir}/simple/checkbox.ftl" />
 <#if parameters.label??>
 </label><#t/>
+</div><#t/>
 </#if>
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

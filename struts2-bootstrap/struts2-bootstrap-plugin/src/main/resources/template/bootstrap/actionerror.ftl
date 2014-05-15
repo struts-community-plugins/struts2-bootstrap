@@ -24,9 +24,9 @@
  id="${parameters.id?html}"<#rt/>
 </#if>
 <#if parameters.cssClass??>
- class="alert alert-error ${parameters.cssClass?html}"<#rt/>
+ class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
 <#else>
- class="alert alert-error"<#rt/>
+ class="alert alert-danger"<#rt/>
 </#if>
 <#if parameters.cssStyle??>
  style="${parameters.cssStyle?html}"<#rt/>

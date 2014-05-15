@@ -21,8 +21,9 @@
 ${parameters.after?if_exists}<#t/>
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if hasFieldErrors>
+    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
 <#list fieldErrors[parameters.name] as error>
-    <span class="help-inline">${error?html}</span><#t/>
+    <span class="help-block alert-danger">${error?html}</span><#t/>
 </#list>
 </#if>
 <#if helpText??>

@@ -33,12 +33,12 @@
             <#assign itemValue = stack.findString('top')/>
     </#if>
     <#assign itemKeyStr=itemKey.toString() />
-<label for="${parameters.name?html}-${itemCount}" class="checkbox <#rt/>
-<#if parameters.labelposition?default("") == 'inline'>
- inline<#rt/>
-</#if>
-">
-${itemValue?html}<#rt/>
+    <#if parameters.labelposition?default("") == 'inline'>
+<div class="checkbox-inline">
+    <#else>
+<div class="checkbox">
+    </#if>
+<label for="${parameters.name?html}-${itemCount}" class="checkbox">
 
 <input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}"
        id="${parameters.name?html}-${itemCount}"<#rt/>
@@ -55,7 +55,9 @@ ${itemValue?html}<#rt/>
     <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
     <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
         /><#rt/>
+${itemValue?html}<#rt/>
 </label>
+</div>
 </@s.iterator>
     <#else>
     &nbsp;

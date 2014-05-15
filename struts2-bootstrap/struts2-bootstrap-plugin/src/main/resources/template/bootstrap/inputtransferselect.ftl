@@ -19,5 +19,5 @@
  */
 -->
 <#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
-<#include "/${parameters.templateDir}/simple/inputtransferselect.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/simple/inputtransferselect.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
