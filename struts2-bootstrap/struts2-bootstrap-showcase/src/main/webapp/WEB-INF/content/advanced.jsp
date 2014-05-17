@@ -75,7 +75,7 @@
             <h1>Advanced Examples</h1>
 
             <h2>Inline Form Layout</h2>
-            <s:form theme="simple" cssClass="well form-search">
+            <s:form theme="bootstrap" cssClass="well form-inline">
                 <s:textfield
                         placeholder="Login"
                         name="login"

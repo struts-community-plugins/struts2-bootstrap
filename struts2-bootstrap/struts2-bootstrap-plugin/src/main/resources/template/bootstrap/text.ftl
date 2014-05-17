@@ -33,26 +33,26 @@
 </#if><#rt/>
 
 <#if inputPrepend??>
-<div class="input-prepend">
-    <span class="add-on">${inputPrepend?html}</span>
+<div class="input-group">
+    <span class="input-group-addon">${inputPrepend?html}</span>
 </#if>
 <#if inputPrependIcon??>
-<div class="input-prepend">
-    <span class="add-on"><i class="icon-${inputPrependIcon?html}"></i></span>
+<div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-${inputPrependIcon?html}"></i></span>
 </#if>
 <#if (inputAppend?? || inputAppendIcon??)>
-<div class="input-append">
+<div class="input-group">
 </#if>
 <#include "/${parameters.templateDir}/simple/text.ftl" />
 <#if (inputPrepend?? || inputPrependIcon??)>
 </div>
 </#if>
 <#if inputAppend??>
-    <span class="add-on">${inputAppend?html}</span>
+    <span class="input-group-addon">${inputAppend?html}</span>
 </div>
 </#if>
 <#if inputAppendIcon??>
-    <span class="add-on"><i class="icon-${inputAppendIcon?html}"></i></span>
+    <span class="input-group-addon"><i class="glyphicon glyphicon-${inputAppendIcon?html}"></i></span>
 </div>
 </#if>
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
