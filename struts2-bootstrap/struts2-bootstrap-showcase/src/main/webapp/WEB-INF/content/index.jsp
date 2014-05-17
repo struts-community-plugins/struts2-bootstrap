@@ -173,25 +173,38 @@
                         doubleEmptyOption="true"
                         doubleMultiple="true"/>
 
+                <s:inputtransferselect
+                        tooltip="Add Your Favourite Cartoon Character"
+                        label="Favourite Cartoons Characters"
+                        name="inputLeftSideCartoonCharacters"
+                        addLabel="Add element"
+                        removeLabel="Remove element"
+                        removeAllLabel="Remove all elements"
+                        upLabel="Move up"
+                        downLabel="Move down"
+                        leftTitle="Add Character"
+                        rightTitle="Existing Characters"
+                        list="{'Popeye', 'He-Man', 'Spiderman'}"
+                 />
+
                 <s:textarea
                         label="Your Thougths"
                         name="thoughts"
                         cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
-                <div class="form-actions">
-                    <s:submit cssClass="btn"/>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-md-9">
+                        <s:submit cssClass="btn btn-primary"/>
+                    </div>
                 </div>
             </s:form>
         </div>
     </div>
-
-    <footer class="footer">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-
-        <p>Created by <a href="http://twitter.com/jogep" target="_blank">@jogep</a>.</p>
-    </footer>
-
 </div>
-<!-- /container -->
+<footer>
+    <p class="pull-right"><a href="#">Back to top</a></p>
+
+    <p>Created by <a href="http://twitter.com/jogep" target="_blank">@jogep</a>.</p>
+</footer>
 </body>
 </html>
