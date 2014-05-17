@@ -30,7 +30,7 @@
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="col-sm-3 control-label" <#t/>
+    <label class="<@s.property value="#s2b_form_label_class" /> control-label" <#t/>
 <#if parameters.id??>
         for="${parameters.id?html}" <#rt/>
 </#if>
@@ -47,7 +47,7 @@ ${parameters.labelseparator?default("")?html}<#rt/>
 </label><#rt/>
 </#if>
 <#lt/>
-<div class="col-sm-9">
+<div class="<@s.property value="#s2b_form_element_class" />">
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
 <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
 </#if><#rt/>

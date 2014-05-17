@@ -18,13 +18,22 @@
  * under the License.
  */
 -->
+
+<#if parameters.cssClass?? && parameters.cssClass?contains("form-horizontal") >
+    <@s.set name="s2b_form_label_class">col-sm-3</@s.set>
+    <@s.set name="s2b_form_element_class">col-sm-9</@s.set>
+<#else>
+    <@s.set name="s2b_form_label_class"> </@s.set>
+    <@s.set name="s2b_form_element_class"> </@s.set>
+</#if>
+
 <#include "/${parameters.templateDir}/simple/form-common.ftl" />
 <#if (parameters.validate?default(false))>
-  onreset="${parameters.onreset?default('clearErrorMessages(this);clearErrorLabels(this);')}"
+onreset="${parameters.onreset?default('clearErrorMessages(this);clearErrorLabels(this);')}"
 <#else>
-  <#if parameters.onreset??>
-  onreset="${parameters.onreset?html}"
-  </#if>
+    <#if parameters.onreset??>
+    onreset="${parameters.onreset?html}"
+    </#if>
 </#if>
 >
 <#include "/${parameters.templateDir}/bootstrap/control.ftl" />

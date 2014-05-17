@@ -32,7 +32,7 @@
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
 <#if parameters.label??>
-    <label class="col-sm-3 control-label" <#t/>
+    <label class="<@s.property value="#s2b_form_label_class" /> control-label" <#t/>
     ><#t/>
 <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
         <span class="required">*</span><#t/>
@@ -45,7 +45,7 @@ ${parameters.labelseparator?default("")?html}<#rt/>
 <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 </label><#rt/>
 </#if>
-<div class="col-sm-9">
+<div class="<@s.property value="#s2b_form_element_class" />">
 <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

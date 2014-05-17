@@ -31,8 +31,8 @@
 ${parameters.cssClass?default('')?html}"><#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
-<div class="col-sm-3"></div>
-<div class="col-sm-9">
+<div class="<@s.property value="#s2b_form_label_class" />"></div>
+<div class="<@s.property value="#s2b_form_element_class" />">
 <#lt/>
 <#if parameters.labelposition?default("") == 'inline'>
 <div class="checkbox-inline">
