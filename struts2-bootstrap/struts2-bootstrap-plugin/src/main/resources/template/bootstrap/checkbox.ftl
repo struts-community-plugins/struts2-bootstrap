@@ -32,7 +32,7 @@ ${parameters.cssClass?default('')?html}"><#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
     <div class="<@s.property value="#s2b_form_label_class" />"></div>
-    <div class="<@s.property value="#s2b_form_element_class" />">
+    <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
     <#if parameters.labelposition?default("") == 'inline'>
     <div class="checkbox-inline">

@@ -45,7 +45,7 @@
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label><#rt/>
 </#if>
-    <div class="<@s.property value="#s2b_form_element_class" />">
+    <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
