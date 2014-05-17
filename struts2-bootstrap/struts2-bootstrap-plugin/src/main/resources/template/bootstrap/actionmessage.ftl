@@ -19,24 +19,24 @@
  */
 -->
 <#if (actionMessages?? && actionMessages?size > 0 && !parameters.isEmptyList)>
-<div 
-<#if parameters.id?if_exists != "">
- id="${parameters.id?html}"<#rt/>
-</#if>
-<#if parameters.cssClass??>
- class="alert alert-info ${parameters.cssClass?html}"<#rt/>
-<#else>
- class="alert alert-info"<#rt/>
-</#if>
-<#if parameters.cssStyle??>
- style="${parameters.cssStyle?html}"<#rt/>
-</#if>
->
-		<#list actionMessages as message>
-            <#if message?if_exists != "">
-		<p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 0.3em;"></span>
-		<span><#if parameters.escape>${message!?html}<#else>${message!}</#if></span></p>
-            </#if>
-		</#list>
+<div
+    <#if parameters.id?if_exists != "">
+            id="${parameters.id?html}"<#rt/>
+    </#if>
+    <#if parameters.cssClass??>
+            class="alert alert-info ${parameters.cssClass?html}"<#rt/>
+    <#else>
+            class="alert alert-info"<#rt/>
+    </#if>
+    <#if parameters.cssStyle??>
+            style="${parameters.cssStyle?html}"<#rt/>
+    </#if>
+        >
+    <#list actionMessages as message>
+        <#if message?if_exists != "">
+            <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 0.3em;"></span>
+                <span><#if parameters.escape>${message!?html}<#else>${message!}</#if></span></p>
+        </#if>
+    </#list>
 </div>
 </#if>

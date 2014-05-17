@@ -83,13 +83,13 @@
     <@s.iterator value="parameters.list">
         <#if parameters.listKey??>
             <#assign itemKey = stack.findValue(parameters.listKey)/>
-            <#else>
-                <#assign itemKey = stack.findValue('top')/>
+        <#else>
+            <#assign itemKey = stack.findValue('top')/>
         </#if>
         <#if parameters.listValue??>
             <#assign itemValue = stack.findString(parameters.listValue)/>
-            <#else>
-                <#assign itemValue = stack.findString('top')/>
+        <#else>
+            <#assign itemValue = stack.findString('top')/>
         </#if>
         <#assign doubleItemCount = 0/>
         <#if parameters.doubleHeaderKey?? && parameters.doubleHeaderValue??>
@@ -100,52 +100,52 @@
         ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("", "");
             <#assign doubleItemCount = doubleItemCount + 1/>
         </#if>
-    <@s.iterator value="${parameters.doubleList}">
-        <#if parameters.doubleListKey??>
-            <#assign doubleItemKey = stack.findValue(parameters.doubleListKey)/>
+        <@s.iterator value="${parameters.doubleList}">
+            <#if parameters.doubleListKey??>
+                <#assign doubleItemKey = stack.findValue(parameters.doubleListKey)/>
             <#else>
                 <#assign doubleItemKey = stack.findValue('top')/>
-        </#if>
-        <#assign doubleItemKeyStr = doubleItemKey.toString() />
-        <#if parameters.doubleListValue??>
-            <#assign doubleItemValue = stack.findString(parameters.doubleListValue)/>
+            </#if>
+            <#assign doubleItemKeyStr = doubleItemKey.toString() />
+            <#if parameters.doubleListValue??>
+                <#assign doubleItemValue = stack.findString(parameters.doubleListValue)/>
             <#else>
                 <#assign doubleItemValue = stack.findString('top')/>
-        </#if>
-        <#if parameters.doubleListCssClass??>
-            <#if stack.findString(parameters.doubleListCssClass)??>
-              <#assign itemDoubleCssClass= stack.findString(parameters.doubleListCssClass)/>
-            <#else>
-              <#assign itemDoubleCssClass = ''/>
             </#if>
-        </#if>
-        <#if parameters.doubleListCssStyle??>
-            <#if stack.findString(parameters.doubleListCssStyle)??>
-              <#assign itemDoubleCssStyle= stack.findString(parameters.doubleListCssStyle)/>
-            <#else>
-              <#assign itemDoubleCssStyle = ''/>
+            <#if parameters.doubleListCssClass??>
+                <#if stack.findString(parameters.doubleListCssClass)??>
+                    <#assign itemDoubleCssClass= stack.findString(parameters.doubleListCssClass)/>
+                <#else>
+                    <#assign itemDoubleCssClass = ''/>
+                </#if>
             </#if>
-        </#if>
-        <#if parameters.doubleListTitle??>
-            <#if stack.findString(parameters.doubleListTitle)??>
-              <#assign itemDoubleTitle= stack.findString(parameters.doubleListTitle)/>
-            <#else>
-              <#assign itemDoubleTitle = ''/>
+            <#if parameters.doubleListCssStyle??>
+                <#if stack.findString(parameters.doubleListCssStyle)??>
+                    <#assign itemDoubleCssStyle= stack.findString(parameters.doubleListCssStyle)/>
+                <#else>
+                    <#assign itemDoubleCssStyle = ''/>
+                </#if>
             </#if>
-        </#if>
-    ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleItemValue?js_string}", "${doubleItemKeyStr?js_string}");
-        <#if itemDoubleCssClass?if_exists != "">
-    ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("class","${itemDoubleCssClass?html}");
-        </#if>
-        <#if itemDoubleCssStyle?if_exists != "">
-        ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("style","${itemDoubleCssStyle?html}");
-        </#if>
-        <#if itemDoubleTitle?if_exists != "">
-        ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("title","${itemDoubleTitle?html}");
-        </#if>
+            <#if parameters.doubleListTitle??>
+                <#if stack.findString(parameters.doubleListTitle)??>
+                    <#assign itemDoubleTitle= stack.findString(parameters.doubleListTitle)/>
+                <#else>
+                    <#assign itemDoubleTitle = ''/>
+                </#if>
+            </#if>
+        ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleItemValue?js_string}", "${doubleItemKeyStr?js_string}");
+            <#if itemDoubleCssClass?if_exists != "">
+            ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("class", "${itemDoubleCssClass?html}");
+            </#if>
+            <#if itemDoubleCssStyle?if_exists != "">
+            ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("style", "${itemDoubleCssStyle?html}");
+            </#if>
+            <#if itemDoubleTitle?if_exists != "">
+            ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("title", "${itemDoubleTitle?html}");
+            </#if>
 
-        <#assign doubleItemCount = doubleItemCount + 1/>
-    </@s.iterator>
+            <#assign doubleItemCount = doubleItemCount + 1/>
+        </@s.iterator>
         <#assign itemCount = itemCount + 1/>
     </@s.iterator>
 
@@ -155,8 +155,8 @@
     <@s.iterator value="parameters.list">
         <#if parameters.listKey??>
             <#assign itemKey = stack.findValue(parameters.listKey)/>
-            <#else>
-                <#assign itemKey = stack.findValue('top')/>
+        <#else>
+            <#assign itemKey = stack.findValue('top')/>
         </#if>
         <#if tag.contains(parameters.nameValue, itemKey)>
             <#assign redirectTo = itemCount/>
@@ -184,16 +184,16 @@
                         selected = true;
                     }
                 }
-                <#else>
-                    if (${parameters.id}Temp.options[i].value == '${parameters.doubleNameValue?js_string}') {
-                        ${parameters.id}Temp.options[i].selected = true;
-                        selected = true;
-                    }
+            <#else>
+                if (${parameters.id}Temp.options[i].value == '${parameters.doubleNameValue?js_string}') {
+                    ${parameters.id}Temp.options[i].selected = true;
+                    selected = true;
+                }
             </#if>
         </#if>
         }
 
-        if ((${parameters.id}Temp.options.length > 0) && (! selected)) {
+        if ((${parameters.id}Temp.options.length > 0) && (!selected)) {
             ${parameters.id}Temp.options[0].selected = true;
         }
     }

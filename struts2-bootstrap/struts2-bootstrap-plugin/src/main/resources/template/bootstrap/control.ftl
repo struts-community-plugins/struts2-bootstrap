@@ -18,7 +18,7 @@
  * under the License.
  */
 -->
-    <fieldset>
+<fieldset>
 <#if parameters.label??>
     <legend>${parameters.label?default("")?html}</legend>
 </#if>

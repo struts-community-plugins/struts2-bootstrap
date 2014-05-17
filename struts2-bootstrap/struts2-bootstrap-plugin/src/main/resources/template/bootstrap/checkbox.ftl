@@ -20,9 +20,9 @@
 -->
 <#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if hasFieldErrors>
-	<#list fieldErrors[parameters.name] as error>
-	    <span class="errorMessage">${error?html}</span><#t/>
-	</#list>
+    <#list fieldErrors[parameters.name] as error>
+    <span class="errorMessage">${error?html}</span><#t/>
+    </#list>
 </#if>
 <div class="form-group<#rt/>
 <#if hasFieldErrors> 
@@ -31,35 +31,35 @@
 ${parameters.cssClass?default('')?html}"><#rt/>
 <#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
 </#if>
-<div class="<@s.property value="#s2b_form_label_class" />"></div>
-<div class="<@s.property value="#s2b_form_element_class" />">
-<#lt/>
-<#if parameters.labelposition?default("") == 'inline'>
-<div class="checkbox-inline">
-<#else>
-<div class="checkbox">
-</#if>
-<#if parameters.label??>
-<label
-<#if parameters.id??>
-        for="${parameters.id?html}" <#t/>
-</#if>
-><#t/>
-<#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-        <span class="required">*</span><#t/>
-</#if>
- <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
-${parameters.label?html}<#t/>
-<#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
- <span class="required">*</span><#t/>
-</#if>
-${parameters.labelseparator?default("")?html}<#t/>
-<#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
+    <div class="<@s.property value="#s2b_form_label_class" />"></div>
+    <div class="<@s.property value="#s2b_form_element_class" />">
+    <#lt/>
+    <#if parameters.labelposition?default("") == 'inline'>
+    <div class="checkbox-inline">
+    <#else>
+    <div class="checkbox">
+    </#if>
+    <#if parameters.label??>
+    <label
+        <#if parameters.id??>
+                for="${parameters.id?html}" <#t/>
+        </#if>
+            ><#t/>
+        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+            <span class="required">*</span><#t/>
+        </#if>
+        <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
+    ${parameters.label?html}<#t/>
+        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+            <span class="required">*</span><#t/>
+        </#if>
+    ${parameters.labelseparator?default("")?html}<#t/>
+        <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
 
-</#if>
+    </#if>
 
-<#if parameters.label??>
-</label><#t/>
-</div><#t/>
-</#if>
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
+    <#if parameters.label??>
+    </label><#t/>
+    </div><#t/>
+    </#if>
+    <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

@@ -33,55 +33,55 @@
                     <#if (haveMatchedErrorField && (!doneStartUlTag))><#t/>
                         <#assign doneStartUlTag=true><#t/>
                     </#if><#t/>
-					<div 
-					<#if parameters.id?if_exists != "">
-					 id="${parameters.id?html}"<#rt/>
-					</#if>
-					<#if parameters.cssClass??>
-					 class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
-					<#else>
-					 class="alert alert-danger actionError"<#rt/>
-					</#if>
-					<#if parameters.cssStyle??>
-					 style="margin${parameters.cssStyle?html}"<#rt/>
-					</#if>
-					>
-		                    <#list eValue as eEachValue><#t/>
-					            <#if eEachValue?if_exists != "">
-							<p><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
-					            </#if>
-							</#list>
-        			</div>
+                <div
+                    <#if parameters.id?if_exists != "">
+                            id="${parameters.id?html}"<#rt/>
+                    </#if>
+                    <#if parameters.cssClass??>
+                            class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
+                    <#else>
+                            class="alert alert-danger actionError"<#rt/>
+                    </#if>
+                    <#if parameters.cssStyle??>
+                            style="margin${parameters.cssStyle?html}"<#rt/>
+                    </#if>
+                        >
+                    <#list eValue as eEachValue><#t/>
+                        <#if eEachValue?if_exists != "">
+                            <p><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
+                        </#if>
+                    </#list>
+                </div>
                 </#if><#t/>
             </#list><#t/>
         </#list><#t/>
         <#if (haveMatchedErrorField && (!doneEndUlTag))><#t/>
             <#assign doneEndUlTag=true><#t/>
         </#if><#t/>
-        <#else><#t/>
+    <#else><#t/>
         <#if (eKeysSize > 0)><#t/>
-					<div 
-					<#if parameters.id?if_exists != "">
-					 id="${parameters.id?html}"<#rt/>
-					</#if>
-					<#if parameters.cssClass??>
-					 class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
-					<#else>
-					 class="alert alert-danger actionError"<#rt/>
-					</#if>
-					<#if parameters.cssStyle??>
-					 style="margin${parameters.cssStyle?html}"<#rt/>
-					</#if>
-					>
+        <div
+            <#if parameters.id?if_exists != "">
+                    id="${parameters.id?html}"<#rt/>
+            </#if>
+            <#if parameters.cssClass??>
+                    class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
+            <#else>
+                    class="alert alert-danger actionError"<#rt/>
+            </#if>
+            <#if parameters.cssStyle??>
+                    style="margin${parameters.cssStyle?html}"<#rt/>
+            </#if>
+                >
             <#list eKeys as eKey><#t/>
                 <#assign eValue = fieldErrors[eKey]><#t/>
-		                    <#list eValue as eEachValue><#t/>
-					            <#if eEachValue?if_exists != "">
-							<p><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
-					            </#if>
-							</#list>
+                <#list eValue as eEachValue><#t/>
+                    <#if eEachValue?if_exists != "">
+                        <p><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
+                    </#if>
+                </#list>
             </#list><#t/>
-        			</div>
+        </div>
         </#if><#t/>
     </#if><#t/>
 </#if><#t/>

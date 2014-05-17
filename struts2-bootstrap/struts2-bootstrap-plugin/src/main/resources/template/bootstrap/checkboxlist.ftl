@@ -20,9 +20,9 @@
 -->
 <#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if hasFieldErrors>
-	<#list fieldErrors[parameters.name] as error>
-	    <span class="errorMessage">${error?html}</span><#t/>
-	</#list>
+    <#list fieldErrors[parameters.name] as error>
+    <span class="errorMessage">${error?html}</span><#t/>
+    </#list>
 </#if>
 <div class="form-group <#rt/>
 <#if hasFieldErrors>
@@ -33,19 +33,19 @@
 </#if>
 <#if parameters.label??>
     <label class="<@s.property value="#s2b_form_label_class" /> control-label" <#t/>
-    ><#t/>
-<#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-        <span class="required">*</span><#t/>
+            ><#t/>
+        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+            <span class="required">*</span><#t/>
+        </#if>
+    ${parameters.label?html}<#t/>
+        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+            <span class="required">*</span><#t/>
+        </#if>
+    ${parameters.labelseparator?default("")?html}<#rt/>
+        <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
+    </label><#rt/>
 </#if>
-${parameters.label?html}<#t/>
-<#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
- <span class="required">*</span><#t/>
-</#if>
-${parameters.labelseparator?default("")?html}<#rt/>
-<#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
-</label><#rt/>
-</#if>
-<div class="<@s.property value="#s2b_form_element_class" />">
-<#lt/>
+    <div class="<@s.property value="#s2b_form_element_class" />">
+    <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

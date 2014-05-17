@@ -31,23 +31,23 @@
 "><#rt/>
 <#if parameters.label??>
     <label class="<@s.property value="#s2b_form_label_class" /> control-label" <#t/>
-<#if parameters.id??>
-        for="${parameters.id?html}" <#rt/>
-</#if>
-    ><#rt/>
-<#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-        <span class="required">*</span><#rt/>
-</#if>
-${parameters.label?html}<#t/>
-<#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
- <span class="required">*</span><#rt/>
-</#if>
-${parameters.labelseparator?default("")?html}<#rt/>
-<#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
-</label><#rt/>
+        <#if parameters.id??>
+           for="${parameters.id?html}" <#rt/>
+        </#if>
+            ><#rt/>
+        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+            <span class="required">*</span><#rt/>
+        </#if>
+    ${parameters.label?html}<#t/>
+        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+            <span class="required">*</span><#rt/>
+        </#if>
+    ${parameters.labelseparator?default("")?html}<#rt/>
+        <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
+    </label><#rt/>
 </#if>
 <#lt/>
-<div class="<@s.property value="#s2b_form_element_class" />">
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
-<#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
-</#if><#rt/>
+    <div class="<@s.property value="#s2b_form_element_class" />">
+    <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
+        <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
+    </#if><#rt/>
