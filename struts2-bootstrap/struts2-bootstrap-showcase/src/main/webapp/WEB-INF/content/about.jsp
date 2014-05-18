@@ -44,13 +44,14 @@
 </nav>
 
 
-<div class="container">
+<div class="container" role="main">
 
     <h1>About Struts2 Bootstrap Plugin</h1>
 
     <h2>Project</h2>
     <ul>
         <li><a href="http://code.google.com/p/struts2-bootstrap/">Project @ Google Code</a></li>
+        <li><a href="https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/">Download</a></li>
     </ul>
 
 
@@ -60,14 +61,14 @@
         <li><a href="http://twitter.com/jogep">Twitter News</a></li>
     </ul>
 
-
-    <footer class="footer">
+    <footer class="footer" style="margin-top: 100px;">
         <p class="pull-right"><a href="#">Back to top</a></p>
 
         <p>Created by <a href="http://twitter.com/jogep" target="_blank">@jogep</a>.</p>
     </footer>
 
 </div>
+
 <!-- /container -->
 </body>
 </html>
