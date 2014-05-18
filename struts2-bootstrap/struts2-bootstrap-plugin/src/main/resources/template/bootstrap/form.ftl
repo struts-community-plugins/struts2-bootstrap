@@ -20,8 +20,18 @@
 -->
 
 <#if parameters.cssClass?? && parameters.cssClass?contains("form-horizontal") >
-    <@s.set name="s2b_form_label_class">col-sm-3</@s.set>
-    <@s.set name="s2b_form_element_class">col-sm-9</@s.set>
+    <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["labelCssClass"]??)><#rt/>
+        <#assign labelCssClass = parameters.dynamicAttributes.remove("labelCssClass")/><#rt/>
+    <#else>
+        <#assign labelCssClass = "col-sm-3"/><#rt/>
+    </#if><#rt/>
+    <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["elementCssClass"]??)><#rt/>
+        <#assign elementCssClass = parameters.dynamicAttributes.remove("elementCssClass")/><#rt/>
+    <#else>
+        <#assign elementCssClass = "col-sm-9"/><#rt/>
+    </#if><#rt/>
+    <@s.set name="s2b_form_label_class">${labelCssClass}</@s.set>
+    <@s.set name="s2b_form_element_class">${elementCssClass}</@s.set>
 <#else>
     <@s.set name="s2b_form_label_class"> </@s.set>
     <@s.set name="s2b_form_element_class"> </@s.set>

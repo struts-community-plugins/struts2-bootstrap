@@ -82,7 +82,13 @@
             <s:fielderror theme="bootstrap"/>
 
 
-            <s:form id="validationForm" action="validation-submit" theme="bootstrap" cssClass="form-horizontal" label="A sample Registration Form">
+            <s:form id="validationForm"
+                    action="validation-submit"
+                    theme="bootstrap"
+                    cssClass="form-horizontal"
+                    labelCssClass="col-sm-2"
+                    elementCssClass="col-sm-7"
+                    label="A sample Registration Form">
 
                 <s:textfield
                         label="Username"
