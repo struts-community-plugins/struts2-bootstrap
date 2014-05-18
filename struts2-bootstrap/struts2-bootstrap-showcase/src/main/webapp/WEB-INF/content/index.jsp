@@ -82,7 +82,7 @@
                 <s:textfield
                         label="Name"
                         name="name"
-                        cssClass="input-xlarge"
+                        cssClass="input-sm"
                         tooltip="Enter your Name here"/>
 
                 <s:textfield
