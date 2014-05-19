@@ -80,6 +80,10 @@
                         parentTheme="bootstrap"
                         label="Datepicker"
                         tooltip="Tooltip for Datepicker"
+                        cssClass="form-control"
+                        elementCssClass="col-sm-5"
+                        showOn="focus"
+                        inputAppendIcon="calendar"
                 />
                 <s:url id="languages_url" action="languages"/>
                 <sj:autocompleter
@@ -87,6 +91,7 @@
                         parentTheme="bootstrap"
                         label="Autocompleter"
                         tooltip="Tooltip for Autocompleter"
+                        cssClass="form-control"
                         href="%{languages_url}"
 	    	            loadMinimumCount="1"
                  />
@@ -101,6 +106,10 @@
                                 parentTheme=&quot;bootstrap&quot;
                                 label=&quot;Datepicker&quot;
                                 tooltip=&quot;Tooltip for Datepicker&quot;
+                                cssClass=&quot;form-control&quot;
+                                elementCssClass=&quot;col-sm-5&quot;
+                                showOn=&quot;focus&quot;
+                                inputAppendIcon=&quot;calendar&quot;
                         /&gt;
                         &lt;s:url id=&quot;languages_url&quot; action=&quot;languages&quot;/&gt;
                         &lt;sj:autocompleter
@@ -108,6 +117,7 @@
                                 parentTheme=&quot;bootstrap&quot;
                                 label=&quot;Autocompleter&quot;
                                 tooltip=&quot;Tooltip for Autocompleter&quot;
+                                cssClass=&quot;form-control&quot;
                                 href=&quot;%{languages_url}&quot;
                                 loadMinimumCount=&quot;1&quot;
                          /&gt;
