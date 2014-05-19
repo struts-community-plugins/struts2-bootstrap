@@ -194,6 +194,7 @@
                         name="thoughts"
                         cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
+
                 <div class="form-group">
                     <div class="col-sm-offset-3 col-md-9">
                         <s:submit cssClass="btn btn-primary"/>
