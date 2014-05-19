@@ -83,6 +83,7 @@
                         label="Name"
                         name="name"
                         cssClass="input-sm"
+                        elementCssClass="col-sm-3"
                         tooltip="Enter your Name here"/>
 
                 <s:textfield
@@ -99,6 +100,7 @@
                 <s:select
                         tooltip="Choose Your Favourite Color"
                         label="Favorite Color"
+                        elementCssClass="col-sm-4"
                         list="{'Red', 'Blue', 'Green'}"
                         name="favouriteColor"
                         emptyOption="true"

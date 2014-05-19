@@ -24,13 +24,25 @@
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["labelCssClass"]??)><#rt/>
+    <#assign labelCssClass = parameters.dynamicAttributes.remove("labelCssClass")/><#rt/>
+<#else>
+    <#assign labelCssClass ><@s.property value="#s2b_form_label_class" /></#assign><#rt/>
+</#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["elementCssClass"]??)><#rt/>
+    <#assign elementCssClass = parameters.dynamicAttributes.remove("elementCssClass")/><#rt/>
+<#else>
+    <#assign elementCssClass ><@s.property value="#s2b_form_element_class" /></#assign><#rt/>
+</#if><#rt/>
+
+
 <div class="form-group <#rt/>
 <#if hasFieldErrors> 
  has-error has-feedback<#rt/>
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="<@s.property value="#s2b_form_label_class" /> control-label" <#t/>
+    <label class="${labelCssClass?html} control-label" <#t/>
         <#if parameters.id??>
            for="${parameters.id?html}" <#rt/>
         </#if>
@@ -47,7 +59,7 @@
     </label><#rt/>
 </#if>
 <#lt/>
-    <div class="<@s.property value="#s2b_form_element_class" /> controls">
+    <div class="${elementCssClass?html} controls">
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
         <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>
