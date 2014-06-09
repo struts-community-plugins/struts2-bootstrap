@@ -15,10 +15,10 @@
     </issueManagement>
 
     <scm>
-        <url>http://code.google.com/p/struts2-bootstrap/source/browse/</url>
-        <connection>http://code.google.com/p/struts2-bootstrap/source/browse/</connection>
+        <connection>scm:git:https://github.com/struts-community-plugins/struts2-bootstrap.git</connection>
+        <developerConnection>scm:git:[fetch=]https://github.com/struts-community-plugins/struts2-bootstrap.git[push=]https://github.com/struts-community-plugins/struts2-bootstrap.git</developerConnection>
+        <url>https://github.com/struts-community-plugins/struts2-bootstrap/</url>
     </scm>
-
 
     <distributionManagement>
         <repository>
