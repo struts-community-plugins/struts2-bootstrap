@@ -9,10 +9,10 @@
     <url>http://code.google.com/p/struts2-bootstrap</url>
     <description>Parent project for Struts2 jQuery integration.</description>
 
-	<issueManagement>
-		<system>Google Code</system>
-		<url>http://code.google.com/p/struts2-bootstrap/issues/list</url>
-	</issueManagement>
+    <issueManagement>
+        <system>Github Issue Tracker</system>
+        <url>https://github.com/struts-community-plugins/struts2-bootstrap/issues</url>
+    </issueManagement>
 
     <scm>
         <url>http://code.google.com/p/struts2-bootstrap/source/browse/</url>
