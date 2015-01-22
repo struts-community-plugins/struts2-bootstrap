@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.jgeppert.struts2.bootstrap</groupId>
 	<artifactId>bootstrap</artifactId>
-	<version>2.0.0</version>
+	<version>2.0.1</version>
     <packaging>pom</packaging>
 	<name>Struts2 Bootstrap Plugin Parent Module</name>
     <url>http://code.google.com/p/struts2-bootstrap</url>
@@ -53,7 +53,7 @@
 
 	<properties>
 		<currentVersion>${project.version}</currentVersion>
-		<struts2.version>2.3.16.3</struts2.version>
+		<struts2.version>2.3.20</struts2.version>
 		<tlib.version>2.2</tlib.version>
 	</properties>
 
@@ -68,7 +68,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
-				<version>2.6</version>
+				<version>2.7</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -76,7 +76,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.2</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 					<source>1.5</source>
@@ -86,7 +86,7 @@
 			<plugin>
 				<!-- Attach javadoc jar to builds -->
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.9.1</version>
+				<version>2.10.1</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
 				</configuration>
@@ -103,7 +103,7 @@
 				<!-- Attach source jar to builds -->
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
-				<version>2.2.1</version>
+				<version>2.4</version>
 				<executions>
 					<execution>
 						<id>attach-source</id>
@@ -131,7 +131,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.4</version>
+                        <version>1.5</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>
