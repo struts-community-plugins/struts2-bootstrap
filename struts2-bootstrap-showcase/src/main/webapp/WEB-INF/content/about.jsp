@@ -54,6 +54,19 @@
         <li><a href="https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/">Download</a></li>
     </ul>
 
+    <h2>Installation via Maven</h2>
+    <pre>
+&lt;dependencies&gt;
+    ...
+    &lt;dependency&gt;
+        &lt;groupId&gt;com.jgeppert.struts2.bootstrap&lt;/groupId&gt;
+        &lt;artifactId&gt;struts2-bootstrap-plugin&lt;/artifactId&gt;
+        &lt;version&gt;<s:text name="showcase.version"/>&lt;/version&gt;
+    &lt;/dependency&gt;
+    ...
+&lt;/dependencies&gt;
+    </pre>
+
 
     <h2>Developer</h2>
     <ul>
