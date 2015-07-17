@@ -38,7 +38,7 @@
             <li class="active"><s:a href="%{index_url}">Home</s:a></li>
             <s:url var="about_url" action="about"/>
             <li><s:a href="%{about_url}">About</s:a></li>
-            <li><a href="http://code.google.com/p/struts2-bootstrap/">Project</a></li>
+            <li><a href="https://github.com/struts-community-plugins/struts2-bootstrap/">Project</a></li>
         </ul>
     </div>
 </nav>
