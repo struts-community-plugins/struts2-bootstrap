@@ -50,7 +50,7 @@
 
     <h2>Project</h2>
     <ul>
-        <li><a href="http://code.google.com/p/struts2-bootstrap/">Project @ Google Code</a></li>
+        <li><a href="https://github.com/struts-community-plugins/struts2-bootstrap/">Project @ Github</a></li>
         <li><a href="https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/">Download</a></li>
     </ul>
 
