@@ -19,5 +19,6 @@
  */
 -->
 <#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+<#assign formControlClass = ""/>
 <#include "/${parameters.templateDir}/simple/file.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />

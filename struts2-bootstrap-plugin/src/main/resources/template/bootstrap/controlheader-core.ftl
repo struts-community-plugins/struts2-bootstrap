@@ -23,6 +23,7 @@
 	This will be done if ActionSupport is used.
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
+<#assign formControlClass = "form-control"/>
 
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["labelCssClass"]??)><#rt/>
     <#assign labelCssClass = parameters.dynamicAttributes.remove("labelCssClass")/><#rt/>

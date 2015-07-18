@@ -1,7 +1,5 @@
 <#--
 /*
- * $Id: css.ftl 720258 2008-11-24 19:05:16Z musachy $
- *
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
  * distributed with this work for additional information
@@ -22,13 +20,13 @@
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if parameters.cssClass?? && !(hasFieldErrors && parameters.cssErrorClass??)>
-class="form-control ${parameters.cssClass?html}"<#rt/>
+class="${formControlClass} ${parameters.cssClass?html}"<#rt/>
 <#elseif parameters.cssClass?? && (hasFieldErrors && parameters.cssErrorClass??)>
-class="form-control ${parameters.cssClass?html} ${parameters.cssErrorClass?html}"<#rt/>
+class="${formControlClass} ${parameters.cssClass?html} ${parameters.cssErrorClass?html}"<#rt/>
 <#elseif !(parameters.cssClass??) && (hasFieldErrors && parameters.cssErrorClass??)>
-class="form-control ${parameters.cssErrorClass?html}"<#rt/>
+class="${formControlClass} ${parameters.cssErrorClass?html}"<#rt/>
 <#else>
-class="form-control"<#rt/>
+class="${formControlClass}"<#rt/>
 </#if>
 <#if parameters.cssStyle?? && !(hasFieldErrors && (parameters.cssErrorStyle?? || parameters.cssErrorClass??))>
 style="${parameters.cssStyle?html}"<#rt/>
