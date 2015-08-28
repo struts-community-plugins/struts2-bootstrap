@@ -33,11 +33,11 @@
         <#assign itemValue = stack.findString('top')/>
     </#if>
     <#if parameters.labelposition?default("") == 'inline'>
-    <div class="radio-inline">
+        <#assign labelClass="radio-inline"/>
     <#else>
-    <div class="radio">
+        <#assign labelClass="radio"/>
     </#if>
-    <label for="${parameters.name?html}-${itemCount}" class="radio">
+    <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
         <input type="radio"<#rt/>
             <#if parameters.name??>
                name="${parameters.name?html}"<#rt/>
@@ -70,5 +70,4 @@
                 /><#rt/>
     ${itemValue}<#t/>
     </label>
-</div>
 </@s.iterator>
