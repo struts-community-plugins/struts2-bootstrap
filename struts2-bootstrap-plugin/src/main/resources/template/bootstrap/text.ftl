@@ -19,40 +19,7 @@
  */
 -->
 <#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputPrepend"]??)><#rt/>
-    <#assign inputPrepend = parameters.dynamicAttributes.remove("inputPrepend")/><#rt/>
-</#if><#rt/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputAppend"]??)><#rt/>
-    <#assign inputAppend = parameters.dynamicAttributes.remove("inputAppend")/><#rt/>
-</#if><#rt/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputPrependIcon"]??)><#rt/>
-    <#assign inputPrependIcon = parameters.dynamicAttributes.remove("inputPrependIcon")/><#rt/>
-</#if><#rt/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["inputAppendIcon"]??)><#rt/>
-    <#assign inputAppendIcon = parameters.dynamicAttributes.remove("inputAppendIcon")/><#rt/>
-</#if><#rt/>
-
-<#if inputPrepend??>
-<div class="input-group">
-    <span class="input-group-addon">${inputPrepend?html}</span>
-</#if>
-<#if inputPrependIcon??>
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-${inputPrependIcon?html}"></i></span>
-</#if>
-<#if (inputAppend?? || inputAppendIcon??)>
-<div class="input-group">
-</#if>
+<#include "/${parameters.templateDir}/bootstrap/append.ftl" />
 <#include "/${parameters.templateDir}/simple/text.ftl" />
-<#if (inputPrepend?? || inputPrependIcon??)>
-</div>
-</#if>
-<#if inputAppend??>
-    <span class="input-group-addon">${inputAppend?html}</span>
-</div>
-</#if>
-<#if inputAppendIcon??>
-    <span class="input-group-addon"><i class="glyphicon glyphicon-${inputAppendIcon?html}"></i></span>
-</div>
-</#if>
+<#include "/${parameters.templateDir}/bootstrap/prepend.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />

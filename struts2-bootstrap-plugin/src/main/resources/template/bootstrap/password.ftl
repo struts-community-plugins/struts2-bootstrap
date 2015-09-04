@@ -19,5 +19,7 @@
  */
 -->
 <#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/append.ftl" />
 <#include "/${parameters.templateDir}/simple/password.ftl" />
+<#include "/${parameters.templateDir}/bootstrap/prepend.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
