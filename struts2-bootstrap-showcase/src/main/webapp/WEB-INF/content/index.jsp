@@ -86,6 +86,11 @@
                         elementCssClass="col-sm-3"
                         tooltip="Enter your Name here"/>
 
+                <s:password
+                        label="Password"
+                        name="password"
+                        tooltip="Enter your Password here"/>
+
                 <s:textfield
                         label="Textfield with Error"
                         name="error"/>

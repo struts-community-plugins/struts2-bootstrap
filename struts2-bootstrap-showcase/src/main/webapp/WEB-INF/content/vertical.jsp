@@ -77,6 +77,11 @@
                         name="name"
                         tooltip="Enter your Name here"/>
 
+                <s:password
+                        label="Password"
+                        name="password"
+                        tooltip="Enter your Password here"/>
+
                 <s:textarea
                         tooltip="Enter your Biography"
                         label="Biography"
