@@ -35,7 +35,8 @@
     <#if parameters.labelposition?default("") == 'inline'>
         <#assign labelClass="radio-inline"/>
     <#else>
-        <#assign labelClass="radio"/>
+        <#assign labelClass=""/>
+        <div class="radio">
     </#if>
     <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
         <input type="radio"<#rt/>
@@ -70,4 +71,7 @@
                 /><#rt/>
     ${itemValue}<#t/>
     </label>
+    <#if parameters.labelposition?default("") != 'inline'>
+    </div>
+    </#if>
 </@s.iterator>
