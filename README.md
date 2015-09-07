@@ -19,7 +19,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
     <dependency>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>struts2-bootstrap-plugin</artifactId>
-        <version>2.0.1</version>
+        <version>2.0.4</version>
     </dependency>
     ...
 </dependencies>
