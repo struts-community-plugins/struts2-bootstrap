@@ -6,7 +6,7 @@
 	<version>2.0.4</version>
     <packaging>pom</packaging>
 	<name>Struts2 Bootstrap Plugin Parent Module</name>
-    <url>http://code.google.com/p/struts2-bootstrap</url>
+    <url>https://github.com/struts-community-plugins/struts2-bootstrap</url>
     <description>Parent project for Struts2 jQuery integration.</description>
 
     <issueManagement>
