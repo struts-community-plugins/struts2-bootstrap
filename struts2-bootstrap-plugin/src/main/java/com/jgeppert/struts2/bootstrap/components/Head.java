@@ -19,31 +19,24 @@
 
 package com.jgeppert.struts2.bootstrap.components;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.opensymphony.xwork2.util.ValueStack;
 import org.apache.struts2.views.annotations.StrutsTag;
 import org.apache.struts2.views.annotations.StrutsTagAttribute;
 import org.apache.struts2.views.annotations.StrutsTagSkipInheritance;
 
-import com.opensymphony.xwork2.util.ValueStack;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * <!-- START SNIPPET: notice -->
- * <p/>
  * <p>
  * The "head" tag renders required JavaScript
  * code to configure Bootstrap and is required in order to use any of the tags
- * included in the Bootstrap plugin.</p>
- * <p/>
+ * included in the Bootstrap plugin.
+ * </p>
  * <!-- END SNIPPET: notice -->
- * <p/>
- * <p/>
- * <p/>
  * <b>Examples</b>
- * <p/>
  * <!-- START SNIPPET: example1 -->
- * <p/>
  * <pre>
  * &lt;%@ taglib prefix=&quot;sb&quot; uri=&quot;/struts-bootstrap-tags&quot; %&gt;
  * &lt;head&gt;
@@ -51,11 +44,8 @@ import com.opensymphony.xwork2.util.ValueStack;
  *   &lt;sb:head/&gt;
  * &lt;/head&gt;
  * </pre>
- * <p/>
  * <!-- END SNIPPET: example1 -->
- * <p/>
  * <!-- START SNIPPET: example2 -->
- * <p/>
  * <pre>
  * &lt;%@ taglib prefix=&quot;sb&quot; uri=&quot;/struts-bootstrap-tags&quot; %&gt;
  * &lt;head&gt;
@@ -63,7 +53,6 @@ import com.opensymphony.xwork2.util.ValueStack;
  *   &lt;sb:head compressed=&quot;false&quot;/&gt;
  * &lt;/head&gt;
  * </pre>
- * <p/>
  * <!-- END SNIPPET: example2 -->
  *
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
