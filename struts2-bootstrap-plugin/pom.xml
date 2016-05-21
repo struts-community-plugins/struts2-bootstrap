@@ -29,45 +29,34 @@
            </resource>
        </resources>
        <plugins>
-            <plugin>
-                <groupId>org.apache.myfaces.tobago</groupId>
-                <artifactId>maven-apt-plugin</artifactId>
-                <version>1.0.36</version>
-                <configuration>
-                    <A>
-                        uri=/struts-bootstrap-tags,
-                        tlibVersion=${tlib.version},
-                        jspVersion=2.0,
-                        shortName=sb,
-                        displayName="Struts2 Bootstrap Tags",
-                        outFile=${basedir}/target/classes/META-INF/struts-bootstrap-tags.tld,
-                        description="Struts2 Tags for Bootstrap Theme.",
-                        outTemplatesDir=${basedir}/src/site/docs
-                    </A>
-                    <resourceTargetPath>target</resourceTargetPath>
-                    <fork>false</fork>
-                    <force>true</force>
-                    <nocompile>true</nocompile>
-                    <showWarnings>true</showWarnings>
-                    <factory>
-                        org.apache.struts.annotations.taglib.apt.TLDAnnotationProcessorFactory
-                    </factory>
-                    <target>1.5</target>
-                    <includes>
-                        <include>**/*.java</include>
-                    </includes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>execute</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <configuration>
+                   <source>1.7</source>
+                   <target>1.7</target>
+                   <compilerArgs>
+                       <arg>-Auri=/struts-bootstrap-tags</arg>
+                       <arg>-AtlibVersion=${tlib.version}</arg>
+                       <arg>-AjspVersion=2.0</arg>
+                       <arg>-AshortName=sb</arg>
+                       <arg>-AdisplayName=Struts2 Bootstrap Tags</arg>
+                       <arg>-AoutFile=${basedir}/target/classes/META-INF/struts-bootstrap-tags.tld</arg>
+                       <arg>-Adescription="Struts2 Tags for Bootstrap Theme."</arg>
+                       <arg>-AoutTemplatesDir=${basedir}/src/site/resources/tags</arg>
+                   </compilerArgs>
+               </configuration>
+               <executions>
+                   <execution>
+                       <phase>compile</phase>
+                       <goals>
+                           <goal>compile</goal>
+                       </goals>
+                   </execution>
+               </executions>
+           </plugin>
+       </plugins>
+   </build>
 
     <dependencies>
 
@@ -104,5 +93,4 @@
             <scope>compile</scope>
         </dependency>
     </dependencies>
-
 </project>
