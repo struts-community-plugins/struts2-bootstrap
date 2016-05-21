@@ -39,7 +39,7 @@
             <#assign labelClass=""/>
             <div class="checkbox">
         </#if>
-        <label for="${parameters.name?html}-${itemCount}" class="${labelClass}"">
+        <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
 
             <input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}"
                    id="${parameters.name?html}-${itemCount}"<#rt/>
