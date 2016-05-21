@@ -20,16 +20,16 @@
 -->
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if parameters.cssClass?? && !(hasFieldErrors && parameters.cssErrorClass??)>
-class="${formControlClass} ${parameters.cssClass?html}"<#rt/>
+ class="${formControlClass} ${parameters.cssClass?html}"<#rt/>
 <#elseif parameters.cssClass?? && (hasFieldErrors && parameters.cssErrorClass??)>
-class="${formControlClass} ${parameters.cssClass?html} ${parameters.cssErrorClass?html}"<#rt/>
+ class="${formControlClass} ${parameters.cssClass?html} ${parameters.cssErrorClass?html}"<#rt/>
 <#elseif !(parameters.cssClass??) && (hasFieldErrors && parameters.cssErrorClass??)>
-class="${formControlClass} ${parameters.cssErrorClass?html}"<#rt/>
+ class="${formControlClass} ${parameters.cssErrorClass?html}"<#rt/>
 <#else>
-class="${formControlClass}"<#rt/>
+ class="${formControlClass}"<#rt/>
 </#if>
 <#if parameters.cssStyle?? && !(hasFieldErrors && (parameters.cssErrorStyle?? || parameters.cssErrorClass??))>
-style="${parameters.cssStyle?html}"<#rt/>
+ style="${parameters.cssStyle?html}"<#rt/>
 <#elseif hasFieldErrors && parameters.cssErrorStyle??>
-style="${parameters.cssErrorStyle?html}"<#rt/>
+ style="${parameters.cssErrorStyle?html}"<#rt/>
 </#if>
