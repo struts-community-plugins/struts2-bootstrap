@@ -6,3 +6,4 @@ Bundle-Version: 1.0.0
 Bundle-Description: Apache Struts2 Bootstrap Plugin
 Bundle-Name: Struts2 Bootstrap Plugin
 Bundle-SymbolicName: com.jgeppert.struts2-bootstrap-plugin
+Import-Package: org.apache.struts2
