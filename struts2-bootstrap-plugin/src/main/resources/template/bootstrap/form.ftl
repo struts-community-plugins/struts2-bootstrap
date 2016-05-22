@@ -30,19 +30,19 @@
     <#else>
         <#assign elementCssClass = "col-sm-9"/><#rt/>
     </#if><#rt/>
-    <@s.set name="s2b_form_label_class">${labelCssClass}</@s.set>
-    <@s.set name="s2b_form_element_class">${elementCssClass}</@s.set>
+    <@s.set var="s2b_form_label_class">${labelCssClass}</@s.set>
+    <@s.set var="s2b_form_element_class">${elementCssClass}</@s.set>
 <#else>
-    <@s.set name="s2b_form_label_class"> </@s.set>
-    <@s.set name="s2b_form_element_class"> </@s.set>
+    <@s.set var="s2b_form_label_class"> </@s.set>
+    <@s.set var="s2b_form_element_class"> </@s.set>
 </#if>
 
 <#include "/${parameters.templateDir}/simple/form-common.ftl" />
 <#if (parameters.validate?default(false))>
-onreset="${parameters.onreset?default('clearErrorMessages(this);clearErrorLabels(this);')}"
+ onreset="${parameters.onreset?default('clearErrorMessages(this);clearErrorLabels(this);')}"
 <#else>
     <#if parameters.onreset??>
-    onreset="${parameters.onreset?html}"
+ onreset="${parameters.onreset?html}"
     </#if>
 </#if>
 >

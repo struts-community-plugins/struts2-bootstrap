@@ -22,6 +22,9 @@
 	Only show message if errors are available.
 	This will be done if ActionSupport is used.
 -->
+<!-- s2b_form_element_class:  <@s.property value="#s2b_form_element_class" /> -->
+<!-- s2b_form_element_class:  <@s.property value="s2b_form_element_class" /> -->
+
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#assign formControlClass = "form-control"/>
 
