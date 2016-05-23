@@ -85,7 +85,7 @@
                         showOn="focus"
                         inputAppendIcon="calendar"
                 />
-                <s:url id="languages_url" action="languages"/>
+                <s:url var="languages_url" action="languages"/>
                 <sj:autocompleter
                         id="autocompleter"
                         parentTheme="bootstrap"
