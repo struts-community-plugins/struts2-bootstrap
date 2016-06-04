@@ -5,6 +5,7 @@ A Plugin for simple Bootstrap CSS Framework integration into Struts2.
 ### [Download] (https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/)
 ### [News and Developer Blog] (https://www.jgeppert.com)
 ### [Showcase] (http://struts.jgeppert.com/struts2-bootstrap-showcase/index.action)
+### [Sample TODO app based on Bootstrap, jQuery and jQuery Mobile] (https://github.com/jogep/struts2-todo-examples/)
 
 ## Installation
 
