@@ -67,6 +67,8 @@
                     <li><s:a href="%{jquery_url}">Struts2 jQuery UI Form Elements</s:a></li>
                     <s:url var="custom_url" action="custom"/>
                     <li><s:a href="%{custom_url}">With Custom Theme</s:a></li>
+                    <s:url var="customlayout_url" action="customlayout"/>
+                    <li><s:a href="%{customlayout_url}">Multi Column Forms</s:a></li>
                 </ul>
             </div>
         </div>
