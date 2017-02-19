@@ -19,18 +19,15 @@
  */
 -->
 <#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
-<#if hasFieldErrors>
-    <#list fieldErrors[parameters.name] as error>
-    <span class="errorMessage">${error?html}</span><#t/>
-    </#list>
-</#if>
-<div class="form-group<#rt/>
-<#if hasFieldErrors> 
- has-error has-feedback<#rt/>
-</#if>
-${parameters.cssClass?default('')?html}"><#rt/>
-<#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
-</#if>
+<div class="form-group <#t/>
+    <#if hasFieldErrors> 
+        has-error has-feedback <#t/>
+    </#if>
+    ${parameters.cssClass?default('')?html}" <#t/>
+    <#if parameters.cssStyle??>
+        style="${parameters.cssStyle?html}" <#t/>
+    </#if>
+>
     <div class="<@s.property value="#s2b_form_label_class" />"></div>
     <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
@@ -40,26 +37,24 @@ ${parameters.cssClass?default('')?html}"><#rt/>
     <div class="checkbox">
     </#if>
     <#if parameters.label??>
-    <label
+    <label <#rt/>
         <#if parameters.id??>
                 for="${parameters.id?html}" <#t/>
         </#if>
-            ><#t/>
+    ><#lt/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-            <span class="required">*</span><#t/>
+            <span class="required">*</span><#rt/>
         </#if>
         <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
-    ${parameters.label?html}<#t/>
+        ${parameters.label?html}<#t/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
             <span class="required">*</span><#t/>
         </#if>
-    ${parameters.labelseparator?default("")?html}<#t/>
+        ${parameters.labelseparator?default("")?html}<#t/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
-
     </#if>
-
     <#if parameters.label??>
-    </label><#t/>
+    </label>
     </div><#t/>
     </#if>
     <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
