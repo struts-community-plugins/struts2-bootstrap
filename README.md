@@ -1,5 +1,7 @@
 # Struts2 Bootstrap Plugin
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.jgeppert.struts2.bootstrap/struts2-bootstrap-plugin/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.jgeppert.struts2.bootstrap/struts2-bootstrap-plugin/)
+
 A Plugin for simple Bootstrap CSS Framework integration into Struts2.
 
 ### [Download] (https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/)
