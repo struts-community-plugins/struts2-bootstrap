@@ -2,17 +2,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>bootstrap</artifactId>
         <version>2.5.2-SNAPSHOT</version>
     </parent>
+
     <artifactId>struts2-bootstrap-showcase</artifactId>
     <name>Struts2 Bootstrap Showcase</name>
     <packaging>war</packaging>
 
     <dependencies>
-
         <dependency>
             <groupId>com.jgeppert.struts2.bootstrap</groupId>
             <artifactId>struts2-bootstrap-plugin</artifactId>
@@ -64,7 +65,6 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>8.1.16.v20140903</version>
                 <configuration>
-                    <stopKey>CTRL+C</stopKey>
                     <stopPort>8999</stopPort>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>

@@ -13,50 +13,50 @@
     <name>Struts2 Bootstrap Plugin</name>
     <packaging>jar</packaging>
 
-   <build>
-       <resources>
-           <resource>
-               <directory>src/main/resources</directory>
-               <filtering>true</filtering>
-               <includes>
-                   <include>template/bootstrap/head.ftl</include>
-               </includes>
-           </resource>
-           <resource>
-               <directory>src/main/resources</directory>
-               <filtering>false</filtering>
-               <excludes>
-                   <exclude>template/bootstrap/head.ftl</exclude>
-               </excludes>
-           </resource>
-       </resources>
-       <plugins>
-           <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-compiler-plugin</artifactId>
-               <configuration>
-                   <compilerArgs>
-                       <arg>-Auri=/struts-bootstrap-tags</arg>
-                       <arg>-AtlibVersion=${tlib.version}</arg>
-                       <arg>-AjspVersion=2.0</arg>
-                       <arg>-AshortName=sb</arg>
-                       <arg>-AdisplayName=Struts2 Bootstrap Tags</arg>
-                       <arg>-AoutFile=${basedir}/target/classes/META-INF/struts-bootstrap-tags.tld</arg>
-                       <arg>-Adescription="Struts2 Tags for Bootstrap Theme."</arg>
-                       <arg>-AoutTemplatesDir=${basedir}/src/site/docs</arg>
-                   </compilerArgs>
-               </configuration>
-               <executions>
-                   <execution>
-                       <phase>compile</phase>
-                       <goals>
-                           <goal>compile</goal>
-                       </goals>
-                   </execution>
-               </executions>
-           </plugin>
-       </plugins>
-   </build>
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>template/bootstrap/head.ftl</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                    <exclude>template/bootstrap/head.ftl</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerArgs>
+                        <arg>-Auri=/struts-bootstrap-tags</arg>
+                        <arg>-AtlibVersion=${tlib.version}</arg>
+                        <arg>-AjspVersion=2.0</arg>
+                        <arg>-AshortName=sb</arg>
+                        <arg>-AdisplayName=Struts2 Bootstrap Tags</arg>
+                        <arg>-AoutFile=${basedir}/target/classes/META-INF/struts-bootstrap-tags.tld</arg>
+                        <arg>-Adescription="Struts2 Tags for Bootstrap Theme."</arg>
+                        <arg>-AoutTemplatesDir=${basedir}/src/site/docs</arg>
+                    </compilerArgs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>compile</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
     <profiles>
         <profile>
