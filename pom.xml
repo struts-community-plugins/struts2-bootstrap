@@ -172,6 +172,21 @@
                 <artifactId>freemarker</artifactId>
                 <version>2.3.26-incubating</version>
             </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.5</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.struts</groupId>
+                <artifactId>struts2-core</artifactId>
+                <version>${struts2.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>
