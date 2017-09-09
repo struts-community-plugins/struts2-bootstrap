@@ -15,7 +15,49 @@
 
     <properties>
         <struts2-jquery-plugin.version>4.0.2</struts2-jquery-plugin.version>
+        <jetty-maven-plugin.version>8.1.16.v20140903</jetty-maven-plugin.version>
     </properties>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.mortbay.jetty</groupId>
+                    <artifactId>jetty-maven-plugin</artifactId>
+                    <version>${jetty-maven-plugin.version}</version>
+                    <configuration>
+                        <stopPort>8999</stopPort>
+                        <scanIntervalSeconds>10</scanIntervalSeconds>
+                        <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
+                        <webApp>
+                            <contextPath>/struts2-bootstrap-showcase</contextPath>
+                        </webApp>
+                        <webAppConfig>
+                            <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
+                        </webAppConfig>
+                        <systemProperties>
+                            <systemProperty>
+                                <name>xwork.loggerFactory</name>
+                                <value>com.opensymphony.xwork2.util.logging.log4j2.Log4j2LoggerFactory</value>
+                            </systemProperty>
+                        </systemProperties>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
     <dependencies>
         <dependency>
@@ -77,37 +119,4 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <build>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        <plugins>
-            <plugin>
-                <groupId>org.mortbay.jetty</groupId>
-                <artifactId>jetty-maven-plugin</artifactId>
-                <version>8.1.16.v20140903</version>
-                <configuration>
-                    <stopPort>8999</stopPort>
-                    <scanIntervalSeconds>10</scanIntervalSeconds>
-                    <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
-                    <webApp>
-                        <contextPath>/struts2-bootstrap-showcase</contextPath>
-                    </webApp>
-                    <webAppConfig>
-                        <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
-                    </webAppConfig>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>xwork.loggerFactory</name>
-                            <value>com.opensymphony.xwork2.util.logging.log4j2.Log4j2LoggerFactory</value>
-                        </systemProperty>
-                    </systemProperties>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
