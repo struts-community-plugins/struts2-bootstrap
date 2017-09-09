@@ -16,11 +16,11 @@
     <properties>
         <struts2-jquery-plugin.version>4.0.2</struts2-jquery-plugin.version>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.jgeppert.struts2.bootstrap</groupId>
             <artifactId>struts2-bootstrap-plugin</artifactId>
-            <version>${project.version}</version>
         </dependency>
 
         <!-- For AJAX Examples and collapsible code -->
