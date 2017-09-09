@@ -58,6 +58,8 @@
         <struts2.version>2.5.13</struts2.version>
         <tlib.version>2.3</tlib.version>
         <log4j2.version>2.9.0</log4j2.version>
+        <freemarker.version>2.3.26-incubating</freemarker.version>
+        <commons-io.version>2.5</commons-io.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -153,15 +155,11 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.0</version>
-            <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.1</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
@@ -170,12 +168,12 @@
             <dependency>
                 <groupId>org.freemarker</groupId>
                 <artifactId>freemarker</artifactId>
-                <version>2.3.26-incubating</version>
+                <version>${freemarker.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.5</version>
+                <version>${commons-io.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
@@ -186,6 +184,20 @@
                 <groupId>org.apache.struts</groupId>
                 <artifactId>struts2-core</artifactId>
                 <version>${struts2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>2.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet.jsp</groupId>
+                <artifactId>jsp-api</artifactId>
+                <version>2.1</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

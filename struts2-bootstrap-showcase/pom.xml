@@ -13,6 +13,9 @@
     <name>Struts2 Bootstrap Showcase</name>
     <packaging>war</packaging>
 
+    <properties>
+        <struts2-jquery-plugin.version>4.0.2</struts2-jquery-plugin.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>com.jgeppert.struts2.bootstrap</groupId>
@@ -24,27 +27,56 @@
         <dependency>
             <groupId>com.jgeppert.struts2.jquery</groupId>
             <artifactId>struts2-jquery-plugin</artifactId>
-            <version>4.0.2</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-convention-plugin</artifactId>
-            <version>${struts2.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-json-plugin</artifactId>
-            <version>${struts2.version}</version>
         </dependency>
 
         <!-- Logging -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>${log4j2.version}</version>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.jgeppert.struts2.bootstrap</groupId>
+                <artifactId>struts2-bootstrap-plugin</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.jgeppert.struts2.jquery</groupId>
+                <artifactId>struts2-jquery-plugin</artifactId>
+	        <version>${struts2-jquery-plugin.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.struts</groupId>
+                <artifactId>struts2-convention-plugin</artifactId>
+                <version>${struts2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.struts</groupId>
+                <artifactId>struts2-json-plugin</artifactId>
+                <version>${struts2.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j2.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <resources>
