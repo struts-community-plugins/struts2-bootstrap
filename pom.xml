@@ -68,6 +68,7 @@
         <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
         <maven-site-plugin.version>3.6</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
+        <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
 
         <tlib.version>2.3</tlib.version>
         <!-- dependencies -->
@@ -202,6 +203,11 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
                 </plugin>
             </plugins>
         </pluginManagement>
