@@ -15,7 +15,8 @@
 
     <properties>
         <struts2-jquery-plugin.version>4.0.2</struts2-jquery-plugin.version>
-        <jetty-maven-plugin.version>8.1.16.v20140903</jetty-maven-plugin.version>
+        <asm.version>5.2</asm.version>
+        <jetty-maven-plugin.version>9.4.6.v20170531</jetty-maven-plugin.version>
     </properties>
 
     <build>
@@ -34,7 +35,7 @@
         <pluginManagement>
             <plugins>
                 <plugin>
-                    <groupId>org.mortbay.jetty</groupId>
+                    <groupId>org.eclipse.jetty</groupId>
                     <artifactId>jetty-maven-plugin</artifactId>
                     <version>${jetty-maven-plugin.version}</version>
                     <configuration>
@@ -54,6 +55,18 @@
                             </systemProperty>
                         </systemProperties>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm</artifactId>
+                            <version>${asm.version}</version>
+                        </dependency>
+                        <dependency>
+                            <groupId>org.ow2.asm</groupId>
+                            <artifactId>asm-commons</artifactId>
+                            <version>${asm.version}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -98,7 +111,7 @@
             <dependency>
                 <groupId>com.jgeppert.struts2.jquery</groupId>
                 <artifactId>struts2-jquery-plugin</artifactId>
-	        <version>${struts2-jquery-plugin.version}</version>
+                <version>${struts2-jquery-plugin.version}</version>
             </dependency>
 
             <dependency>
