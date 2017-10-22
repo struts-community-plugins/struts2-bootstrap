@@ -33,45 +33,42 @@
         <#assign itemValue = stack.findString('top')/>
     </#if>
     <#if parameters.labelposition?default("") == 'inline'>
-        <#assign labelClass="radio-inline"/>
+        <#assign labelClass="radio-inline"/><#lt/>
     <#else>
         <#assign labelClass=""/>
-        <div class="radio">
+        <div class="radio"><#lt/>
     </#if>
     <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
-        <input type="radio"<#rt/>
+        <input type="radio" <#rt/>
             <#if parameters.name??>
-               name="${parameters.name?html}"<#rt/>
+               name="${parameters.name?html}" <#t/>
             </#if>
-               id="${parameters.name?html}-${itemCount}"<#rt/>
+               id="${parameters.name?html}-${itemCount}" <#t/>
             <#if tag.contains(parameters.nameValue?default(''), itemKeyStr)>
-               checked="checked"<#rt/>
+               checked="checked" <#t/>
             </#if>
             <#if itemKey??>
-               value="${itemKeyStr?html}"<#rt/>
+               value="${itemKeyStr?html}" <#t/>
             </#if>
             <#if parameters.disabled?default(false)>
-               disabled="disabled"<#rt/>
+               disabled="disabled" <#t/>
             </#if>
             <#if parameters.tabindex??>
-               tabindex="${parameters.tabindex?html}"<#rt/>
-            </#if>
-            <#if parameters.cssClass??>
-               class="${parameters.cssClass?html}"<#rt/>
+               tabindex="${parameters.tabindex?html}" <#t/>
             </#if>
             <#if parameters.cssStyle??>
-               style="${parameters.cssStyle?html}"<#rt/>
+               style="${parameters.cssStyle?html}" <#t/>
             </#if>
-            <#include "/${parameters.templateDir}/simple/css.ftl" />
+            <#include "/${parameters.templateDir}/simple/css.ftl" /> <#t/>
             <#if parameters.title??>
-               title="${parameters.title?html}"<#rt/>
+               title="${parameters.title?html}" <#t/>
             </#if>
             <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
             <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-                /><#rt/>
-    ${itemValue}<#t/>
+        /><#lt/>
+        ${itemValue}
     </label>
     <#if parameters.labelposition?default("") != 'inline'>
-    </div>
+    </div><#lt/>
     </#if>
 </@s.iterator>

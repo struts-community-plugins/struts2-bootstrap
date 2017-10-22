@@ -19,33 +19,28 @@
  */
 -->
 <#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
-<#if hasFieldErrors>
-    <#list fieldErrors[parameters.name] as error>
-    <span class="errorMessage">${error?html}</span><#t/>
-    </#list>
-</#if>
 <div class="form-group <#rt/>
-<#if hasFieldErrors>
- has-error has-feedback<#rt/>
-</#if>
- ${parameters.cssClass?default('')?html}"><#rt/>
-<#if parameters.cssStyle??> style="${parameters.cssStyle?html}"<#rt/>
-</#if>
-<#if parameters.label??>
-    <label class="<@s.property value="#s2b_form_label_class" /> control-label" <#t/>
-            ><#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-            <span class="required">*</span><#t/>
-        </#if>
-    ${parameters.label?html}<#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
-            <span class="required">*</span><#t/>
-        </#if>
-    ${parameters.labelseparator?default("")?html}<#rt/>
-        <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
-    </label><#rt/>
-</#if>
+    <#if hasFieldErrors>
+        has-error has-feedback<#t/>
+    </#if>
+    ${parameters.cssClass?default('')?html}" <#t/>
+    <#if parameters.cssStyle??>
+        style="${parameters.cssStyle?html}" <#t/>
+    </#if>
+>
+    <#if parameters.label??>
+        <label class="<@s.property value="#s2b_form_label_class" /> control-label" >
+            <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+                <span class="required">*</span><#rt/>
+            </#if>
+            ${parameters.label?html}<#rt/>
+            <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+                <span class="required">*</span> <#rt/>
+            </#if>
+            ${parameters.labelseparator?default("")?html}<#t/>
+            <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" /><#lt/>
+        </label>
+    </#if>
     <div class="<@s.property value="#s2b_form_element_class" /> controls">
-    <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

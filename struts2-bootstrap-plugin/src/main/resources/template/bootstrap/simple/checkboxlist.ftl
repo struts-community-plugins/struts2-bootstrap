@@ -40,23 +40,22 @@
             <div class="checkbox">
         </#if>
         <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
-
-            <input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}"
-                   id="${parameters.name?html}-${itemCount}"<#rt/>
+            <input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}" <#rt/>
+                   id="${parameters.name?html}-${itemCount}" <#t/>
                 <#if tag.contains(parameters.nameValue, itemKey)>
-                   checked="checked"<#rt/>
+                   checked="checked" <#t/>
                 </#if>
                 <#if parameters.disabled?default(false)>
-                   disabled="disabled"<#rt/>
+                   disabled="disabled" <#t/>
                 </#if>
                 <#if parameters.title??>
-                   title="${parameters.title?html}"<#rt/>
+                   title="${parameters.title?html}" <#t/>
                 </#if>
-                <#include "/${parameters.templateDir}/simple/css.ftl" />
-                <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
-                <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
-                    /><#rt/>
-        ${itemValue?html}<#rt/>
+                <#include "/${parameters.templateDir}/simple/css.ftl" /> <#t/>
+                <#include "/${parameters.templateDir}/simple/scripting-events.ftl" /> <#t/>
+                <#include "/${parameters.templateDir}/simple/common-attributes.ftl" /> <#t/>
+            /><#lt/>
+            ${itemValue?html}
         </label>
         <#if parameters.labelposition?default("") != 'inline'>
             </div>
