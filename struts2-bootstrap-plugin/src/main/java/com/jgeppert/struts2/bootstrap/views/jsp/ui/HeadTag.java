@@ -38,7 +38,6 @@ public class HeadTag extends AbstractUITag {
     protected String compressed;
     protected String includeStyles;
     protected String includeScripts;
-    protected String includeScriptsValidation;
 
     public Component getBean(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
         return new Head(stack, req, res);
@@ -51,7 +50,6 @@ public class HeadTag extends AbstractUITag {
         head.setCompressed(compressed);
         head.setIncludeStyles(includeStyles);
         head.setIncludeScripts(includeScripts);
-        head.setIncludeScriptsValidation(includeScriptsValidation);
     }
 
     public void setCompressed(String compressed) {
@@ -66,8 +64,5 @@ public class HeadTag extends AbstractUITag {
         this.includeScripts = includeScripts;
     }
 
-    public void setIncludeScriptsValidation(String includeScriptsValidation) {
-        this.includeScriptsValidation = includeScriptsValidation;
-    }
 
 }

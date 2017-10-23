@@ -57,14 +57,14 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
  */
-@StrutsTag(name = "head", tldBodyContent = "empty", tldTagClass = "com.jgeppert.struts2.bootstrap.views.jsp.ui.HeadTag", description = "Render a chunk of HEAD for your HTML file", allowDynamicAttributes = false)
+@StrutsTag(name = "head", tldBodyContent = "empty", tldTagClass = "com.jgeppert.struts2.bootstrap.views.jsp.ui.HeadTag", description = "Render a chunk of HEAD for your HTML file")
 @StrutsTagSkipInheritance
 public class Head extends org.apache.struts2.components.Head {
     public static final String TEMPLATE = "head";
+
     protected String compressed;
     protected String includeStyles;
     protected String includeScripts;
-    protected String includeScriptsValidation;
 
     public Head(ValueStack stack, HttpServletRequest request, HttpServletResponse response) {
         super(stack, request, response);
@@ -79,8 +79,6 @@ public class Head extends org.apache.struts2.components.Head {
         if (this.compressed != null) addParameter("compressed", findValue(this.compressed, Boolean.class));
         if (this.includeStyles != null) addParameter("includeStyles", findValue(this.includeStyles, Boolean.class));
         if (this.includeScripts != null) addParameter("includeScripts", findValue(this.includeScripts, Boolean.class));
-        if (this.includeScriptsValidation != null)
-            addParameter("includeScriptsValidation", findValue(this.includeScriptsValidation, Boolean.class));
     }
 
     @Override
@@ -109,8 +107,4 @@ public class Head extends org.apache.struts2.components.Head {
         this.includeScripts = includeScripts;
     }
 
-    @StrutsTagAttribute(description = "include bootstrap validation scripts", defaultValue = "true", type = "Boolean")
-    public void setIncludeScriptsValidation(String includeScriptsValidation) {
-        this.includeScriptsValidation = includeScriptsValidation;
-    }
 }
