@@ -29,7 +29,7 @@
     </#if>
 >
     <#if parameters.label??>
-        <label class="<@s.property value="#s2b_form_label_class" /> control-label" >
+        <label class="<@s.property value="#s2b_form_label_class" /> col-form-label" >
             <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
                 <span class="required">*</span><#rt/>
             </#if>

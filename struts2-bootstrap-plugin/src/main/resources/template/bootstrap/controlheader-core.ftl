@@ -46,7 +46,7 @@
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="${labelCssClass?html} control-label" <#t/>
+    <label class="${labelCssClass?html} col-form-label" <#t/>
         <#if parameters.id??>
            for="${parameters.id?html}" <#rt/>
         </#if>
