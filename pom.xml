@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <name>Struts2 Bootstrap Plugin Parent Module</name>
     <url>https://github.com/struts-community-plugins/struts2-bootstrap</url>
-    <description>Parent project for Struts2 jQuery integration.</description>
+    <description>Parent project for Struts2 Bootstrap integration.</description>
 
     <issueManagement>
         <system>Github Issue Tracker</system>
