@@ -23,11 +23,11 @@ ${parameters.after?if_exists}<#t/>
 <#if hasFieldErrors>
 <span class="glyphicon glyphicon-remove form-control-feedback"></span>
     <#list fieldErrors[parameters.name] as error>
-    <span class="help-block alert-danger">${error?html}</span><#t/>
+    <span class="form-text alert-danger">${error?html}</span><#t/>
     </#list>
 </#if>
 <#if helpText??>
-<span class="help-block">${helpText?html}</span>
+<span class="form-text">${helpText?html}</span>
 </#if>
 </div>
 </div>

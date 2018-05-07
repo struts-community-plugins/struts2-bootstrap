@@ -32,25 +32,26 @@
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-    <#if parameters.labelposition?default("") == 'inline'>
-        <#assign labelClass="radio-inline"/><#lt/>
-    <#else>
-        <#assign labelClass=""/>
-        <div class="radio"><#lt/>
+    <#if parameters.labelposition!"" == 'inline'>
+        <#assign inline="form-check-inline"/><#lt/>
     </#if>
-    <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
-        <input type="radio" <#rt/>
+    <#if parameters.disabled!false>
+        <#assign disabled="disabled"/><#lt/>
+    </#if>
+<div class="form-check ${inline!""} ${disabled!""}"><#lt/>
+    <label for="${parameters.name?html}-${itemCount}" class="form-check-label">
+        <input type="radio" class="form-check-input"<#rt/>
             <#if parameters.name??>
                name="${parameters.name?html}" <#t/>
             </#if>
                id="${parameters.name?html}-${itemCount}" <#t/>
-            <#if tag.contains(parameters.nameValue?default(''), itemKeyStr)>
+            <#if tag.contains(parameters.nameValue!'', itemKeyStr)>
                checked="checked" <#t/>
             </#if>
             <#if itemKey??>
                value="${itemKeyStr?html}" <#t/>
             </#if>
-            <#if parameters.disabled?default(false)>
+            <#if parameters.disabled!false>
                disabled="disabled" <#t/>
             </#if>
             <#if parameters.tabindex??>
@@ -68,7 +69,5 @@
         /><#lt/>
         ${itemValue}
     </label>
-    <#if parameters.labelposition?default("") != 'inline'>
-    </div><#lt/>
-    </#if>
+</div><#lt/>
 </@s.iterator>

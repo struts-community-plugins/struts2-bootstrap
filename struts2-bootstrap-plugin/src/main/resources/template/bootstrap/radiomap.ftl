@@ -40,7 +40,7 @@
     </#if>
 >
 <#if parameters.label??>
-    <label class="${labelCssClass?html} /> control-label">
+    <label class="${labelCssClass?html} /> col-form-label">
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
             <span class="required">*</span><#t/>
         </#if>
