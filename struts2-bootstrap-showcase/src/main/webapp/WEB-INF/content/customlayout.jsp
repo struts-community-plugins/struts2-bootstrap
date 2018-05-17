@@ -18,7 +18,7 @@
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <sj:head jqueryui="true"/>
-    <sb:head includeScripts="true" includeScriptsValidation="false"/>
+    <sb:head includeScripts="true"/>
     <style type="text/css">
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */

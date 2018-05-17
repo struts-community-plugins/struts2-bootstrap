@@ -17,7 +17,7 @@
     <![endif]-->
 
     <sj:head jqueryui="false"/>
-    <sb:head includeScripts="true" includeScriptsValidation="true"/>
+    <sb:head includeScripts="true"/>
 
     <style type="text/css">
         body {
