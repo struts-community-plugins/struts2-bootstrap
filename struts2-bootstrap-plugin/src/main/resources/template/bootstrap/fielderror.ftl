@@ -77,7 +77,7 @@
                 <#assign eValue = fieldErrors[eKey]><#t/>
                 <#list eValue as eEachValue><#t/>
                     <#if eEachValue?if_exists != "">
-                        <p><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
+                        <p class="mb-0"><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
                     </#if>
                 </#list>
             </#list><#t/>

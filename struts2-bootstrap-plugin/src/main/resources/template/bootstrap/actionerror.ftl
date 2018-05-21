@@ -34,7 +34,7 @@
         >
     <#list actionErrors as message>
         <#if message?if_exists != "">
-            <p><#if parameters.escape>${message!?html}<#else>${message!}</#if></p>
+            <p class="mb-0"><#if parameters.escape>${message!?html}<#else>${message!}</#if></p>
         </#if>
     </#list>
 </div>
