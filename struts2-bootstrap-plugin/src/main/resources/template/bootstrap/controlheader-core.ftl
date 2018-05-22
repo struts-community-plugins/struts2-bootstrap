@@ -38,15 +38,20 @@
 <#else>
     <#assign elementCssClass ><@s.property value="#s2b_form_element_class" /></#assign><#rt/>
 </#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
+    <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
+<#else>
+    <#assign formGroupCssClass ></#assign><#rt/>
+</#if><#rt/>
 
 
-<div class="form-group <#rt/>
+<div class="form-group ${formGroupCssClass?html} <#rt/>
 <#if hasFieldErrors> 
  has-error has-feedback<#rt/>
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="${labelCssClass?html} col-form-label" <#t/>
+    <label class="${labelCssClass?html}" <#t/>
         <#if parameters.id??>
            for="${parameters.id?html}" <#rt/>
         </#if>
@@ -63,7 +68,7 @@
     </label><#rt/>
 </#if>
 <#lt/>
-    <div class="${elementCssClass?html} controls">
+    <div class="${elementCssClass?html}">
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
         <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>

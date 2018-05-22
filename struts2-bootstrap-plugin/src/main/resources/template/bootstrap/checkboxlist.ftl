@@ -19,7 +19,13 @@
  */
 -->
 <#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
-<div class="form-group <#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
+    <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
+<#else>
+    <#assign formGroupCssClass ></#assign><#rt/>
+</#if><#rt/>
+
+<div class="form-group ${formGroupCssClass?html} <#rt/>
     <#if hasFieldErrors>
         has-error has-feedback<#t/>
     </#if>
@@ -29,7 +35,7 @@
     </#if>
 >
     <#if parameters.label??>
-        <label class="<@s.property value="#s2b_form_label_class" /> col-form-label" >
+        <label class="<@s.property value="#s2b_form_label_class" />" >
             <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
                 <span class="required">*</span><#rt/>
             </#if>
