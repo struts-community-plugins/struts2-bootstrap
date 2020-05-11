@@ -13,11 +13,11 @@
 
 <#if inputPrepend??>
 <div class="input-group">
-    <span class="input-group-addon">${inputPrepend?html}</span>
+    <span class="input-group-addon">${inputPrepend}</span>
 </#if>
 <#if inputPrependIcon??>
 <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-${inputPrependIcon?html}"></i></span>
+    <span class="input-group-addon"><i class="glyphicon glyphicon-${inputPrependIcon}"></i></span>
 </#if>
 <#if (inputAppend?? || inputAppendIcon??)>
 <div class="input-group">

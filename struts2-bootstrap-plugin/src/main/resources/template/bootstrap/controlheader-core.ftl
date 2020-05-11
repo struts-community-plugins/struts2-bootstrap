@@ -46,24 +46,24 @@
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="${labelCssClass?html} col-form-label" <#t/>
+    <label class="${labelCssClass} col-form-label" <#t/>
         <#if parameters.id??>
-           for="${parameters.id?html}" <#rt/>
+           for="${parameters.id}" <#rt/>
         </#if>
             ><#rt/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
             <span class="required">*</span><#rt/>
         </#if>
-    ${parameters.label?html}<#t/>
+    ${parameters.label}<#t/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
             <span class="required">*</span><#rt/>
         </#if>
-    ${parameters.labelseparator?default("")?html}<#rt/>
+    ${parameters.labelseparator?default("")}<#rt/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label><#rt/>
 </#if>
 <#lt/>
-    <div class="${elementCssClass?html} controls">
+    <div class="${elementCssClass} controls">
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
         <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>

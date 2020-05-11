@@ -39,30 +39,30 @@
         <#assign disabled="disabled"/><#lt/>
     </#if>
 <div class="form-check ${inline!""} ${disabled!""}"><#lt/>
-    <label for="${parameters.name?html}-${itemCount}" class="form-check-label">
+    <label for="${parameters.name}-${itemCount}" class="form-check-label">
         <input type="radio" class="form-check-input"<#rt/>
             <#if parameters.name??>
-               name="${parameters.name?html}" <#t/>
+               name="${parameters.name}" <#t/>
             </#if>
-               id="${parameters.name?html}-${itemCount}" <#t/>
+               id="${parameters.name}-${itemCount}" <#t/>
             <#if tag.contains(parameters.nameValue!'', itemKeyStr)>
                checked="checked" <#t/>
             </#if>
             <#if itemKey??>
-               value="${itemKeyStr?html}" <#t/>
+               value="${itemKeyStr}" <#t/>
             </#if>
             <#if parameters.disabled!false>
                disabled="disabled" <#t/>
             </#if>
             <#if parameters.tabindex??>
-               tabindex="${parameters.tabindex?html}" <#t/>
+               tabindex="${parameters.tabindex}" <#t/>
             </#if>
             <#if parameters.cssStyle??>
-               style="${parameters.cssStyle?html}" <#t/>
+               style="${parameters.cssStyle}" <#t/>
             </#if>
             <#include "/${parameters.templateDir}/simple/css.ftl" /> <#t/>
             <#if parameters.title??>
-               title="${parameters.title?html}" <#t/>
+               title="${parameters.title}" <#t/>
             </#if>
             <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
             <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
