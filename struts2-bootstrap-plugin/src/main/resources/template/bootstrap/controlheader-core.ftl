@@ -39,9 +39,8 @@
     <#assign elementCssClass ><@s.property value="#s2b_form_element_class" /></#assign><#rt/>
 </#if><#rt/>
 
-
 <div class="form-group <#rt/>
-<#if hasFieldErrors> 
+<#if hasFieldErrors>
  has-error has-feedback<#rt/>
 </#if>
 "><#rt/>
@@ -51,14 +50,14 @@
            for="${parameters.id}" <#rt/>
         </#if>
             ><#rt/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+        <#if parameters.required!false && parameters.requiredposition!"right" != 'right'>
             <span class="required">*</span><#rt/>
         </#if>
     ${parameters.label}<#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+        <#if parameters.required!false && parameters.requiredposition!"right" == 'right'>
             <span class="required">*</span><#rt/>
         </#if>
-    ${parameters.labelseparator?default("")}<#rt/>
+    ${parameters.labelseparator!""}<#rt/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label><#rt/>
 </#if>

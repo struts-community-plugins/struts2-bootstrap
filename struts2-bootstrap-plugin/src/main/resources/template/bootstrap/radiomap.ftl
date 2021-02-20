@@ -34,21 +34,21 @@
     <#if hasFieldErrors>
         has-error has-feedback <#t/>
     </#if>
-    ${parameters.cssClass?default('')}" <#t/>
+    ${parameters.cssClass!''}" <#t/>
     <#if parameters.cssStyle??>
         style="${parameters.cssStyle}" <#t/>
     </#if>
 >
 <#if parameters.label??>
     <label class="${labelCssClass} /> col-form-label">
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+        <#if parameters.required!false && parameters.requiredposition!"right" != 'right'>
             <span class="required">*</span><#t/>
         </#if>
     ${parameters.label}<#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+        <#if parameters.required!false && parameters.requiredposition!"right" == 'right'>
             <span class="required">*</span><#t/>
         </#if>
-    ${parameters.labelseparator?default("")}<#t/>
+    ${parameters.labelseparator!""}<#t/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label>
 </#if>
