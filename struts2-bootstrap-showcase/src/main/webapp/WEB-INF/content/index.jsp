@@ -103,29 +103,35 @@
                 <s:textfield
                         label="Name"
                         name="name"
-                        cssClass="input-sm"
+                        formGroupCssClass="row"
+                        labelCssClass="col-sm-3 col-form-label col-form-label-sm"
                         elementCssClass="col-sm-3"
+                        cssClass="form-control-sm"
                         tooltip="Enter your Name here"/>
 
                 <s:password
                         label="Password"
                         name="password"
+                        formGroupCssClass="row"
                         tooltip="Enter your Password here"/>
 
                 <s:textfield
                         label="Textfield with Error"
-                        name="error"/>
+                        name="error"
+                        formGroupCssClass="row"/>
 
                 <s:textarea
                         tooltip="Enter your Biography"
                         label="Biography"
                         name="bio"
                         cols="20"
-                        rows="3"/>
+                        rows="3"
+                        formGroupCssClass="row"/>
 
                 <s:select
                         tooltip="Choose Your Favourite Color"
                         label="Favorite Color"
+                        formGroupCssClass="row"
                         elementCssClass="col-sm-4"
                         list="{'Red', 'Blue', 'Green'}"
                         name="favouriteColor"
@@ -136,6 +142,7 @@
                 <s:checkboxlist
                         tooltip="Choose your Friends"
                         label="Friends"
+                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friends"/>
 
@@ -143,12 +150,14 @@
                         tooltip="Checkboxes with inline position"
                         labelposition="inline"
                         label="Friends Inline"
+                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friendsInline"/>
 
                 <s:radio
                         tooltip="Choose your Best Friend"
                         label="Best Friend"
+                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriend"
                         cssErrorClass="foo"/>
@@ -157,6 +166,7 @@
                         tooltip="Radio Buttons with inline position"
                         label="Best Friend Inline"
                         labelposition="inline"
+                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriendInline"
                         cssErrorClass="foo"/>
@@ -164,7 +174,8 @@
                 <s:checkbox
                         tooltip="Confirmed that your are Over 18"
                         label="Age 18+"
-                        name="legalAge"/>
+                        name="legalAge"
+                        formGroupCssClass="row"/>
 
                 <s:doubleselect
                         tooltip="Choose Your State"
@@ -181,7 +192,8 @@
                 <s:file
                         tooltip="Upload Your Picture"
                         label="Picture"
-                        name="picture"/>
+                        name="picture"
+                        formGroupCssClass="row"/>
 
                 <s:optiontransferselect
                         tooltip="Select Your Favourite Cartoon Characters"
@@ -218,11 +230,12 @@
                 <s:textarea
                         label="Your Thougths"
                         name="thoughts"
+                        formGroupCssClass="row"
                         cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
 
-                <div class="form-group">
-                    <div class="col-sm-offset-3 col-md-9">
+                <div class="form-group row">
+                    <div class="offset-md-3 col-md-9">
                         <s:submit cssClass="btn btn-primary"/>
                     </div>
                 </div>
