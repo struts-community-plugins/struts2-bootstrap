@@ -33,7 +33,7 @@
 
 
         <input type="text"<#rt/>
-               name="${parameters.name?default("")?html}_input"<#rt/>
+               name="${parameters.name?default("")}_input"<#rt/>
         <#if parameters.disabled?default(false)>
                disabled="disabled"<#rt/>
         </#if>
@@ -41,21 +41,21 @@
                readonly="readonly"<#rt/>
         </#if>
         <#if parameters.tabindex??>
-               tabindex="${parameters.tabindex?html}"<#rt/>
+               tabindex="${parameters.tabindex}"<#rt/>
         </#if>
         <#if parameters.id??>
-               id="${parameters.id?html}_input"<#rt/>
+               id="${parameters.id}_input"<#rt/>
         </#if>
         <#if parameters.cssClass??>
-               class="form-control ${parameters.cssClass?html}"<#rt/>
+               class="form-control ${parameters.cssClass}"<#rt/>
         <#else>
                class="form-control"<#rt/>
         </#if>
         <#if parameters.cssStyle??>
-               style="${parameters.cssStyle?html}"<#rt/>
+               style="${parameters.cssStyle}"<#rt/>
         </#if>
         <#if parameters.title??>
-               title="${parameters.title?html}"<#rt/>
+               title="${parameters.title}"<#rt/>
         </#if>
         <#include "/${parameters.templateDir}/${parameters.expandTheme}/scripting-events.ftl" />
         <#include "/${parameters.templateDir}/${parameters.expandTheme}/common-attributes.ftl" />
@@ -64,50 +64,50 @@
 
     <div class="col-md-2 text-center">
         <div class="btn-group-vertical transferselect-btn transferselect-btn-middle">
-        <#assign addLabel=parameters.addLabel?default("Add")?html /><#t/>
+        <#assign addLabel=parameters.addLabel?default("Add") /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
-                    class="btn btn-default ${parameters.buttonCssClass?html}"
+                    class="btn btn-default ${parameters.buttonCssClass}"
             <#else><#t/>
                     class="btn btn-default"
             </#if><#t/>
             <#if parameters.buttonCssStyle??><#t/>
-                    style="${parameters.buttonCssStyle?html}"
+                    style="${parameters.buttonCssStyle}"
             </#if><#t/>
-                    title="${addLabel?html}"
-                    onclick="addOption(document.getElementById('${parameters.id?html}_input'), document.getElementById('${parameters.id?html}'))"
+                    title="${addLabel}"
+                    onclick="addOption(document.getElementById('${parameters.id}_input'), document.getElementById('${parameters.id}'))"
                     ><#t/>
                 <span class="glyphicon glyphicon-plus"></span>
             </button>
         <#t/>
-        <#assign removeLabel=parameters.removeLabel?default("Remove")?html /><#t/>
+        <#assign removeLabel=parameters.removeLabel?default("Remove") /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
-                    class="btn btn-default ${parameters.buttonCssClass?html}"
+                    class="btn btn-default ${parameters.buttonCssClass}"
             <#else><#t/>
                     class="btn btn-default"
             </#if><#t/>
             <#if parameters.buttonCssStyle??><#t/>
-                    style="${parameters.buttonCssStyle?html}"
+                    style="${parameters.buttonCssStyle}"
             </#if><#t/>
-                    title="${removeLabel?html}"
-                    onclick="removeOptions(document.getElementById('${parameters.id?html}'))"
+                    title="${removeLabel}"
+                    onclick="removeOptions(document.getElementById('${parameters.id}'))"
                     ><#t/>
                 <span class="glyphicon glyphicon-remove"></span>
             </button>
         <#t/>
-        <#assign removeAllLabel=parameters.removeAllLabel?default("Remove all")?html /><#t/>
+        <#assign removeAllLabel=parameters.removeAllLabel?default("Remove all") /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
-                    class="btn btn-default ${parameters.buttonCssClass?html}"
+                    class="btn btn-default ${parameters.buttonCssClass}"
             <#else><#t/>
                     class="btn btn-default"
             </#if><#t/>
             <#if parameters.buttonCssStyle??><#t/>
-                    style="${parameters.buttonCssStyle?html}"
+                    style="${parameters.buttonCssStyle}"
             </#if><#t/>
-                    title="${removeAllLabel?html}"
-                    onclick="removeAllOptions(document.getElementById('${parameters.id?html}'))"
+                    title="${removeAllLabel}"
+                    onclick="removeAllOptions(document.getElementById('${parameters.id}'))"
                     ><#t/>
                 <span class="glyphicon glyphicon-remove-circle"></span>
             </button>
@@ -123,7 +123,7 @@
             <div class="btn-group transferselect-btn transferselect-btn-bottom">
                 <button type="button" class="btn btn-default"
                     <#if parameters.downLabel??>
-                        title="${parameters.downLabel?html}"
+                        title="${parameters.downLabel}"
                     </#if>
                     <#if parameters.headerKey??>
                         onclick="moveOptionDown(document.getElementById('${parameters.id}'), 'key', '${parameters.headerKey}');"
@@ -135,7 +135,7 @@
                 </button>
                 <button type="button" class="btn btn-default"
                     <#if parameters.downLabel??>
-                        title="${parameters.upLabel?html}"
+                        title="${parameters.upLabel}"
                     </#if>
                     <#if parameters.headerKey??>
                         onclick="moveOptionUp(document.getElementById('${parameters.id}'), 'key', '${parameters.headerKey}');"

@@ -35,20 +35,20 @@
                     </#if><#t/>
                 <div
                     <#if parameters.id?if_exists != "">
-                            id="${parameters.id?html}"<#rt/>
+                            id="${parameters.id}"<#rt/>
                     </#if>
                     <#if parameters.cssClass??>
-                            class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
+                            class="alert alert-danger ${parameters.cssClass}"<#rt/>
                     <#else>
                             class="alert alert-danger actionError"<#rt/>
                     </#if>
                     <#if parameters.cssStyle??>
-                            style="margin${parameters.cssStyle?html}"<#rt/>
+                            style="margin${parameters.cssStyle}"<#rt/>
                     </#if>
                         >
                     <#list eValue as eEachValue><#t/>
                         <#if eEachValue?if_exists != "">
-                            <p><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
+                            <p><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></p>
                         </#if>
                     </#list>
                 </div>
@@ -62,22 +62,22 @@
         <#if (eKeysSize > 0)><#t/>
         <div
             <#if parameters.id?if_exists != "">
-                    id="${parameters.id?html}"<#rt/>
+                    id="${parameters.id}"<#rt/>
             </#if>
             <#if parameters.cssClass??>
-                    class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
+                    class="alert alert-danger ${parameters.cssClass}"<#rt/>
             <#else>
                     class="alert alert-danger actionError"<#rt/>
             </#if>
             <#if parameters.cssStyle??>
-                    style="margin${parameters.cssStyle?html}"<#rt/>
+                    style="margin${parameters.cssStyle}"<#rt/>
             </#if>
                 >
             <#list eKeys as eKey><#t/>
                 <#assign eValue = fieldErrors[eKey]><#t/>
                 <#list eValue as eEachValue><#t/>
                     <#if eEachValue?if_exists != "">
-                        <p class="mb-0"><#if parameters.escape>${eEachValue!?html}<#else>${eEachValue!}</#if></p>
+                        <p class="mb-0"><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></p>
                     </#if>
                 </#list>
             </#list><#t/>

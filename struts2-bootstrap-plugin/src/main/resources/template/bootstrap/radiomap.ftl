@@ -34,25 +34,25 @@
     <#if hasFieldErrors>
         has-error has-feedback <#t/>
     </#if>
-    ${parameters.cssClass?default('')?html}" <#t/>
+    ${parameters.cssClass!''}" <#t/>
     <#if parameters.cssStyle??>
-        style="${parameters.cssStyle?html}" <#t/>
+        style="${parameters.cssStyle}" <#t/>
     </#if>
 >
 <#if parameters.label??>
-    <label class="${labelCssClass?html} /> col-form-label">
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+    <label class="${labelCssClass} /> col-form-label">
+        <#if parameters.required!false && parameters.requiredposition!"right" != 'right'>
             <span class="required">*</span><#t/>
         </#if>
-    ${parameters.label?html}<#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+    ${parameters.label}<#t/>
+        <#if parameters.required!false && parameters.requiredposition!"right" == 'right'>
             <span class="required">*</span><#t/>
         </#if>
-    ${parameters.labelseparator?default("")?html}<#t/>
+    ${parameters.labelseparator!""}<#t/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label>
 </#if>
-    <div class="${elementCssClass?html} controls">
+    <div class="${elementCssClass} controls">
     <#lt/>
 <#include "/${parameters.templateDir}/bootstrap/simple/radiomap.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
