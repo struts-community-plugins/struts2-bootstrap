@@ -28,9 +28,9 @@
     <#if hasFieldErrors> 
         has-error has-feedback <#t/>
     </#if>
-    ${parameters.cssClass?default('')?html}" <#t/>
+    ${parameters.cssClass?default('')}" <#t/>
     <#if parameters.cssStyle??>
-        style="${parameters.cssStyle?html}" <#t/>
+        style="${parameters.cssStyle}" <#t/>
     </#if>
 >
     <div class="<@s.property value="#s2b_form_label_class" />"></div>
@@ -44,18 +44,18 @@
     <#if parameters.label??>
     <label <#rt/>
         <#if parameters.id??>
-                for="${parameters.id?html}" <#t/>
+                for="${parameters.id}" <#t/>
         </#if>
     ><#lt/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
             <span class="required">*</span><#rt/>
         </#if>
         <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
-        ${parameters.label?html}<#t/>
+        ${parameters.label}<#t/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
             <span class="required">*</span><#t/>
         </#if>
-        ${parameters.labelseparator?default("")?html}<#t/>
+        ${parameters.labelseparator?default("")}<#t/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </#if>
     <#if parameters.label??>

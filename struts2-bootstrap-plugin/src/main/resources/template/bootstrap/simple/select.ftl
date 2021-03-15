@@ -22,22 +22,22 @@
 -->
 <#setting number_format="#.#####">
 <select<#rt/>
-        name="${parameters.name?default("")?html}"<#rt/>
+        name="${parameters.name?default("")}"<#rt/>
 <#if parameters.get("size")??>
-        size="${parameters.get("size")?html}"<#rt/>
+        size="${parameters.get("size")}"<#rt/>
 </#if>
 <#if parameters.disabled?default(false)>
         disabled="disabled"<#rt/>
 </#if>
 <#if parameters.tabindex??>
-        tabindex="${parameters.tabindex?html}"<#rt/>
+        tabindex="${parameters.tabindex}"<#rt/>
 </#if>
 <#if parameters.id??>
-        id="${parameters.id?html}"<#rt/>
+        id="${parameters.id}"<#rt/>
 </#if>
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/css.ftl" />
 <#if parameters.title??>
-        title="${parameters.title?html}"<#rt/>
+        title="${parameters.title}"<#rt/>
 </#if>
 <#if parameters.multiple?default(false)>
         multiple="multiple"<#rt/>
@@ -47,11 +47,11 @@
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/dynamic-attributes.ftl" />
         >
 <#if parameters.headerKey?? && parameters.headerValue??>
-    <option value="${parameters.headerKey?html}"
+    <option value="${parameters.headerKey}"
         <#if tag.contains(parameters.nameValue, parameters.headerKey) == true>
             selected="selected"
         </#if>
-            >${parameters.headerValue?html}</option>
+            >${parameters.headerValue}</option>
 </#if>
 <#if parameters.emptyOption?default(false)>
     <option value=""></option>
@@ -99,20 +99,20 @@
             <#assign itemTitle = ''/>
         </#if>
     </#if>
-    <option value="${itemKeyStr?html}"<#rt/>
+    <option value="${itemKeyStr}"<#rt/>
         <#if tag.contains(parameters.nameValue, itemKey) == true>
             selected="selected"<#rt/>
         </#if>
         <#if itemCssClass?if_exists != "">
-            class="${itemCssClass?html}"<#rt/>
+            class="${itemCssClass}"<#rt/>
         </#if>
         <#if itemCssStyle?if_exists != "">
-            style="${itemCssStyle?html}"<#rt/>
+            style="${itemCssStyle}"<#rt/>
         </#if>
         <#if itemTitle?if_exists != "">
-            title="${itemTitle?html}"<#rt/>
+            title="${itemTitle}"<#rt/>
         </#if>
-            >${itemValue?html}</option><#lt/>
+            >${itemValue}</option><#lt/>
 </@s.iterator>
 
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/optgroup.ftl" />
@@ -121,15 +121,15 @@
 
 <#if parameters.multiple?default(false)>
     <#if (parameters.id?? && parameters.name??)>
-    <input type="hidden" id="__multiselect_${parameters.id?html}" name="__multiselect_${parameters.name?html}"
+    <input type="hidden" id="__multiselect_${parameters.id}" name="__multiselect_${parameters.name}"
            value=""<#rt/>
     </#if>
     <#if (parameters.id?? && !parameters.name??)>
-    <input type="hidden" id="__multiselect_${parameters.id?html}" name="__multiselect_${parameters.id?html}"
+    <input type="hidden" id="__multiselect_${parameters.id}" name="__multiselect_${parameters.id}"
            value=""<#rt/>
     </#if>
     <#if ( !parameters.id?? && parameters.name??)>
-    <input type="hidden" id="__multiselect_${parameters.id?html}" name="__multiselect_${parameters.id?html}"
+    <input type="hidden" id="__multiselect_${parameters.id}" name="__multiselect_${parameters.id}"
            value=""<#rt/>
     </#if>
     <#if ( !parameters.id?? && !parameters.name??)>

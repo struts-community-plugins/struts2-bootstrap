@@ -39,7 +39,7 @@
         <div class="btn-group transferselect-btn transferselect-btn-bottom">
             <button type="button" class="btn btn-default"
                 <#if parameters.rightDownLabel??>
-                    title="${parameters.rightDownLabel?html}"
+                    title="${parameters.rightDownLabel}"
                 </#if>
                     onclick="moveOptionDown(document.getElementById('${parameters.id}'), 'key', <#if parameters.headerKey??>'${parameters.headerKey}'<#else>''</#if>);<#if parameters.upDownOnLeftOnclick?has_content>${parameters.upDownOnLeftOnclick};</#if>"<#t/>
                     ><#t/>
@@ -47,7 +47,7 @@
             </button>
             <button type="button" class="btn btn-default"
                 <#if parameters.rightUpLabel??>
-                    title="${parameters.rightUpLabel?html}"
+                    title="${parameters.rightUpLabel}"
                 </#if>
                     onclick="moveOptionUp(document.getElementById('${parameters.id}'), 'key', <#if parameters.headerKey??>'${parameters.headerKey}'<#else>''</#if>);<#if parameters.upDownOnLeftOnclick?has_content>${parameters.upDownOnLeftOnclick};</#if>"<#t/>
                     ><#t/>
@@ -61,200 +61,200 @@
 <div class="col-md-2 text-center">
 <div class="btn-group-vertical transferselect-btn transferselect-btn-middle">
 <#if parameters.allowAddToLeft?default(true)><#t/>
-    <#assign addToLeftLabel = parameters.addToLeftLabel?default("To left")?html/><#t/>
+    <#assign addToLeftLabel = parameters.addToLeftLabel?default("To left")/><#t/>
     <#if parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addToLeftLabel}"
-            onclick="moveSelectedOptions(document.getElementById('${parameters.doubleId?html}'), document.getElementById('${parameters.id?html}'), false, '${parameters.doubleHeaderKey}', '');<#if parameters.addToLeftOnclick?has_content>${parameters.addToLeftOnclick};</#if>"
+            onclick="moveSelectedOptions(document.getElementById('${parameters.doubleId}'), document.getElementById('${parameters.id}'), false, '${parameters.doubleHeaderKey}', '');<#if parameters.addToLeftOnclick?has_content>${parameters.addToLeftOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-arrow-left"></span>
     </button>
     <#else><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addToLeftLabel}"
-            onclick="moveSelectedOptions(document.getElementById('${parameters.doubleId?html}'), document.getElementById('${parameters.id?html}'), false, '');<#if parameters.addToLeftOnclick?has_content>${parameters.addToLeftOnclick};</#if>"
+            onclick="moveSelectedOptions(document.getElementById('${parameters.doubleId}'), document.getElementById('${parameters.id}'), false, '');<#if parameters.addToLeftOnclick?has_content>${parameters.addToLeftOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-arrow-left"></span>
     </button>
     </#if><#t/>
 </#if><#t/>
 <#if parameters.allowAddToRight?default(true)><#t/>
-    <#assign addToRightLabel=parameters.addToRightLabel?default("To right")?html /><#t/>
+    <#assign addToRightLabel=parameters.addToRightLabel?default("To right") /><#t/>
     <#if parameters.headerKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addToRightLabel}"
-            onclick="moveSelectedOptions(document.getElementById('${parameters.id?html}'), document.getElementById('${parameters.doubleId?html}'), false, '${parameters.headerKey}', '');<#if parameters.addToRightOnclick?has_content>${parameters.addToRightOnclick};</#if>"
+            onclick="moveSelectedOptions(document.getElementById('${parameters.id}'), document.getElementById('${parameters.doubleId}'), false, '${parameters.headerKey}', '');<#if parameters.addToRightOnclick?has_content>${parameters.addToRightOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-arrow-right"></span>
     </button>
     <#else><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addToRightLabel}"
-            onclick="moveSelectedOptions(document.getElementById('${parameters.id?html}'), document.getElementById('${parameters.doubleId?html}'), false, '');<#if parameters.addToRightOnclick?has_content>${parameters.addToRightOnclick};</#if>"
+            onclick="moveSelectedOptions(document.getElementById('${parameters.id}'), document.getElementById('${parameters.doubleId}'), false, '');<#if parameters.addToRightOnclick?has_content>${parameters.addToRightOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-arrow-right"></span>
     </button>
     </#if><#t/>
 </#if><#t/>
 <#if parameters.allowAddAllToLeft?default(true)><#t/>
-    <#assign addAllToLeftLabel=parameters.addAllToLeftLabel?default("All to left")?html /><#t/>
+    <#assign addAllToLeftLabel=parameters.addAllToLeftLabel?default("All to left") /><#t/>
     <#if parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addAllToLeftLabel}"
-            onclick="moveAllOptions(document.getElementById('${parameters.doubleId?html}'), document.getElementById('${parameters.id?html}'), false, '${parameters.doubleHeaderKey}', '');<#if parameters.addAllToLeftOnclick?has_content>${parameters.addAllToLeftOnclick};</#if>"
+            onclick="moveAllOptions(document.getElementById('${parameters.doubleId}'), document.getElementById('${parameters.id}'), false, '${parameters.doubleHeaderKey}', '');<#if parameters.addAllToLeftOnclick?has_content>${parameters.addAllToLeftOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-circle-arrow-left"></span>
     </button>
     <#else><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addAllToLeftLabel}"
-            onclick="moveAllOptions(document.getElementById('${parameters.doubleId?html}'), document.getElementById('${parameters.id?html}'), false, '');<#if parameters.addAllToLeftOnclick?has_content>${parameters.addAllToLeftOnclick};</#if>"
+            onclick="moveAllOptions(document.getElementById('${parameters.doubleId}'), document.getElementById('${parameters.id}'), false, '');<#if parameters.addAllToLeftOnclick?has_content>${parameters.addAllToLeftOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-circle-arrow-left"></span>
     </button>
     </#if><#t/>
 </#if><#t/>
 <#if parameters.allowAddAllToRight?default(true)><#t/>
-    <#assign addAllToRightLabel=parameters.addAllToRightLabel?default("All to right")?html /><#t/>
+    <#assign addAllToRightLabel=parameters.addAllToRightLabel?default("All to right") /><#t/>
     <#if parameters.headerKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addAllToRightLabel}"
-            onclick="moveAllOptions(document.getElementById('${parameters.id?html}'), document.getElementById('${parameters.doubleId?html}'), false, '${parameters.headerKey}', '');<#if parameters.addAllToRightOnclick?has_content>${parameters.addAllToRightOnclick};</#if>"
+            onclick="moveAllOptions(document.getElementById('${parameters.id}'), document.getElementById('${parameters.doubleId}'), false, '${parameters.headerKey}', '');<#if parameters.addAllToRightOnclick?has_content>${parameters.addAllToRightOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </button>
     <#else><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${addAllToRightLabel}"
-            onclick="moveAllOptions(document.getElementById('${parameters.id?html}'), document.getElementById('${parameters.doubleId?html}'), false, '');<#if parameters.addAllToRightOnclick?has_content>${parameters.addAllToRightOnclick};</#if>"
+            onclick="moveAllOptions(document.getElementById('${parameters.id}'), document.getElementById('${parameters.doubleId}'), false, '');<#if parameters.addAllToRightOnclick?has_content>${parameters.addAllToRightOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-circle-arrow-right"></span>
     </button>
     </#if><#t/>
 </#if><#t/>
 <#if parameters.allowSelectAll?default(true)><#t/>
-    <#assign selectAllLabel=parameters.selectAllLabel?default("Select all")?html /><#t/>
+    <#assign selectAllLabel=parameters.selectAllLabel?default("Select all") /><#t/>
     <#if parameters.headerKey?? && parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${selectAllLabel}"
-            onclick="selectAllOptionsExceptSome(document.getElementById('${parameters.id?html}'), 'key', '${parameters.headerKey}');selectAllOptionsExceptSome(document.getElementById('${parameters.doubleId?html}'), 'key', '${parameters.doubleHeaderKey}');<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
+            onclick="selectAllOptionsExceptSome(document.getElementById('${parameters.id}'), 'key', '${parameters.headerKey}');selectAllOptionsExceptSome(document.getElementById('${parameters.doubleId}'), 'key', '${parameters.doubleHeaderKey}');<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-resize-horizontal"></span>
     </button>
     <#elseif parameters.headerKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${selectAllLabel}"
-            onclick="selectAllOptionsExceptSome(document.getElementById('${parameters.id?html}'), 'key', '${parameters.headerKey}');selectAllOptions(document.getElementById('${parameters.doubleId?html}'));<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
+            onclick="selectAllOptionsExceptSome(document.getElementById('${parameters.id}'), 'key', '${parameters.headerKey}');selectAllOptions(document.getElementById('${parameters.doubleId}'));<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-resize-horizontal"></span>
     </button>
     <#elseif parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${selectAllLabel}"
-            onclick="selectAllOptions(document.getElementById('${parameters.id?html}'));selectAllOptionsExceptSome(document.getElementById('${parameters.doubleId?html}'), 'key', '${parameters.doubleHeaderKey}');<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
+            onclick="selectAllOptions(document.getElementById('${parameters.id}'));selectAllOptionsExceptSome(document.getElementById('${parameters.doubleId}'), 'key', '${parameters.doubleHeaderKey}');<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-resize-horizontal"></span>
     </button>
     <#else><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
-            class="btn btn-default ${parameters.buttonCssClass?html}"
+            class="btn btn-default ${parameters.buttonCssClass}"
         <#else><#t/>
             class="btn btn-default"
         </#if><#t/>
         <#if parameters.buttonCssStyle??><#t/>
-            style="${parameters.buttonCssStyle?html}"
+            style="${parameters.buttonCssStyle}"
         </#if><#t/>
             title="${selectAllLabel}"
-            onclick="selectAllOptions(document.getElementById('${parameters.id?html}'));selectAllOptions(document.getElementById('${parameters.doubleId?html}'));<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
+            onclick="selectAllOptions(document.getElementById('${parameters.id}'));selectAllOptions(document.getElementById('${parameters.doubleId}'));<#if parameters.selectAllOnclick?has_content>${parameters.selectAllOnclick};</#if>"
             ><#t/>
         <span class="glyphicon glyphicon-resize-horizontal"></span>
     </button>
@@ -267,9 +267,9 @@
     <label for="rightTitle">${parameters.rightTitle}</label><br/>
 </#if><#t/>
     <select
-            name="${parameters.doubleName?default("")?html}"
+            name="${parameters.doubleName?default("")}"
     <#if parameters.get("doubleSize")??><#t/>
-            size="${parameters.get("doubleSize")?html}"
+            size="${parameters.get("doubleSize")}"
     </#if><#t/>
     <#if parameters.doubleDisabled?default(false)><#t/>
             disabled="disabled"
@@ -278,67 +278,67 @@
             multiple="multiple"
     </#if><#t/>
     <#if parameters.doubleTabindex??><#t/>
-            tabindex="${parameters.tabindex?html}"
+            tabindex="${parameters.tabindex}"
     </#if><#t/>
     <#if parameters.doubleId??><#t/>
-            id="${parameters.doubleId?html}"
+            id="${parameters.doubleId}"
     </#if><#t/>
     <#if parameters.doubleCss??><#t/>
-            class="form-control ${parameters.doubleCss?html}"
+            class="form-control ${parameters.doubleCss}"
     <#else><#t/>
             class="form-control"
     </#if><#t/>
     <#if parameters.doubleStyle??><#t/>
-            style="${parameters.doubleStyle?html}"
+            style="${parameters.doubleStyle}"
     </#if><#t/>
     <#if parameters.doubleOnclick??><#t/>
-            onclick="${parameters.doubleOnclick?html}"
+            onclick="${parameters.doubleOnclick}"
     </#if><#t/>
     <#if parameters.doubleOndblclick??><#t/>
-            ondblclick="${parameters.doubleOndblclick?html}"
+            ondblclick="${parameters.doubleOndblclick}"
     </#if><#t/>
     <#if parameters.doubleOnmousedown??><#t/>
-            onmousedown="${parameters.doubleOnmousedown?html}"
+            onmousedown="${parameters.doubleOnmousedown}"
     </#if><#t/>
     <#if parameters.doubleOnmouseup??><#t/>
-            onmouseup="${parameters.doubleOnmouseup?html}"
+            onmouseup="${parameters.doubleOnmouseup}"
     </#if><#t/>
     <#if parameters.doubleOnmousemove??><#t/>
-            onmousemove="${parameters.doubleOnmousemove?html}"
+            onmousemove="${parameters.doubleOnmousemove}"
     </#if><#t/>
     <#if parameters.doubleOnmouseover??><#t/>
-            onmouseover="${parameters.doubleOnmouseover?html}"
+            onmouseover="${parameters.doubleOnmouseover}"
     </#if><#t/>
     <#if parameters.doubleOnmouseout??><#t/>
-            onmouseout="${parameters.doubleOnmouseout?html}"
+            onmouseout="${parameters.doubleOnmouseout}"
     </#if><#t/>
     <#if parameters.doubleOnfocus??><#t/>
-            onfocus="${parameters.doubleOnfocus?html}"
+            onfocus="${parameters.doubleOnfocus}"
     </#if><#t/>
     <#if parameters.doubleOnblur??><#t/>
-            onblur="${parameters.doubleOnblur?html}"
+            onblur="${parameters.doubleOnblur}"
     </#if><#t/>
     <#if parameters.doubleOnkeypress??><#t/>
-            onkeypress="${parameters.doubleOnkeypress?html}"
+            onkeypress="${parameters.doubleOnkeypress}"
     </#if><#t/>
     <#if parameters.doubleOnKeydown??><#t/>
-            onkeydown="${parameters.doubleOnkeydown?html}"
+            onkeydown="${parameters.doubleOnkeydown}"
     </#if><#t/>
     <#if parameters.doubleOnkeyup??><#t/>
-            onkeyup="${parameters.doubleOnkeyup?html}"
+            onkeyup="${parameters.doubleOnkeyup}"
     </#if><#t/>
     <#if parameters.doubleOnselect??><#t/>
-            onselect="${parameters.doubleOnselect?html}"
+            onselect="${parameters.doubleOnselect}"
     </#if><#t/>
     <#if parameters.doubleOnchange??><#t/>
-            onchange="${parameters.doubleOnchange?html}"
+            onchange="${parameters.doubleOnchange}"
     </#if><#t/>
     <#if parameters.doubleAccesskey??><#t/>
-            accesskey="${parameters.doubleAccesskey?html}"
+            accesskey="${parameters.doubleAccesskey}"
     </#if>
             >
     <#if parameters.doubleHeaderKey?? && parameters.doubleHeaderValue??><#t/>
-        <option value="${parameters.doubleHeaderKey?html}">${parameters.doubleHeaderValue?html}</option>
+        <option value="${parameters.doubleHeaderKey}">${parameters.doubleHeaderValue}</option>
     </#if><#t/>
     <#if parameters.doubleEmptyOption?default(false)><#t/>
         <option value=""></option>
@@ -355,16 +355,16 @@
         <#else><#t/>
             <#assign doubleItemValue = stack.findString('top') /><#t/>
         </#if><#t/>
-        <option value="${doubleItemKeyStr?html}"<#rt/>
+        <option value="${doubleItemKeyStr}"<#rt/>
             <#if tag.contains(parameters.doubleNameValue, doubleItemKey)><#t/>
                 selected="selected"<#rt/>
             </#if><#t/>
-                >${doubleItemValue?html}</option><#lt/>
+                >${doubleItemValue}</option><#lt/>
     </@s.iterator><#t/>
     </select>
 <#if parameters.doubleMultiple?default(false)>
-    <input type="hidden" id="__multiselect_${parameters.doubleId?html}"
-           name="__multiselect_${parameters.doubleName?default("")?html}" value=""<#rt/>
+    <input type="hidden" id="__multiselect_${parameters.doubleId}"
+           name="__multiselect_${parameters.doubleName?default("")}" value=""<#rt/>
         <#if parameters.doubleDisabled?default(false)>
            disabled="disabled"<#rt/>
         </#if>
@@ -376,7 +376,7 @@
         <div class="btn-group transferselect-btn transferselect-btn-bottom">
             <button type="button" class="btn btn-default"
                 <#if parameters.rightDownLabel??>
-                    title="${parameters.rightDownLabel?html}"
+                    title="${parameters.rightDownLabel}"
                 </#if>
                     onclick="moveOptionDown(document.getElementById('${parameters.doubleId}'), 'key', <#if parameters.doubleHeaderKey??>'${parameters.doubleHeaderKey}'<#else>''</#if>);<#if parameters.upDownOnLeftOnclick?has_content>${parameters.upDownOnLeftOnclick};</#if>"<#t/>
                     ><#t/>
@@ -384,7 +384,7 @@
             </button>
             <button type="button" class="btn btn-default"
                 <#if parameters.rightUpLabel??>
-                    title="${parameters.rightUpLabel?html}"
+                    title="${parameters.rightUpLabel}"
                 </#if>
                     onclick="moveOptionUp(document.getElementById('${parameters.doubleId}'), 'key', <#if parameters.doubleHeaderKey??>'${parameters.doubleHeaderKey}'<#else>''</#if>);<#if parameters.upDownOnLeftOnclick?has_content>${parameters.upDownOnLeftOnclick};</#if>"<#t/>
                     ><#t/>

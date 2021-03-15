@@ -44,7 +44,6 @@
     <#assign formGroupCssClass ></#assign><#rt/>
 </#if><#rt/>
 
-
 <div class="form-group ${formGroupCssClass?html} <#rt/>
 <#if hasFieldErrors> 
  has-error has-feedback<#rt/>
@@ -53,17 +52,17 @@
 <#if parameters.label??>
     <label class="${labelCssClass?html}" <#t/>
         <#if parameters.id??>
-           for="${parameters.id?html}" <#rt/>
+           for="${parameters.id}" <#rt/>
         </#if>
             ><#rt/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+        <#if parameters.required!false && parameters.requiredposition!"right" != 'right'>
             <span class="required">*</span><#rt/>
         </#if>
-    ${parameters.label?html}<#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+    ${parameters.label}<#t/>
+        <#if parameters.required!false && parameters.requiredposition!"right" == 'right'>
             <span class="required">*</span><#rt/>
         </#if>
-    ${parameters.labelseparator?default("")?html}<#rt/>
+    ${parameters.labelseparator!""}<#rt/>
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label><#rt/>
 </#if>

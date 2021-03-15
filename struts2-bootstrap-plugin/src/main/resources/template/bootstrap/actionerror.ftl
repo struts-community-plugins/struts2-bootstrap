@@ -21,20 +21,20 @@
 <#if (actionErrors?? && actionErrors?size > 0 && !parameters.isEmptyList)>
 <div
     <#if parameters.id?if_exists != "">
-            id="${parameters.id?html}"<#rt/>
+            id="${parameters.id}"<#rt/>
     </#if>
     <#if parameters.cssClass??>
-            class="alert alert-danger ${parameters.cssClass?html}"<#rt/>
+            class="alert alert-danger ${parameters.cssClass}"<#rt/>
     <#else>
             class="alert alert-danger"<#rt/>
     </#if>
     <#if parameters.cssStyle??>
-            style="${parameters.cssStyle?html}"<#rt/>
+            style="${parameters.cssStyle}"<#rt/>
     </#if>
         >
     <#list actionErrors as message>
         <#if message?if_exists != "">
-            <p class="mb-0"><#if parameters.escape>${message!?html}<#else>${message!}</#if></p>
+            <p class="mb-0"><#if parameters.escape>${message!}<#else>${message!}</#if></p>
         </#if>
     </#list>
 </div>

@@ -39,9 +39,9 @@
             <#assign labelClass=""/>
             <div class="checkbox">
         </#if>
-        <label for="${parameters.name?html}-${itemCount}" class="${labelClass}">
-            <input type="checkbox" name="${parameters.name?html}" value="${itemKeyStr?html}" <#rt/>
-                   id="${parameters.name?html}-${itemCount}" <#t/>
+        <label for="${parameters.name}-${itemCount}" class="${labelClass}">
+            <input type="checkbox" name="${parameters.name}" value="${itemKeyStr}" <#rt/>
+                   id="${parameters.name}-${itemCount}" <#t/>
                 <#if tag.contains(parameters.nameValue, itemKey)>
                    checked="checked" <#t/>
                 </#if>
@@ -49,13 +49,13 @@
                    disabled="disabled" <#t/>
                 </#if>
                 <#if parameters.title??>
-                   title="${parameters.title?html}" <#t/>
+                   title="${parameters.title}" <#t/>
                 </#if>
                 <#include "/${parameters.templateDir}/simple/css.ftl" /> <#t/>
                 <#include "/${parameters.templateDir}/simple/scripting-events.ftl" /> <#t/>
                 <#include "/${parameters.templateDir}/simple/common-attributes.ftl" /> <#t/>
             /><#lt/>
-            ${itemValue?html}
+            ${itemValue}
         </label>
         <#if parameters.labelposition?default("") != 'inline'>
             </div>
