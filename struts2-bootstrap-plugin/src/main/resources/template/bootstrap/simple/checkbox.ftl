@@ -20,7 +20,7 @@
  * under the License.
  */
 -->
-<input type="checkbox" name="${parameters.name}" value="${parameters.fieldValue}" <#rt/>
+<input type="checkbox" name="${parameters.name}" value="${parameters.fieldValue}" class="form-check-input" <#rt/>
     <#if parameters.nameValue?? && parameters.nameValue>
         checked="checked" <#t/>
     </#if>

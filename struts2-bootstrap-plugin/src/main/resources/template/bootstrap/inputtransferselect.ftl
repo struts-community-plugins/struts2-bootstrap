@@ -19,6 +19,7 @@
  */
 -->
 <#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+
 <#if !stack.findValue("#inputtransferselect_js_included")??><#t/>
 <script type="text/javascript"
         src="<@s.url value="/struts/inputtransferselect.js" encode='false' includeParams='none'/>"></script>
@@ -67,9 +68,9 @@
         <#assign addLabel=parameters.addLabel?default("Add") /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
-                    class="btn btn-default ${parameters.buttonCssClass}"
+                    class="btn ${parameters.buttonCssClass}"
             <#else><#t/>
-                    class="btn btn-default"
+                    class="btn btn-outline-secondary"
             </#if><#t/>
             <#if parameters.buttonCssStyle??><#t/>
                     style="${parameters.buttonCssStyle}"
@@ -77,15 +78,15 @@
                     title="${addLabel}"
                     onclick="addOption(document.getElementById('${parameters.id}_input'), document.getElementById('${parameters.id}'))"
                     ><#t/>
-                <span class="glyphicon glyphicon-plus"></span>
+                <span class="bi bi-plus-circle"></span>
             </button>
         <#t/>
         <#assign removeLabel=parameters.removeLabel?default("Remove") /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
-                    class="btn btn-default ${parameters.buttonCssClass}"
+                    class="btn ${parameters.buttonCssClass}"
             <#else><#t/>
-                    class="btn btn-default"
+                    class="btn btn-outline-secondary"
             </#if><#t/>
             <#if parameters.buttonCssStyle??><#t/>
                     style="${parameters.buttonCssStyle}"
@@ -93,15 +94,15 @@
                     title="${removeLabel}"
                     onclick="removeOptions(document.getElementById('${parameters.id}'))"
                     ><#t/>
-                <span class="glyphicon glyphicon-remove"></span>
+                <span class="bi bi-dash-circle"></span>
             </button>
         <#t/>
         <#assign removeAllLabel=parameters.removeAllLabel?default("Remove all") /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
-                    class="btn btn-default ${parameters.buttonCssClass}"
+                    class="btn ${parameters.buttonCssClass}"
             <#else><#t/>
-                    class="btn btn-default"
+                    class="btn btn-outline-secondary"
             </#if><#t/>
             <#if parameters.buttonCssStyle??><#t/>
                     style="${parameters.buttonCssStyle}"
@@ -109,7 +110,7 @@
                     title="${removeAllLabel}"
                     onclick="removeAllOptions(document.getElementById('${parameters.id}'))"
                     ><#t/>
-                <span class="glyphicon glyphicon-remove-circle"></span>
+                <span class="bi bi-dash-circle-fill"></span>
             </button>
         </div>
     </div>
@@ -121,7 +122,7 @@
     <#if parameters.allowUpDown?default(true)>
         <div class="text-center">
             <div class="btn-group transferselect-btn transferselect-btn-bottom">
-                <button type="button" class="btn btn-default"
+                <button type="button" class="btn btn-outline-secondary"
                     <#if parameters.downLabel??>
                         title="${parameters.downLabel}"
                     </#if>
@@ -131,9 +132,9 @@
                         onclick="moveOptionDown(document.getElementById('${parameters.id}'), 'key', '');"
                     </#if>
                         ><#t/>
-                    <span class="glyphicon glyphicon-arrow-down"></span>
+                    <span class="bi bi-arrow-down-circle"></span>
                 </button>
-                <button type="button" class="btn btn-default"
+                <button type="button" class="btn btn-outline-secondary"
                     <#if parameters.downLabel??>
                         title="${parameters.upLabel}"
                     </#if>
@@ -143,7 +144,7 @@
                         onclick="moveOptionUp(document.getElementById('${parameters.id}'), 'key', '');"
                     </#if>
                         ><#t/>
-                    <span class="glyphicon glyphicon-arrow-up"></span>
+                    <span class="bi bi-arrow-up-circle"></span>
                 </button>
             </div>
         </div>

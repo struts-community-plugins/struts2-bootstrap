@@ -23,7 +23,7 @@
 <script type="text/javascript">
     if (typeof jQuery != 'undefined') {
         if (typeof jQuery.fn.tooltip == 'function') {
-            jQuery('i.s2b_tooltip').tooltip();
+            jQuery('[data-toggle="tooltip"]').tooltip();
         }
     }
 </script>

@@ -39,8 +39,7 @@
         <#assign disabled="disabled"/><#lt/>
     </#if>
 <div class="form-check ${inline!""} ${disabled!""}"><#lt/>
-    <label for="${parameters.name}-${itemCount}" class="form-check-label">
-        <input type="radio" class="form-check-input"<#rt/>
+        <input type="radio" class="form-check-input" <#t/>
             <#if parameters.name??>
                name="${parameters.name}" <#t/>
             </#if>
@@ -67,6 +66,7 @@
             <#include "/${parameters.templateDir}/simple/scripting-events.ftl" />
             <#include "/${parameters.templateDir}/simple/common-attributes.ftl" />
         /><#lt/>
+    <label for="${parameters.name}-${itemCount}" class="form-check-label">
         ${itemValue}
     </label>
 </div><#lt/>

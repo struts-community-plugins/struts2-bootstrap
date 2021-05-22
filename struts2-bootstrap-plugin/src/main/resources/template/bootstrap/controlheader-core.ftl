@@ -22,8 +22,6 @@
 	Only show message if errors are available.
 	This will be done if ActionSupport is used.
 -->
-<!-- s2b_form_element_class:  <@s.property value="#s2b_form_element_class" /> -->
-<!-- s2b_form_element_class:  <@s.property value="s2b_form_element_class" /> -->
 
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#assign formControlClass = "form-control"/>
@@ -41,12 +39,18 @@
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
     <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
 <#else>
-    <#assign formGroupCssClass ></#assign><#rt/>
+    <@s.if test="#s2b_form_class == 'form-horizontal'">
+        <#assign formGroupCssClass >row</#assign><#rt/>
+    </@s.if><#rt/>
+    <@s.else>
+        <#assign formGroupCssClass ></#assign><#rt/>
+    </@s.else><#rt/>
 </#if><#rt/>
 
+<@s.if test="#s2b_form_element_class != 'form-inline'">
 <div class="form-group ${formGroupCssClass?html} <#rt/>
-<#if hasFieldErrors> 
- has-error has-feedback<#rt/>
+<#if hasFieldErrors>
+ is-invalid <#rt/>
 </#if>
 "><#rt/>
 <#if parameters.label??>
@@ -55,14 +59,14 @@
            for="${parameters.id}" <#rt/>
         </#if>
             ><#rt/>
-        <#if parameters.required!false && parameters.requiredposition!"right" != 'right'>
-            <span class="required">*</span><#rt/>
+        <#if (parameters.required!false) && ((parameters.requiredPosition!"right") != 'right')>
+            <span class="required">*</span>
         </#if>
     ${parameters.label}<#t/>
-        <#if parameters.required!false && parameters.requiredposition!"right" == 'right'>
-            <span class="required">*</span><#rt/>
+        <#if (parameters.required!false) && ((parameters.requiredPosition!"right") == 'right')>
+            <span class="required">*</span>
         </#if>
-    ${parameters.labelseparator!""}<#rt/>
+    ${parameters.labelseparator!""}
         <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
     </label><#rt/>
 </#if>
@@ -71,3 +75,4 @@
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
         <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>
+</@s.if>

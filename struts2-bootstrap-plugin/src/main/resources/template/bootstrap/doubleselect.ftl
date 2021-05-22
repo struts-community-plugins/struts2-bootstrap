@@ -20,4 +20,4 @@
 -->
 <#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/simple/doubleselect.ftl" />
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
+<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />

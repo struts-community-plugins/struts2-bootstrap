@@ -18,35 +18,6 @@
  * under the License.
  */
 -->
-<#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
-<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
-    <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
-<#else>
-    <#assign formGroupCssClass ></#assign><#rt/>
-</#if><#rt/>
-
-<div class="form-group ${formGroupCssClass?html} <#rt/>
-    <#if hasFieldErrors>
-        has-error has-feedback<#t/>
-    </#if>
-    ${parameters.cssClass?default('')}" <#t/>
-    <#if parameters.cssStyle??>
-        style="${parameters.cssStyle}" <#t/>
-    </#if>
->
-    <#if parameters.label??>
-        <label class="<@s.property value="#s2b_form_label_class" />" >
-            <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-                <span class="required">*</span><#rt/>
-            </#if>
-            ${parameters.label}<#rt/>
-            <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
-                <span class="required">*</span> <#rt/>
-            </#if>
-            ${parameters.labelseparator?default("")}<#t/>
-            <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" /><#lt/>
-        </label>
-    </#if>
-    <div class="<@s.property value="#s2b_form_element_class" /> controls">
+<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
 <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>

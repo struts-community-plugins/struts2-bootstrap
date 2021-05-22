@@ -21,13 +21,14 @@
 ${parameters.after?if_exists}<#t/>
 <#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
 <#if hasFieldErrors>
-<span class="glyphicon glyphicon-remove form-control-feedback"></span>
     <#list fieldErrors[parameters.name] as error>
-    <span class="form-text alert-danger">${error}</span><#t/>
+<div class="invalid-feedback">${error}</div><#t/>
     </#list>
 </#if>
 <#if helpText??>
-<span class="form-text">${helpText}</span>
+<small class="form-text text-muted">${helpText}</small>
 </#if>
+<@s.if test="#s2b_form_element_class != 'form-inline'">
 </div>
 </div>
+</@s.if>

@@ -22,17 +22,26 @@
 <#assign struts2BootstrapVersion="${version}">
 
 <#if parameters.compressed?default(true)>
-    <#assign jsFile="bootstrap.min.js">
+    <#assign jsFile="bootstrap.bundle.min.js">
     <#assign cssFile="bootstrap.min.css">
+    <#assign cssIconsFile="bootstrap-icons.css">
+    <#assign validationFile="validation.min.js">
 <#else>
-    <#assign jsFile="bootstrap.js">
+    <#assign jsFile="bootstrap.bundle.js">
     <#assign cssFile="bootstrap.css">
+    <#assign cssIconsFile="bootstrap-icons.css">
+    <#assign validationFile="validation.js">
 </#if>
 
 <#if parameters.includeScripts?default(true)>
-<script type="text/javascript" src="${base}/struts/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"></script>
+<script src="${base}/struts/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"></script>
+</#if>
+<#if parameters.includeScriptsValidation?default(true)>
+<script src="${base}/struts/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"></script>
 </#if>
 <#if parameters.includeStyles?default(true)>
 <link id="bootstrap_styles" rel="stylesheet"
       href="${base}/struts/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+<link id="bootstrap_styles_icons" rel="stylesheet"
+      href="${base}/struts/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>

@@ -31,10 +31,10 @@
     <#if parameters.cssStyle??>
             style="${parameters.cssStyle}"<#rt/>
     </#if>
-        >
+    role="alert">
     <#list actionErrors as message>
         <#if message?if_exists != "">
-            <p class="mb-0"><#if parameters.escape>${message!}<#else>${message!}</#if></p>
+            <div class="mb-0"><#if parameters.escape>${message!}<#else>${message!}</#if></div>
         </#if>
     </#list>
 </div>

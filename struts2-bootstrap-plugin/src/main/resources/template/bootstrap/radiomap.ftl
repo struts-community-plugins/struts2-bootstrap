@@ -37,7 +37,7 @@
 
 <div class="form-group ${formGroupCssClass?html} <#t/>
     <#if hasFieldErrors>
-        has-error has-feedback <#t/>
+        is-invalid invalid-feedback <#t/>
     </#if>
     ${parameters.cssClass!''}" <#t/>
     <#if parameters.cssStyle??>

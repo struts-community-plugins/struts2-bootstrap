@@ -31,10 +31,10 @@
     <#if parameters.cssStyle??>
             style="${parameters.cssStyle}"<#rt/>
     </#if>
-        >
+    role="alert">
     <#list actionMessages as message>
         <#if message?if_exists != "">
-            <p class="mb-0"><span class="ui-icon ui-icon-info" style="float: left; margin-right: 0.3em;"></span>
+            <p class="mb-0"><span class="bi bi-info-circle" style="float: left; margin-right: 0.3em;"></span>
                 <span><#if parameters.escape>${message!}<#else>${message!}</#if></span></p>
         </#if>
     </#list>

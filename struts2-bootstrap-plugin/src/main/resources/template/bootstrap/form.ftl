@@ -20,6 +20,7 @@
 -->
 
 <#if parameters.cssClass?? && parameters.cssClass?contains("form-horizontal") >
+    <@s.set var="s2b_form_class">form-horizontal</@s.set>
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["labelCssClass"]??)><#rt/>
         <#assign labelCssClass = parameters.dynamicAttributes.remove("labelCssClass")/><#rt/>
     <#else>
@@ -33,8 +34,14 @@
     <@s.set var="s2b_form_label_class">${labelCssClass}</@s.set>
     <@s.set var="s2b_form_element_class">${elementCssClass}</@s.set>
 <#else>
-    <@s.set var="s2b_form_label_class"> </@s.set>
-    <@s.set var="s2b_form_element_class"> </@s.set>
+    <@s.set var="s2b_form_class"></@s.set>
+    <#if parameters.cssClass?? && parameters.cssClass?contains("form-inline")>
+        <@s.set var="s2b_form_label_class">form-inline</@s.set>
+        <@s.set var="s2b_form_element_class">form-inline</@s.set>
+    <#else>
+        <@s.set var="s2b_form_label_class"> </@s.set>
+        <@s.set var="s2b_form_element_class"> </@s.set>
+    </#if>
 </#if>
 
 <#include "/${parameters.templateDir}/simple/form-common.ftl" />

@@ -26,7 +26,7 @@
 </#if><#rt/>
 <div class="form-group ${formGroupCssClass?html} <#t/>
     <#if hasFieldErrors> 
-        has-error has-feedback <#t/>
+        is-invalid invalid-feedback <#t/>
     </#if>
     ${parameters.cssClass?default('')}" <#t/>
     <#if parameters.cssStyle??>
@@ -37,20 +37,20 @@
     <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
     <#if parameters.labelposition?default("") == 'inline'>
-    <div class="checkbox-inline">
+    <div class="form-check-inline">
     <#else>
-    <div class="checkbox">
+    <div class="form-check">
     </#if>
     <#if parameters.label??>
-    <label <#rt/>
-        <#if parameters.id??>
-                for="${parameters.id}" <#t/>
-        </#if>
-    ><#lt/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
-            <span class="required">*</span><#rt/>
-        </#if>
-        <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
+         <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
+        <label <#rt/>
+                <#if parameters.id??>
+                    for="${parameters.id}" <#t/>
+                </#if>
+                class="form-check-label"><#lt/>
+            <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+                <span class="required">*</span><#rt/>
+            </#if>
         ${parameters.label}<#t/>
         <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
             <span class="required">*</span><#t/>

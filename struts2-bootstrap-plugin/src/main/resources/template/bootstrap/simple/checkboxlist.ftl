@@ -34,13 +34,11 @@
         </#if>
         <#assign itemKeyStr=itemKey.toString() />
         <#if parameters.labelposition?default("") == 'inline'>
-            <#assign labelClass="checkbox-inline"/>
+            <div class="form-check form-check-inline">
         <#else>
-            <#assign labelClass=""/>
-            <div class="checkbox">
+            <div class="form-check">
         </#if>
-        <label for="${parameters.name}-${itemCount}" class="${labelClass}">
-            <input type="checkbox" name="${parameters.name}" value="${itemKeyStr}" <#rt/>
+            <input type="checkbox" class="form-check-input" name="${parameters.name}" value="${itemKeyStr}" <#rt/>
                    id="${parameters.name}-${itemCount}" <#t/>
                 <#if tag.contains(parameters.nameValue, itemKey)>
                    checked="checked" <#t/>
@@ -54,12 +52,11 @@
                 <#include "/${parameters.templateDir}/simple/css.ftl" /> <#t/>
                 <#include "/${parameters.templateDir}/simple/scripting-events.ftl" /> <#t/>
                 <#include "/${parameters.templateDir}/simple/common-attributes.ftl" /> <#t/>
-            /><#lt/>
+            /> <#t/>
+        <label for="${parameters.name}-${itemCount}" class="form-check-label">
             ${itemValue}
         </label>
-        <#if parameters.labelposition?default("") != 'inline'>
-            </div>
-        </#if>
+        </div>
     </@s.iterator>
 <#else>
     &nbsp;

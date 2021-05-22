@@ -22,9 +22,11 @@
 <#if parameters.cssClass?? && !(hasFieldErrors && parameters.cssErrorClass??)>
  class="${formControlClass} ${parameters.cssClass}"<#rt/>
 <#elseif parameters.cssClass?? && (hasFieldErrors && parameters.cssErrorClass??)>
- class="${formControlClass} ${parameters.cssClass} ${parameters.cssErrorClass}"<#rt/>
+ class="${formControlClass} ${parameters.cssClass} is-invalid ${parameters.cssErrorClass}"<#rt/>
 <#elseif !(parameters.cssClass??) && (hasFieldErrors && parameters.cssErrorClass??)>
- class="${formControlClass} ${parameters.cssErrorClass}"<#rt/>
+ class="${formControlClass} is-invalid ${parameters.cssErrorClass}"<#rt/>
+<#elseif !(parameters.cssClass??) && hasFieldErrors>
+ class="${formControlClass} is-invalid"<#rt/>
 <#else>
  class="${formControlClass}"<#rt/>
 </#if>
