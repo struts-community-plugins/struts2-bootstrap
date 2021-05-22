@@ -108,9 +108,12 @@
                 <s:submit cssClass="btn btn-primary"/>
             </s:form>
 
-            <button  id="code1btn" class="btn">Code Example for Inline Form</button>
+            <hr>
+
+            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
             <div id="code1" class="collapse">
-                <pre>
+                <div class="card card-body">
+                    <pre>
 &lt;s:form theme=&quot;simple&quot; cssClass=&quot;well form-search&quot;&gt;
     &lt;s:textfield
             placeholder=&quot;Login&quot;
@@ -123,9 +126,11 @@
 
     &lt;s:submit cssClass=&quot;btn btn-primary&quot;/&gt;
 &lt;/s:form&gt;
-                </pre>
+                    </pre>
+                </div>
             </div>
 
+            <hr>
             <h2>Elements with Help Text, prepended text and appended text or prepended icon and appended icon</h2>
 
             <s:form theme="bootstrap" cssClass="well form-vertical">
@@ -152,16 +157,19 @@
 
                 <s:textfield
                         label="Textfield with appended icon"
-                        inputAppendIcon="user"
+                        inputAppendIcon="person"
                         name="appendIcon"/>
 
                 <s:submit cssClass="btn btn-primary"/>
                 <s:submit cssClass="btn btn-danger"/>
             </s:form>
 
-            <button  id="code2btn" class="btn">Code Example for Help Text, prepended text and appended text</button>
+            <hr>
+
+            <button id="code2btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code2" aria-expanded="false" aria-controls="code2">Code Example for Help Text, prepended text and appended text</button>
             <div id="code2" class="collapse">
-                <pre>
+                <div class="card card-body">
+                    <pre>
 &lt;s:form theme=&quot;bootstrap&quot; cssClass=&quot;well form-vertical&quot;&gt;
     &lt;s:textfield
             label=&quot;Name&quot;
@@ -182,8 +190,11 @@
     &lt;s:submit cssClass=&quot;btn btn-primary&quot;/&gt;
     &lt;s:submit cssClass=&quot;btn btn-danger&quot;/&gt;
 &lt;/s:form&gt;
-                </pre>
+                    </pre>
+                </div>
             </div>
+
+            <hr>
 
             <h2>A Bootstrap Form with jQuery AJAX Form</h2>
 
@@ -197,9 +208,12 @@
             </s:form>
             <div id="result"></div>
 
-            <button  id="code3btn" class="btn">Code Example for AJAX Form</button>
+            <hr>
+
+            <button id="code3btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code3" aria-expanded="false" aria-controls="code3">Code Example for AJAX Form</button>
             <div id="code3" class="collapse">
-                <pre>
+                <div class="card card-body">
+                    <pre>
 &lt;s:form action=&quot;echo&quot; theme=&quot;bootstrap&quot; cssClass=&quot;well form-vertical&quot; label=&quot;AJAX Echo Form&quot;&gt;
     &lt;s:textfield
             label=&quot;Enter your Name&quot;
@@ -209,8 +223,10 @@
     &lt;sj:submit targets=&quot;result&quot; effect=&quot;highlight&quot; cssClass=&quot;btn-success&quot;/&gt;
 &lt;/s:form&gt;
 &lt;div id=&quot;result&quot;&gt;&lt;/div&gt;
-                </pre>
+                    </pre>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -223,22 +239,6 @@
 </div>
 <!-- /container -->
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".collapse").collapse();
-        $("#code1btn").click(function () {
-            $('#code1').collapse('toggle')
-        });
-        $("#code2btn").click(function () {
-            $('#code2').collapse('toggle')
-        });
-        $("#code3btn").click(function () {
-            $('#code3').collapse('toggle')
-        });
-        $("#code4btn").click(function () {
-            $('#code4').collapse('toggle')
-        });
-    });
-</script>
+
 </body>
 </html>

@@ -64,7 +64,7 @@
                         </li>
                         <li class="nav-item">
                             <s:url var="vertical_url" action="vertical"/>
-                            <li><s:a href="%{vertical_url}" cssClass="nav-link">Vertical Form Layout</s:a></li>
+                            <s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a>
                         </li>
                         <li class="nav-item">
                             <s:url var="validation_url" action="validation"/>
@@ -117,32 +117,34 @@
                  />
             </s:form>
 
-            <button id="code1btn" class="btn">Code Example</button>
-            <div id="code1" class="collapse in">
-                <pre>
-                    &lt;s:form action=&quot;echo&quot; theme=&quot;bootstrap&quot; cssClass=&quot;form-horizontal&quot; label=&quot;Form with jQuery UI Elements&quot;&gt;
-                        &lt;sj:datepicker
-                                id=&quot;datepicker&quot;
-                                parentTheme=&quot;bootstrap&quot;
-                                label=&quot;Datepicker&quot;
-                                tooltip=&quot;Tooltip for Datepicker&quot;
-                                cssClass=&quot;form-control&quot;
-                                elementCssClass=&quot;col-sm-5&quot;
-                                showOn=&quot;focus&quot;
-                                inputAppendIcon=&quot;calendar&quot;
-                        /&gt;
-                        &lt;s:url id=&quot;languages_url&quot; action=&quot;languages&quot;/&gt;
-                        &lt;sj:autocompleter
-                                id=&quot;autocompleter&quot;
-                                parentTheme=&quot;bootstrap&quot;
-                                label=&quot;Autocompleter&quot;
-                                tooltip=&quot;Tooltip for Autocompleter&quot;
-                                cssClass=&quot;form-control&quot;
-                                href=&quot;%{languages_url}&quot;
-                                loadMinimumCount=&quot;1&quot;
-                         /&gt;
-                    &lt;/s:form&gt;
-                </pre>
+            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
+            <div id="code1" class="collapse">
+                <div class="card card-body">
+                    <pre>
+&lt;s:form action=&quot;echo&quot; theme=&quot;bootstrap&quot; cssClass=&quot;form-horizontal&quot; label=&quot;Form with jQuery UI Elements&quot;&gt;
+    &lt;sj:datepicker
+            id=&quot;datepicker&quot;
+            parentTheme=&quot;bootstrap&quot;
+            label=&quot;Datepicker&quot;
+            tooltip=&quot;Tooltip for Datepicker&quot;
+            cssClass=&quot;form-control&quot;
+            elementCssClass=&quot;col-sm-5&quot;
+            showOn=&quot;focus&quot;
+            inputAppendIcon=&quot;calendar&quot;
+    /&gt;
+    &lt;s:url id=&quot;languages_url&quot; action=&quot;languages&quot;/&gt;
+    &lt;sj:autocompleter
+            id=&quot;autocompleter&quot;
+            parentTheme=&quot;bootstrap&quot;
+            label=&quot;Autocompleter&quot;
+            tooltip=&quot;Tooltip for Autocompleter&quot;
+            cssClass=&quot;form-control&quot;
+            href=&quot;%{languages_url}&quot;
+            loadMinimumCount=&quot;1&quot;
+     /&gt;
+&lt;/s:form&gt;
+                    </pre>
+                </div>
             </div>
         </div>
 
@@ -156,13 +158,6 @@
 
 </div>
 <!-- /container -->
-<script type="text/javascript">
-    $(document).ready(function () {
-        $(".collapse").collapse();
-        $("#code1btn").click(function () {
-            $('#code1').collapse('toggle')
-        });
-    });
-</script>
+
 </body>
 </html>

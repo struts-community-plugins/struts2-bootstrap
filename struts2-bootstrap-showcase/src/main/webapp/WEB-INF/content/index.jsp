@@ -14,7 +14,9 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <sb:head includeScripts="false" />
+
+    <s:head />
+    <sb:head includeScripts="true" />
     <style type="text/css">
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -61,7 +63,7 @@
                         </li>
                         <li class="nav-item">
                             <s:url var="vertical_url" action="vertical"/>
-                            <li><s:a href="%{vertical_url}" cssClass="nav-link">Vertical Form Layout</s:a></li>
+                            <s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a>
                         </li>
                         <li class="nav-item">
                             <s:url var="validation_url" action="validation"/>
@@ -104,8 +106,8 @@
                         label="Name"
                         name="name"
                         formGroupCssClass="row"
-                        labelCssClass="col-sm-3 col-form-label col-form-label-sm"
-                        elementCssClass="col-sm-3"
+                        labelCssClass="col-sm-3 col-form-label"
+                        elementCssClass="col-sm-5"
                         cssClass="form-control-sm"
                         tooltip="Enter your Name here"/>
 
@@ -172,7 +174,7 @@
                         cssErrorClass="foo"/>
 
                 <s:checkbox
-                        tooltip="Confirmed that your are Over 18"
+                        tooltip="Confirm that your are over 18 years old"
                         label="Age 18+"
                         name="legalAge"
                         formGroupCssClass="row"/>
@@ -224,13 +226,13 @@
                         downLabel="Move down"
                         leftTitle="Add Character"
                         rightTitle="Existing Characters"
-                        list="{'Popeye', 'He-Man', 'Spiderman'}"
-                 />
+                        list="{'Popeye', 'He-Man', 'Spiderman'}"/>
 
                 <s:textarea
                         label="Your Thougths"
                         name="thoughts"
                         formGroupCssClass="row"
+                        labelCssClass="col-sm-3 col-form-label col-form-label-sm"
                         cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
 

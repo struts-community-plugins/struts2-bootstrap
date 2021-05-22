@@ -37,7 +37,7 @@ import org.apache.struts2.convention.annotation.Result;
         @ExpressionValidator(expression = "password.trim().length() > 5", message = "Password must have as minimum 6 Characters.")
 }, fieldExpressions = {
         @FieldExpressionValidator(fieldName = "password", expression = "password.trim().length() > 6", message = "Password must have as minimum 6 Characters."),
-        @FieldExpressionValidator(fieldName = "agree", expression = "agree == true", message = "Accept the Agreement.")
+        @FieldExpressionValidator(fieldName = "agree", expression = "agree == true", message = "You need to accept the Agreement!")
 })
 public class ValidationSubmit extends ActionSupport {
 

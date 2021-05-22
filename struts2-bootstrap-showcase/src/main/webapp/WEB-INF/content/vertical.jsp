@@ -61,7 +61,7 @@
                         </li>
                         <li class="nav-item">
                             <s:url var="vertical_url" action="vertical"/>
-                            <li><s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a></li>
+                            <s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a>
                         </li>
                         <li class="nav-item">
                             <s:url var="validation_url" action="validation"/>
@@ -132,7 +132,7 @@
                         cssErrorClass="foo"/>
 
                 <s:checkbox
-                        tooltip="Confirmed that your are Over 18"
+                        tooltip="Confirm that your are over 18 years old"
                         label="Age 18+"
                         name="legalAge"/>
 

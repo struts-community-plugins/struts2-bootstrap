@@ -65,7 +65,7 @@
                         </li>
                         <li class="nav-item">
                             <s:url var="vertical_url" action="vertical"/>
-                            <li><s:a href="%{vertical_url}" cssClass="nav-link">Vertical Form Layout</s:a></li>
+                            <s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a>
                         </li>
                         <li class="nav-item">
                             <s:url var="validation_url" action="validation"/>
