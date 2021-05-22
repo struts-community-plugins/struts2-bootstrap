@@ -73,9 +73,9 @@
 
         <tlib.version>2.3</tlib.version>
         <!-- dependencies -->
-        <struts2.version>2.5.16</struts2.version>
-        <log4j2.version>2.11.0</log4j2.version>
-        <freemarker.version>2.3.26-incubating</freemarker.version>
+        <struts2.version>2.5.26</struts2.version>
+        <log4j2.version>2.12.1</log4j2.version>
+        <freemarker.version>2.3.30</freemarker.version>
         <commons-io.version>2.5</commons-io.version>
         <velocity.version>1.7</velocity.version>
     </properties>
