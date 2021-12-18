@@ -18,4 +18,4 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/controlheader-core.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader-core.ftl" />

@@ -67,7 +67,7 @@
             <span class="required">*</span>
         </#if>
     ${parameters.labelseparator!""}
-        <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
+        <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
     </label><#rt/>
 </#if>
 <#lt/>

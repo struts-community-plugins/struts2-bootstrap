@@ -18,6 +18,6 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
-<#include "/${parameters.templateDir}/bootstrap/simple/checkboxlist.ftl" />
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/simple/checkboxlist.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" /><#nt/>

@@ -18,7 +18,7 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#inputtransferselect_js_included")??><#t/>
 <script type="text/javascript"
@@ -118,7 +118,7 @@
     <#if parameters.rightTitle??><#t/>
         <label for="rightTitle">${parameters.rightTitle}</label><br/>
     </#if><#t/>
-    <#include "/${parameters.templateDir}/bootstrap/simple/select.ftl" />
+    <#include "/${parameters.templateDir}/${parameters.expandTheme}/simple/select.ftl" />
     <#if parameters.allowUpDown?default(true)>
         <div class="text-center">
             <div class="btn-group transferselect-btn transferselect-btn-bottom">
@@ -151,4 +151,4 @@
     </#if>
     </div>
 </div>
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" /><#nt/>

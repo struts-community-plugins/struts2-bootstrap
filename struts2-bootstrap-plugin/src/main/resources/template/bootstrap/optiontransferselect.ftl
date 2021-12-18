@@ -20,7 +20,7 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#optiontransferselect_js_included")??><#t/>
 <script src="<@s.url value="/struts/optiontransferselect.js" encode='false' includeParams='none'/>"></script>
@@ -394,4 +394,4 @@
 </#if>
 </div>
 </div>
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" />

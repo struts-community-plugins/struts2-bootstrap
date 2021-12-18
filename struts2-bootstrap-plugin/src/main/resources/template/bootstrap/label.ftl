@@ -18,6 +18,6 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 <#include "/${parameters.templateDir}/simple/label.ftl" />
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" />

@@ -18,7 +18,7 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/controlheader.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 <#assign formControlClass = ""/>
 <#include "/${parameters.templateDir}/simple/file.ftl" />
-<#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" />

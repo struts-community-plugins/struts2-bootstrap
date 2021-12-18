@@ -53,4 +53,4 @@
     </#if>
 </#if>
 >
-<#include "/${parameters.templateDir}/bootstrap/control.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/control.ftl" />

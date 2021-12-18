@@ -18,7 +18,7 @@
  * under the License.
  */
 -->
-<#include "/${parameters.templateDir}/bootstrap/control-close.ftl" />
+<#include "/${parameters.templateDir}/${parameters.expandTheme}/control-close.ftl" />
 <#include "/${parameters.templateDir}/simple/form-close.ftl" />
 <script type="text/javascript">
     if (typeof jQuery != 'undefined') {

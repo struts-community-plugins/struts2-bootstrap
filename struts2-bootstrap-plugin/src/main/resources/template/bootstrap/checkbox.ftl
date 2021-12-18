@@ -22,7 +22,12 @@
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
     <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
 <#else>
-    <#assign formGroupCssClass ></#assign><#rt/>
+    <@s.if test="#s2b_form_class == 'form-horizontal'">
+        <#assign formGroupCssClass >row</#assign><#rt/>
+    </@s.if><#rt/>
+    <@s.else>
+        <#assign formGroupCssClass ></#assign><#rt/>
+    </@s.else><#rt/>
 </#if><#rt/>
 <div class="form-group ${formGroupCssClass?html} <#t/>
     <#if hasFieldErrors> 
@@ -42,7 +47,7 @@
     <div class="form-check">
     </#if>
     <#if parameters.label??>
-         <#include "/${parameters.templateDir}/bootstrap/simple/checkbox.ftl" />
+         <#include "/${parameters.templateDir}/${parameters.expandTheme}/simple/checkbox.ftl" />
         <label <#rt/>
                 <#if parameters.id??>
                     for="${parameters.id}" <#t/>
@@ -56,10 +61,10 @@
             <span class="required">*</span><#t/>
         </#if>
         ${parameters.labelseparator?default("")}<#t/>
-        <#include "/${parameters.templateDir}/bootstrap/tooltip.ftl" />
+        <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
     </#if>
     <#if parameters.label??>
     </label>
     </div><#t/>
     </#if>
-    <#include "/${parameters.templateDir}/bootstrap/controlfooter.ftl" /><#nt/>
+    <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlfooter.ftl" /><#nt/>
