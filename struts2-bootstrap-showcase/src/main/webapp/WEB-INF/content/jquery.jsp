@@ -104,6 +104,7 @@
                         elementCssClass="col-sm-5"
                         showOn="focus"
                         inputAppendIcon="calendar"
+                        autocomplete="off"
                 />
                 <s:url var="languages_url" action="languages"/>
                 <sj:autocompleter
@@ -114,6 +115,7 @@
                         cssClass="form-control"
                         href="%{languages_url}"
 	    	            loadMinimumCount="1"
+                        autocomplete="off"
                  />
             </s:form>
 
