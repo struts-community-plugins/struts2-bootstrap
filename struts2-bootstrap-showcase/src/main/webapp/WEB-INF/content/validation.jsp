@@ -11,11 +11,6 @@
     <meta name="description" content="Enable Client Side Validation - A Showcase for the Struts2 Bootstrap Plugin" />
     <title>Client Side Validation - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
     <s:head />
     <sj:head jqueryui="false"/>
     <sb:head includeScripts="true"/>

@@ -48,13 +48,13 @@
 </#if><#rt/>
 
 <@s.if test="#s2b_form_element_class != 'form-inline'">
-<div class="form-group ${formGroupCssClass?html} <#rt/>
+<div class="form-group ${formGroupCssClass} <#rt/>
 <#if hasFieldErrors>
  is-invalid <#rt/>
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="${labelCssClass?html}" <#t/>
+    <label class="${labelCssClass}" <#t/>
         <#if parameters.id??>
            for="${parameters.id}" <#rt/>
         </#if>
@@ -71,7 +71,7 @@
     </label><#rt/>
 </#if>
 <#lt/>
-    <div class="${elementCssClass?html}">
+    <div class="${elementCssClass}">
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
         <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>

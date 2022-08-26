@@ -29,7 +29,7 @@
         <#assign formGroupCssClass ></#assign><#rt/>
     </@s.else><#rt/>
 </#if><#rt/>
-<div class="form-group ${formGroupCssClass?html} <#t/>
+<div class="form-group ${formGroupCssClass} <#t/>
     <#if hasFieldErrors> 
         is-invalid invalid-feedback <#t/>
     </#if>

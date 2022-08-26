@@ -10,10 +10,6 @@
     <meta name="description" content="Customized Layouts - A Showcase for the Struts2 Bootstrap Plugin - About" />
     <title>Customized Layouts - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <sb:head includeScripts="true" includeStyles="true"/>
     <link rel="stylesheet" href="<s:url value="/styles/bootstrap-superhero.css" />" type="text/css"/>
     <style type="text/css">
@@ -140,7 +136,7 @@
 
                 <s:checkboxlist
                         tooltip="Checkboxes with inline position"
-                        labelposition="inline"
+                        labelPosition="inline"
                         label="Friends Inline"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friendsInline"/>
@@ -155,7 +151,7 @@
                 <s:radio
                         tooltip="Radio Buttons with inline position"
                         label="Best Friend Inline"
-                        labelposition="inline"
+                        labelPosition="inline"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriendInline"
                         cssErrorClass="foo"/>

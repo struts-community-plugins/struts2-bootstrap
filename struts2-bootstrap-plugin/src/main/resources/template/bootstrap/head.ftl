@@ -34,14 +34,14 @@
 </#if>
 
 <#if parameters.includeScripts?default(true)>
-<script src="${base}/struts/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"></script>
+<script src="${base}/static/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"></script>
 </#if>
 <#if parameters.includeScriptsValidation?default(true)>
-<script src="${base}/struts/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"></script>
+<script src="${base}/static/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"></script>
 </#if>
 <#if parameters.includeStyles?default(true)>
 <link id="bootstrap_styles" rel="stylesheet"
-      href="${base}/struts/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}/static/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 <link id="bootstrap_styles_icons" rel="stylesheet"
-      href="${base}/struts/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}/static/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>

@@ -34,26 +34,21 @@ import org.apache.struts2.views.TagLibraryModelProvider;
 import com.opensymphony.xwork2.util.ValueStack;
 
 /**
- * 
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
- * 
  */
 
 public class BootstrapTagLibrary implements TagLibraryDirectiveProvider, TagLibraryModelProvider {
 
-  public Object getModels(ValueStack stack, HttpServletRequest req, HttpServletResponse res)
-  {
-    return new BootstrapModels(stack, req, res);
-  }
+    public Object getModels(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
+        return new BootstrapModels(stack, req, res);
+    }
 
-  @SuppressWarnings("unchecked")
-  public List<Class> getDirectiveClasses()
-  {
-    Class[] directives =
-                         new Class[] {
-                             HeadDirective.class
-                         };
-    return Arrays.asList(directives);
-  }
+    @SuppressWarnings("unchecked")
+    public List<Class<?>> getDirectiveClasses() {
+        Class<?>[] directives = new Class[]{
+                HeadDirective.class
+        };
+        return Arrays.asList(directives);
+    }
 
 }

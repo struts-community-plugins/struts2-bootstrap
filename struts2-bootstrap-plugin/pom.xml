@@ -16,7 +16,7 @@
     <properties>
         <taglibs-standard.version>1.1.2</taglibs-standard.version>
         <jstl.version>1.1.2</jstl.version>
-        <struts-annotations.version>1.0.6</struts-annotations.version>
+        <struts-annotations.version>1.0.7</struts-annotations.version>
     </properties>
 
     <build>
@@ -100,9 +100,11 @@
             <artifactId>struts2-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-velocity-plugin</artifactId>
+            <version>${struts2.version}</version>
             <optional>true</optional>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
