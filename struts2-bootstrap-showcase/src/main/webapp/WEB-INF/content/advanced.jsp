@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
   
@@ -105,7 +105,7 @@
 
             <hr>
 
-            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
+            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
             <div id="code1" class="collapse">
                 <div class="card card-body">
                     <pre>
@@ -161,7 +161,7 @@
 
             <hr>
 
-            <button id="code2btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code2" aria-expanded="false" aria-controls="code2">Code Example for Help Text, prepended text and appended text</button>
+            <button id="code2btn" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#code2" aria-expanded="false" aria-controls="code2">Code Example for Help Text, prepended text and appended text</button>
             <div id="code2" class="collapse">
                 <div class="card card-body">
                     <pre>
@@ -205,7 +205,7 @@
 
             <hr>
 
-            <button id="code3btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code3" aria-expanded="false" aria-controls="code3">Code Example for AJAX Form</button>
+            <button id="code3btn" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#code3" aria-expanded="false" aria-controls="code3">Code Example for AJAX Form</button>
             <div id="code3" class="collapse">
                 <div class="card card-body">
                     <pre>

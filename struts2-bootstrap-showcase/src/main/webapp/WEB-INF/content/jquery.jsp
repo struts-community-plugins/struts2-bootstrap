@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
   
@@ -89,14 +89,12 @@
 
             <h2>A Bootstrap Form with jQuery UI Datepicker and jQuery UI Autocompleter</h2>
 
-            <s:form action="echo" theme="bootstrap" cssClass="form-horizontal" label="Form with jQuery UI Elements">
+            <s:form action="echo" theme="bootstrap" label="Form with jQuery UI Elements">
                 <sj:datepicker
                         id="datepicker"
                         parentTheme="bootstrap"
                         label="Datepicker"
                         tooltip="Tooltip for Datepicker"
-                        cssClass="form-control"
-                        elementCssClass="col-sm-5"
                         showOn="focus"
                         inputAppendIcon="calendar"
                         autocomplete="off"
@@ -107,14 +105,13 @@
                         parentTheme="bootstrap"
                         label="Autocompleter"
                         tooltip="Tooltip for Autocompleter"
-                        cssClass="form-control"
                         href="%{languages_url}"
 	    	            loadMinimumCount="1"
                         autocomplete="off"
                  />
             </s:form>
 
-            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-toggle="collapse" data-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
+            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
             <div id="code1" class="collapse">
                 <div class="card card-body">
                     <pre>

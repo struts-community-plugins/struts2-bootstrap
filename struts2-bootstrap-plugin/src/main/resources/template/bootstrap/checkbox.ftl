@@ -23,7 +23,7 @@
     <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
 <#else>
     <@s.if test="#s2b_form_class == 'form-horizontal'">
-        <#assign formGroupCssClass >row</#assign><#rt/>
+        <#assign formGroupCssClass >mb-3 row</#assign><#rt/>
     </@s.if><#rt/>
     <@s.else>
         <#assign formGroupCssClass ></#assign><#rt/>

@@ -25,7 +25,7 @@
         src="<@s.url value="/struts/inputtransferselect.js" encode='false' includeParams='none'/>"></script>
     <#assign temporaryVariable = stack.setValue("#inputtransferselect_js_included", "true") /><#t/>
 </#if><#t/>
-<div class="row">
+<div class="mb-3 row">
     <div class="col-md-5">
 
     <#if parameters.leftTitle??><#t/>

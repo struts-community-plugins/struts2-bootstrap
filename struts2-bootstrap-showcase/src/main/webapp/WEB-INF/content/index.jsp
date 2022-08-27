@@ -23,7 +23,7 @@
 
     <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
         <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
   
@@ -101,7 +101,6 @@
                 <s:textfield
                         label="Name"
                         name="name"
-                        formGroupCssClass="row"
                         labelCssClass="col-sm-3 col-form-label"
                         elementCssClass="col-sm-5"
                         cssClass="form-control-sm"
@@ -110,26 +109,22 @@
                 <s:password
                         label="Password"
                         name="password"
-                        formGroupCssClass="row"
                         tooltip="Enter your Password here"/>
 
                 <s:textfield
                         label="Textfield with Error"
-                        name="error"
-                        formGroupCssClass="row"/>
+                        name="error"/>
 
                 <s:textarea
                         tooltip="Enter your Biography"
                         label="Biography"
                         name="bio"
                         cols="20"
-                        rows="3"
-                        formGroupCssClass="row"/>
+                        rows="3"/>
 
                 <s:select
                         tooltip="Choose Your Favourite Color"
                         label="Favorite Color"
-                        formGroupCssClass="row"
                         elementCssClass="col-sm-4"
                         list="{'Red', 'Blue', 'Green'}"
                         name="favouriteColor"
@@ -140,7 +135,6 @@
                 <s:checkboxlist
                         tooltip="Choose your Friends"
                         label="Friends"
-                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friends"/>
 
@@ -148,14 +142,12 @@
                         tooltip="Checkboxes with inline position"
                         labelPosition="inline"
                         label="Friends Inline"
-                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friendsInline"/>
 
                 <s:radio
                         tooltip="Choose your Best Friend"
                         label="Best Friend"
-                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriend"
                         cssErrorClass="foo"/>
@@ -164,7 +156,6 @@
                         tooltip="Radio Buttons with inline position"
                         label="Best Friend Inline"
                         labelPosition="inline"
-                        formGroupCssClass="row"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriendInline"
                         cssErrorClass="foo"/>
@@ -172,8 +163,7 @@
                 <s:checkbox
                         tooltip="Confirm that your are over 18 years old"
                         label="Age 18+"
-                        name="legalAge"
-                        formGroupCssClass="row"/>
+                        name="legalAge"/>
 
                 <s:doubleselect
                         tooltip="Choose Your State"
@@ -190,8 +180,7 @@
                 <s:file
                         tooltip="Upload Your Picture"
                         label="Picture"
-                        name="picture"
-                        formGroupCssClass="row"/>
+                        name="picture"/>
 
                 <s:optiontransferselect
                         tooltip="Select Your Favourite Cartoon Characters"
@@ -227,16 +216,11 @@
                 <s:textarea
                         label="Your Thougths"
                         name="thoughts"
-                        formGroupCssClass="row"
                         labelCssClass="col-sm-3 col-form-label col-form-label-sm"
                         cssClass="input-xxlarge"
                         tooltip="Enter your thoughts here"/>
 
-                <div class="form-group row">
-                    <div class="offset-md-3 col-md-9">
-                        <s:submit cssClass="btn btn-primary"/>
-                    </div>
-                </div>
+                <s:submit cssClass="btn btn-primary"/>
             </s:form>
         </div>
     </div>
