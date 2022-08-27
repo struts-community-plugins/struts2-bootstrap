@@ -22,7 +22,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
     <dependency>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>struts2-bootstrap-plugin</artifactId>
-        <version>4.0.1</version>
+        <version>5.0.0</version>
     </dependency>
     ...
 </dependencies>
@@ -58,10 +58,6 @@ Include the Taglib and use the HeadTag to load necessary resources.
 <html lang="en">
 <head>
     ...
-    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <sb:head/>
 </head>
