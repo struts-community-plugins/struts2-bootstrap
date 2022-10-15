@@ -11,38 +11,15 @@
     <title>About - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
     <sb:head includeScripts="false"/>
-    <style type="text/css">
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <s:url var="index_url" action="index"/>
-                    <s:a href="%{index_url}" cssClass="nav-link">Home</s:a>
-                </li>
-                <li class="nav-item active">
-                    <s:url var="about_url" action="about"/>
-                    <s:a href="%{about_url}" cssClass="nav-link">About</s:a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/struts-community-plugins/struts2-bootstrap/" class="nav-link">Project</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<s:include value="includes/topMenu.jsp">
+    <s:param name="active">about</s:param>
+</s:include>
 
-<div class="container" role="main">
+
+<div class="col-md-12">
 
     <h1>About Struts2 Bootstrap Plugin</h1>
 
@@ -71,15 +48,8 @@
         <li><a href="http://www.jgeppert.com">Developer Homepage and Contact</a></li>
         <li><a href="http://twitter.com/jogep">Twitter News</a></li>
     </ul>
-
-    <footer class="footer" style="margin-top: 100px;">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-
-        <p>Created by <a href="http://twitter.com/jogep" target="_blank">@jogep</a>.</p>
-    </footer>
-
 </div>
 
-<!-- /container -->
+    <s:include value="includes/footer.jsp" />
 </body>
 </html>

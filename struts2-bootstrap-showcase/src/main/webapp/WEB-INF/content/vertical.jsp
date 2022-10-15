@@ -11,77 +11,18 @@
     <title>Vertical Form - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
     <sb:head includeScripts="false"/>
-    <style type="text/css">
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <s:url var="index_url" action="index"/>
-                    <s:a href="%{index_url}" cssClass="nav-link">Home</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:url var="about_url" action="about"/>
-                    <s:a href="%{about_url}" cssClass="nav-link">About</s:a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/struts-community-plugins/struts2-bootstrap/" class="nav-link">Project</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<s:include value="includes/topMenu.jsp">
+    <s:param name="active">home</s:param>
+</s:include>
 
-<div class="container">
-    <div class="row">
+
         <div class="col-md-3">
-            <div class="card">
-                <div class="card-header">
-                     Form Layouts
-                </div>
-                <div class="card-body">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <s:url var="index_url" action="index"/>
-                            <s:a href="%{index_url}" cssClass="nav-link">Horizontal Form Layout</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="vertical_url" action="vertical"/>
-                            <s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="validation_url" action="validation"/>
-                            <s:a href="%{validation_url}" cssClass="nav-link">Client Validation</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="advanced_url" action="advanced"/>
-                            <s:a href="%{advanced_url}" cssClass="nav-link">Advanced Examples</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="jquery_url" action="jquery"/>
-                            <s:a href="%{jquery_url}" cssClass="nav-link">Struts2 jQuery UI Form Elements</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="custom_url" action="custom"/>
-                            <s:a href="%{custom_url}" cssClass="nav-link">With Custom Theme</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="customlayout_url" action="customlayout"/>
-                            <s:a href="%{customlayout_url}" cssClass="nav-link">Multi Column Forms</s:a>
-                        </li>
-                    </ul> 
-                </div>
-            </div>
+            <s:include value="includes/menu.jsp">
+                <s:param name="active">vertical</s:param>
+            </s:include>
         </div>
         <div class="col-md-9">
 
@@ -177,15 +118,8 @@
                 </div>
             </s:form>
         </div>
-    </div>
 
-    <footer class="footer">
-        <p class="pull-right"><a href="#">Back to top</a></p>
+<s:include value="includes/footer.jsp" />
 
-        <p>Created by <a href="http://twitter.com/jogep" target="_blank">@jogep</a>.</p>
-    </footer>
-
-</div>
-<!-- /container -->
 </body>
 </html>

@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ taglib prefix="sj" uri="/struts-jquery-tags" %>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
+<%@ taglib prefix="sjg" uri="/struts-jquery-grid-tags" %>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,96 +14,41 @@
 
     <sj:head jqueryui="true"/>
     <sb:head includeScripts="true"/>
-    <style type="text/css">
-        body {
-            padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
-        }
-    </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <a class="navbar-brand" href="#">Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <s:url var="index_url" action="index"/>
-                    <s:a href="%{index_url}" cssClass="nav-link">Home</s:a>
-                </li>
-                <li class="nav-item">
-                    <s:url var="about_url" action="about"/>
-                    <s:a href="%{about_url}" cssClass="nav-link">About</s:a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://github.com/struts-community-plugins/struts2-bootstrap/" class="nav-link">Project</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<s:include value="includes/topMenu.jsp">
+    <s:param name="active">home</s:param>
+</s:include>
 
-<div class="container">
-    <div class="row">
         <div class="col-md-3">
-            <div class="card">
-                <div class="card-header">
-                     Form Layouts
-                </div>
-                <div class="card-body">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <s:url var="index_url" action="index"/>
-                            <s:a href="%{index_url}" cssClass="nav-link">Horizontal Form Layout</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="vertical_url" action="vertical"/>
-                            <s:a href="%{vertical_url}" cssClass="nav-link active">Vertical Form Layout</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="validation_url" action="validation"/>
-                            <s:a href="%{validation_url}" cssClass="nav-link">Client Validation</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="advanced_url" action="advanced"/>
-                            <s:a href="%{advanced_url}" cssClass="nav-link">Advanced Examples</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="jquery_url" action="jquery"/>
-                            <s:a href="%{jquery_url}" cssClass="nav-link active">Struts2 jQuery UI Form Elements</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="custom_url" action="custom"/>
-                            <s:a href="%{custom_url}" cssClass="nav-link">With Custom Theme</s:a>
-                        </li>
-                        <li class="nav-item">
-                            <s:url var="customlayout_url" action="customlayout"/>
-                            <s:a href="%{customlayout_url}" cssClass="nav-link">Multi Column Forms</s:a>
-                        </li>
-                    </ul> 
-                </div>
-            </div>
+            <s:include value="includes/menu.jsp">
+                <s:param name="active">jquery</s:param>
+            </s:include>
         </div>
         <div class="col-md-9">
 
-            <h2>A Bootstrap Form with jQuery UI Datepicker and jQuery UI Autocompleter</h2>
+            <h2>A Bootstrap Form with jQuery UI Form Elements</h2>
 
-            <s:form action="echo" theme="bootstrap" label="Form with jQuery UI Elements">
+            <s:form action="echo" label="Form with jQuery UI Datepicker and Autocompleter" theme="bootstrap" cssClass="form-horizontal">
                 <sj:datepicker
                         id="datepicker"
                         parentTheme="bootstrap"
                         label="Datepicker"
+                        labelCssClass="col-sm-3 col-form-label"
+                        elementCssClass="col-sm-5"
+                        cssClass="form-control-sm"
                         tooltip="Tooltip for Datepicker"
                         showOn="focus"
-                        inputAppendIcon="calendar"
                         autocomplete="off"
                 />
                 <s:url var="languages_url" action="languages"/>
                 <sj:autocompleter
                         id="autocompleter"
                         parentTheme="bootstrap"
+                        labelCssClass="col-sm-3 col-form-label"
+                        elementCssClass="col-sm-5"
+                        cssClass="form-control-sm"
                         label="Autocompleter"
                         tooltip="Tooltip for Autocompleter"
                         href="%{languages_url}"
@@ -110,6 +56,8 @@
                         autocomplete="off"
                  />
             </s:form>
+
+            <hr>
 
             <button id="code1btn" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#code1" aria-expanded="false" aria-controls="code1">Code Example for Inline Form</button>
             <div id="code1" class="collapse">
@@ -140,18 +88,111 @@
                     </pre>
                 </div>
             </div>
+
+            <hr>
+
+            <h2>A free jqGrid component with guiStyle=bootstrap</h2>
+
+
+            <s:url var="remoteurl" action="grid-data-provider" namespace="/">
+                <s:param name="loadonce" value="%{true}"/>
+            </s:url>
+            <sjg:grid
+                    id="gridloadtable"
+                    loadonce="true"
+                    guiStyle="bootstrap"
+                    caption="Grid Examples based on free jqGrid with guiStyle=bootstrap"
+                    href="%{remoteurl}"
+                    gridModel="gridModel"
+                    rowNum="-1"
+                    hidegrid="true"
+                    scroll="true"
+                    altRows="true"
+                    sortable="true"
+                    sortableOpacity="0.8"
+                    sortablePlaceholder="ui-state-highlight"
+                    sortableForcePlaceholderSize="true"
+            >
+                <sjg:gridColumn name="id" index="id" key="true" title="ID" width="30" formatter="integer" sortable="true"
+                                sorttype="int"/>
+                <sjg:gridColumn name="name" index="name" title="Company" width="250" sortable="true"/>
+                <sjg:gridColumn name="lastName" index="lastName" title="Last Name" sortable="true" hidden="true"/>
+                <sjg:gridColumn name="firstName" index="firstName" title="First Name" sortable="true" hidden="true"/>
+                <sjg:gridColumn name="addressLine1" index="addressLine1" title="Adress" sortable="true" hidden="true"/>
+                <sjg:gridColumn name="country" index="country" title="Country" sortable="true"/>
+                <sjg:gridColumn name="city" index="city" title="City" sortable="true"/>
+                <sjg:gridColumn name="creditLimit"
+                                index="creditLimit"
+                                title="Credit Limit"
+                                align="right"
+                                editable="true"
+                                editrules="{
+    									number: true,
+    									required: true,
+    									minValue : 100.0,
+    									maxValue : 10000.0
+    								}"
+                                formatter="currency"
+                                sortable="true"
+                                sorttype="currency"/>
+            </sjg:grid>
+
+            <hr>
+
+            <button id="code1btn" type="button" class="btn btn-outline-secondary" data-bs-toggle="collapse" data-bs-target="#code2" aria-expanded="false" aria-controls="code2">Code Example for jqGrid</button>
+            <div id="code2" class="collapse">
+                <div class="card card-body">
+                    <pre>
+&lt;s:url var=&quot;remoteurl&quot; action=&quot;grid-data-provider&quot; namespace=&quot;/&quot;&gt;
+    &lt;s:param name=&quot;loadonce&quot; value=&quot;%{true}&quot;/&gt;
+&lt;/s:url&gt;
+&lt;sjg:grid
+        id=&quot;gridloadtable&quot;
+        loadonce=&quot;true&quot;
+        guiStyle=&quot;bootstrap&quot;
+        caption=&quot;Grid Examples based on free jqGrid with guiStyle=bootstrap&quot;
+        href=&quot;%{remoteurl}&quot;
+        gridModel=&quot;gridModel&quot;
+        rowNum=&quot;-1&quot;
+        hidegrid=&quot;true&quot;
+        scroll=&quot;true&quot;
+        altRows=&quot;true&quot;
+        sortable=&quot;true&quot;
+        sortableOpacity=&quot;0.8&quot;
+        sortablePlaceholder=&quot;ui-state-highlight&quot;
+        sortableForcePlaceholderSize=&quot;true&quot;
+&gt;
+    &lt;sjg:gridColumn name=&quot;id&quot; index=&quot;id&quot; key=&quot;true&quot; title=&quot;ID&quot; width=&quot;30&quot; formatter=&quot;integer&quot; sortable=&quot;true&quot;
+                    sorttype=&quot;int&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;name&quot; index=&quot;name&quot; title=&quot;Company&quot; width=&quot;250&quot; sortable=&quot;true&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;lastName&quot; index=&quot;lastName&quot; title=&quot;Last Name&quot; sortable=&quot;true&quot; hidden=&quot;true&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;firstName&quot; index=&quot;firstName&quot; title=&quot;First Name&quot; sortable=&quot;true&quot; hidden=&quot;true&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;addressLine1&quot; index=&quot;addressLine1&quot; title=&quot;Adress&quot; sortable=&quot;true&quot; hidden=&quot;true&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;country&quot; index=&quot;country&quot; title=&quot;Country&quot; sortable=&quot;true&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;city&quot; index=&quot;city&quot; title=&quot;City&quot; sortable=&quot;true&quot;/&gt;
+    &lt;sjg:gridColumn name=&quot;creditLimit&quot;
+                    index=&quot;creditLimit&quot;
+                    title=&quot;Credit Limit&quot;
+                    align=&quot;right&quot;
+                    editable=&quot;true&quot;
+                    editrules=&quot;{
+                            number: true,
+                            required: true,
+                            minValue : 100.0,
+                            maxValue : 10000.0
+                        }&quot;
+                    formatter=&quot;currency&quot;
+                    sortable=&quot;true&quot;
+                    sorttype=&quot;currency&quot;/&gt;
+&lt;/sjg:grid&gt;
+                    </pre>
+                </div>
+            </div>
+
+            <hr>
+
         </div>
 
-    </div>
-
-    <footer class="footer">
-        <p class="pull-right"><a href="#">Back to top</a></p>
-
-        <p>Created by <a href="http://twitter.com/jogep" target="_blank">@jogep</a>.</p>
-    </footer>
-
-</div>
-<!-- /container -->
-
+<s:include value="includes/footer.jsp" />
 </body>
 </html>
