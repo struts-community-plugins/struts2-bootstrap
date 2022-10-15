@@ -14,8 +14,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <struts2-jquery-plugin.version>5.0.0</struts2-jquery-plugin.version>
-        <asm.version>5.2</asm.version>
+        <struts2-jquery-plugin.version>5.0.1</struts2-jquery-plugin.version>
         <jetty-maven-plugin.version>9.4.8.v20171121</jetty-maven-plugin.version>
     </properties>
 
@@ -71,6 +70,10 @@
             <groupId>com.jgeppert.struts2.jquery</groupId>
             <artifactId>struts2-jquery-plugin</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.jgeppert.struts2.jquery</groupId>
+            <artifactId>struts2-jquery-grid-plugin</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.struts</groupId>
@@ -99,6 +102,11 @@
             <dependency>
                 <groupId>com.jgeppert.struts2.jquery</groupId>
                 <artifactId>struts2-jquery-plugin</artifactId>
+                <version>${struts2-jquery-plugin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jgeppert.struts2.jquery</groupId>
+                <artifactId>struts2-jquery-grid-plugin</artifactId>
                 <version>${struts2-jquery-plugin.version}</version>
             </dependency>
 
