@@ -76,7 +76,7 @@
 
                 <s:checkboxlist
                         tooltip="Checkboxes with inline position"
-                        labelPosition="inline"
+                        labelPosition="left"
                         label="Friends Inline"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friendsInline"/>
@@ -91,7 +91,7 @@
                 <s:radio
                         tooltip="Radio Buttons with inline position"
                         label="Best Friend Inline"
-                        labelPosition="inline"
+                        labelPosition="left"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriendInline"
                         cssErrorClass="foo"/>

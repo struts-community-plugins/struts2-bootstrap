@@ -41,7 +41,7 @@
     <div class="<@s.property value="#s2b_form_label_class" />"></div>
     <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
-    <#if parameters.labelposition?default("") == 'inline'>
+    <#if parameters.labelPosition?default("") == 'left'>
     <div class="form-check-inline">
     <#else>
     <div class="form-check">

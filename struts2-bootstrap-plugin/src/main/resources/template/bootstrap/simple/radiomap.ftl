@@ -32,7 +32,7 @@
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-    <#if (parameters.labelposition!"") == 'inline'>
+    <#if parameters.labelPosition?default("") == 'left'>
         <#assign inline="form-check-inline"/><#lt/>
     </#if>
     <#if parameters.disabled!false>
