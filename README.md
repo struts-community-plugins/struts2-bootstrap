@@ -110,7 +110,7 @@ Include the Taglib and use the HeadTag to load necessary resources.
 
                 <s:checkboxlist
                         tooltip="Checkboxes with inline position"
-                        labelposition="inline"
+                        labelPosition="left"
                         label="Friends Inline"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="friendsInline"/>
@@ -125,7 +125,7 @@ Include the Taglib and use the HeadTag to load necessary resources.
                 <s:radio
                         tooltip="Radio Buttons with inline position"
                         label="Best Friend Inline"
-                        labelposition="inline"
+                        labelPosition="left"
                         list="{'Wes', 'Patrick', 'Jason', 'Jay', 'Toby', 'Rene'}"
                         name="bestFriend"
                         cssErrorClass="foo"/>

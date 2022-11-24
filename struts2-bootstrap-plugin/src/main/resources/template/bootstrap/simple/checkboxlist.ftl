@@ -33,7 +33,7 @@
             <#assign itemValue = stack.findString('top')/>
         </#if>
         <#assign itemKeyStr=itemKey.toString() />
-        <#if parameters.labelposition?default("") == 'inline'>
+        <#if parameters.labelPosition?default("") == 'left'>
             <div class="form-check form-check-inline">
         <#else>
             <div class="form-check">
