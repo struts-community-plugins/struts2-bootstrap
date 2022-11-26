@@ -15,14 +15,12 @@
 
     <sj:head jqueryui="true"/>
     <sb:head includeScripts="true"/>
-
 </head>
 <body>
 
 <s:include value="includes/topMenu.jsp">
     <s:param name="active">home</s:param>
 </s:include>
-
 
         <div class="col-md-3">
             <s:include value="includes/menu.jsp">

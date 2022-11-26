@@ -11,7 +11,8 @@
     <title>Customized Layouts - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
     <sb:head includeScripts="true" includeStyles="true"/>
-    <link rel="stylesheet" href="<s:url value="/styles/bootstrap-superhero.css" />" type="text/css"/>
+    <s:set var="pageContextPath"><%=request.getContextPath()%></s:set>
+    <s:link href="%{#pageContextPath}/styles/bootstrap-superhero.css" type="text/css"/>
 </head>
 <body>
 

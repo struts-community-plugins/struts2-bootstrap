@@ -20,7 +20,7 @@
 -->
 <#if (actionMessages?? && actionMessages?size > 0 && !parameters.isEmptyList)>
 <div
-    <#if parameters.id?if_exists != "">
+    <#if parameters.id?has_content>
             id="${parameters.id}"<#rt/>
     </#if>
     <#if parameters.cssClass??>
@@ -33,7 +33,7 @@
     </#if>
     role="alert">
     <#list actionMessages as message>
-        <#if message?if_exists != "">
+        <#if message?has_content>
             <p class="mb-0"><span class="bi bi-info-circle" style="float: left; margin-right: 0.3em;"></span>
                 <span><#if parameters.escape>${message!}<#else>${message!}</#if></span></p>
         </#if>
