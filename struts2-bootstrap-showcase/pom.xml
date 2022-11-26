@@ -15,7 +15,7 @@
 
     <properties>
         <struts2-jquery-plugin.version>5.0.2</struts2-jquery-plugin.version>
-        <jetty-maven-plugin.version>11.0.14</jetty-maven-plugin.version>
+        <jetty-maven-plugin.version>9.4.46.v20220331</jetty-maven-plugin.version>
     </properties>
 
     <build>
@@ -42,17 +42,11 @@
                         <scanIntervalSeconds>10</scanIntervalSeconds>
                         <webAppSourceDirectory>${basedir}/src/main/webapp/</webAppSourceDirectory>
                         <webApp>
-                            <contextPath>/struts2-bootstrap-showcase</contextPath>
+                            <contextPath>/${project.artifactId}</contextPath>
                         </webApp>
                         <webAppConfig>
                             <descriptor>${basedir}/src/main/webapp/WEB-INF/web.xml</descriptor>
                         </webAppConfig>
-                        <systemProperties>
-                            <systemProperty>
-                                <name>xwork.loggerFactory</name>
-                                <value>com.opensymphony.xwork2.util.logging.log4j2.Log4j2LoggerFactory</value>
-                            </systemProperty>
-                        </systemProperties>
                     </configuration>
                 </plugin>
             </plugins>
