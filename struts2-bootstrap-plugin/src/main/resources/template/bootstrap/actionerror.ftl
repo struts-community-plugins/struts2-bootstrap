@@ -20,7 +20,7 @@
 -->
 <#if (actionErrors?? && actionErrors?size > 0 && !parameters.isEmptyList)>
 <div
-    <#if parameters.id?if_exists != "">
+    <#if parameters.id?has_content>
             id="${parameters.id}"<#rt/>
     </#if>
     <#if parameters.cssClass??>
@@ -33,7 +33,7 @@
     </#if>
     role="alert">
     <#list actionErrors as message>
-        <#if message?if_exists != "">
+        <#if message?has_content>
             <div class="mb-0"><#if parameters.escape>${message!}<#else>${message!}</#if></div>
         </#if>
     </#list>

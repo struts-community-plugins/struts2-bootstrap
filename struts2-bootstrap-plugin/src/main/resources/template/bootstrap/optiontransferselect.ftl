@@ -23,7 +23,7 @@
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#optiontransferselect_js_included")??><#t/>
-<script src="<@s.url value="/struts/optiontransferselect.js" encode='false' includeParams='none'/>"></script>
+<@s.script src="${base}${parameters.staticContentPath}/optiontransferselect.js" encode='false' includeParams='none'/>
     <#assign temporaryVariable = stack.setValue("#optiontransferselect_js_included", "true") /><#t/>
 </#if><#t/>
 <div class="row">
@@ -33,7 +33,7 @@
     <label for="leftTitle">${parameters.leftTitle}</label><br/>
 </#if><#t/>
 <#include "/${parameters.templateDir}/simple/select.ftl" />
-<#if parameters.allowUpDownOnLeft?default(true)>
+<#if parameters.allowUpDownOnLeft!true>
     <div class="text-center">
         <div class="btn-group transferselect-btn transferselect-btn-bottom">
             <button type="button" class="btn btn-outline-secondary"
@@ -59,8 +59,8 @@
 </div>
 <div class="col-md-2 text-center align-middle">
 <div class="btn-group-vertical transferselect-btn transferselect-btn-middle">
-<#if parameters.allowAddToLeft?default(true)><#t/>
-    <#assign addToLeftLabel = parameters.addToLeftLabel?default("To left")/><#t/>
+<#if parameters.allowAddToLeft!true><#t/>
+    <#assign addToLeftLabel = parameters.addToLeftLabel!"To left"/><#t/>
     <#if parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
@@ -93,8 +93,8 @@
     </button>
     </#if><#t/>
 </#if><#t/>
-<#if parameters.allowAddToRight?default(true)><#t/>
-    <#assign addToRightLabel=parameters.addToRightLabel?default("To right") /><#t/>
+<#if parameters.allowAddToRight!true><#t/>
+    <#assign addToRightLabel=parameters.addToRightLabel!"To right" /><#t/>
     <#if parameters.headerKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
@@ -127,8 +127,8 @@
     </button>
     </#if><#t/>
 </#if><#t/>
-<#if parameters.allowAddAllToLeft?default(true)><#t/>
-    <#assign addAllToLeftLabel=parameters.addAllToLeftLabel?default("All to left") /><#t/>
+<#if parameters.allowAddAllToLeft!true><#t/>
+    <#assign addAllToLeftLabel=parameters.addAllToLeftLabel!"All to left" /><#t/>
     <#if parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
@@ -161,8 +161,8 @@
     </button>
     </#if><#t/>
 </#if><#t/>
-<#if parameters.allowAddAllToRight?default(true)><#t/>
-    <#assign addAllToRightLabel=parameters.addAllToRightLabel?default("All to right") /><#t/>
+<#if parameters.allowAddAllToRight!true><#t/>
+    <#assign addAllToRightLabel=parameters.addAllToRightLabel!"All to right" /><#t/>
     <#if parameters.headerKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
@@ -195,8 +195,8 @@
     </button>
     </#if><#t/>
 </#if><#t/>
-<#if parameters.allowSelectAll?default(true)><#t/>
-    <#assign selectAllLabel=parameters.selectAllLabel?default("Select all") /><#t/>
+<#if parameters.allowSelectAll!true><#t/>
+    <#assign selectAllLabel=parameters.selectAllLabel!"Select all" /><#t/>
     <#if parameters.headerKey?? && parameters.doubleHeaderKey??><#t/>
     <button type="button"
         <#if parameters.buttonCssClass??><#t/>
@@ -266,14 +266,14 @@
     <label for="rightTitle">${parameters.rightTitle}</label><br/>
 </#if><#t/>
     <select
-            name="${parameters.doubleName?default("")}"
+            name="${parameters.doubleName!""}"
     <#if parameters.get("doubleSize")??><#t/>
             size="${parameters.get("doubleSize")}"
     </#if><#t/>
-    <#if parameters.doubleDisabled?default(false)><#t/>
+    <#if parameters.doubleDisabled!false><#t/>
             disabled="disabled"
     </#if><#t/>
-    <#if parameters.doubleMultiple?default(false)><#t/>
+    <#if parameters.doubleMultiple!false><#t/>
             multiple="multiple"
     </#if><#t/>
     <#if parameters.doubleTabindex??><#t/>
@@ -339,7 +339,7 @@
     <#if parameters.doubleHeaderKey?? && parameters.doubleHeaderValue??><#t/>
         <option value="${parameters.doubleHeaderKey}">${parameters.doubleHeaderValue}</option>
     </#if><#t/>
-    <#if parameters.doubleEmptyOption?default(false)><#t/>
+    <#if parameters.doubleEmptyOption!false><#t/>
         <option value=""></option>
     </#if><#t/>
     <@s.iterator value="parameters.doubleList"><#t/>
@@ -361,16 +361,16 @@
                 >${doubleItemValue}</option><#lt/>
     </@s.iterator><#t/>
     </select>
-<#if parameters.doubleMultiple?default(false)>
+<#if parameters.doubleMultiple!false>
     <input type="hidden" id="__multiselect_${parameters.doubleId}"
-           name="__multiselect_${parameters.doubleName?default("")}" value=""<#rt/>
-        <#if parameters.doubleDisabled?default(false)>
+           name="__multiselect_${parameters.doubleName!""}" value=""<#rt/>
+        <#if parameters.doubleDisabled!false>
            disabled="disabled"<#rt/>
         </#if>
             />
 </#if>
 
-<#if parameters.allowUpDownOnRight?default(true)>
+<#if parameters.allowUpDownOnRight!true>
     <div class="text-center">
         <div class="btn-group transferselect-btn transferselect-btn-bottom">
             <button type="button" class="btn btn-outline-secondary"

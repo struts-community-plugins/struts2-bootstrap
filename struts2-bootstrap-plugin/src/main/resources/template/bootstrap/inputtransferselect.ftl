@@ -21,8 +21,7 @@
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#inputtransferselect_js_included")??><#t/>
-<script type="text/javascript"
-        src="<@s.url value="/struts/inputtransferselect.js" encode='false' includeParams='none'/>"></script>
+<@s.script src="${base}${parameters.staticContentPath}/inputtransferselect.js" encode='false' includeParams='none'/>
     <#assign temporaryVariable = stack.setValue("#inputtransferselect_js_included", "true") /><#t/>
 </#if><#t/>
 <div class="mb-3 row">
@@ -34,11 +33,11 @@
 
 
         <input type="text"<#rt/>
-               name="${parameters.name?default("")}_input"<#rt/>
-        <#if parameters.disabled?default(false)>
+               name="${parameters.name!""}_input"<#rt/>
+        <#if parameters.disabled!false>
                disabled="disabled"<#rt/>
         </#if>
-        <#if parameters.readonly?default(false)>
+        <#if parameters.readonly!false>
                readonly="readonly"<#rt/>
         </#if>
         <#if parameters.tabindex??>
@@ -65,7 +64,7 @@
 
     <div class="col-md-2 text-center">
         <div class="btn-group-vertical transferselect-btn transferselect-btn-middle">
-        <#assign addLabel=parameters.addLabel?default("Add") /><#t/>
+        <#assign addLabel=parameters.addLabel!"Add" /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
                     class="btn ${parameters.buttonCssClass}"
@@ -81,7 +80,7 @@
                 <span class="bi bi-plus-circle"></span>
             </button>
         <#t/>
-        <#assign removeLabel=parameters.removeLabel?default("Remove") /><#t/>
+        <#assign removeLabel=parameters.removeLabel!"Remove" /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
                     class="btn ${parameters.buttonCssClass}"
@@ -97,7 +96,7 @@
                 <span class="bi bi-dash-circle"></span>
             </button>
         <#t/>
-        <#assign removeAllLabel=parameters.removeAllLabel?default("Remove all") /><#t/>
+        <#assign removeAllLabel=parameters.removeAllLabel!"Remove all" /><#t/>
             <button type="button"
             <#if parameters.buttonCssClass??><#t/>
                     class="btn ${parameters.buttonCssClass}"
@@ -119,7 +118,7 @@
         <label for="rightTitle">${parameters.rightTitle}</label><br/>
     </#if><#t/>
     <#include "/${parameters.templateDir}/${parameters.expandTheme}/simple/select.ftl" />
-    <#if parameters.allowUpDown?default(true)>
+    <#if parameters.allowUpDown!true>
         <div class="text-center">
             <div class="btn-group transferselect-btn transferselect-btn-bottom">
                 <button type="button" class="btn btn-outline-secondary"

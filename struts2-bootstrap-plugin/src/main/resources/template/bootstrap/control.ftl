@@ -21,7 +21,7 @@
 <@s.if test="#s2b_form_element_class != 'form-inline'">
 <fieldset>
 <#if parameters.label??>
-    <legend>${parameters.label?default("")}</legend>
+    <legend>${parameters.label!""}</legend>
 </#if>
 </@s.if>
 <@s.else>

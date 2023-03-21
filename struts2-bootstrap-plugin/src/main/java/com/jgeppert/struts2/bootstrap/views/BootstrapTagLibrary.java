@@ -43,7 +43,6 @@ public class BootstrapTagLibrary implements TagLibraryDirectiveProvider, TagLibr
         return new BootstrapModels(stack, req, res);
     }
 
-    @SuppressWarnings("unchecked")
     public List<Class<?>> getDirectiveClasses() {
         Class<?>[] directives = new Class[]{
                 HeadDirective.class

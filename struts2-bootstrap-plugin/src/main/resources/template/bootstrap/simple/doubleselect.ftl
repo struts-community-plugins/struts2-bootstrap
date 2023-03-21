@@ -31,54 +31,54 @@
 
 <br/>
 <select<#rt/>
-        name="${parameters.doubleName?default("")}"<#rt/>
-<#if parameters.disabled?default(false)>
-        disabled="disabled"<#rt/>
+ name="${parameters.doubleName!""}"<#rt/>
+<#if parameters.disabled!false>
+ disabled="disabled"<#rt/>
 </#if>
 <#if parameters.doubleTabindex??>
-        tabindex="${parameters.doubleTabindex}"<#rt/>
+ tabindex="${parameters.doubleTabindex}"<#rt/>
 </#if>
 <#if parameters.doubleId??>
-        id="${parameters.doubleId}"<#rt/>
+ id="${parameters.doubleId}"<#rt/>
 </#if>
 <#if parameters.doubleCss??>
-        class="form-control ${parameters.doubleCss}"<#rt/>
+ class="form-control ${parameters.doubleCss}"<#rt/>
 <#else>
-        class="form-control"<#rt/>
+ class="form-control"<#rt/>
 </#if>
 <#if parameters.doubleStyle??>
-        style="${parameters.doubleStyle}"<#rt/>
+ style="${parameters.doubleStyle}"<#rt/>
 </#if>
 <#if parameters.title??>
-        title="${parameters.title}"<#rt/>
+ title="${parameters.title}"<#rt/>
 </#if>
-<#if parameters.multiple?default(false)>
-        multiple="multiple"<#rt/>
+<#if parameters.multiple!false>
+ multiple="multiple"<#rt/>
 </#if>
 <#if parameters.get("doubleSize")??>
-        size="${parameters.get("doubleSize")}"<#rt/>
+ size="${parameters.get("doubleSize")}"<#rt/>
 </#if>
-<#if parameters.doubleMultiple?default(false)>
-        multiple="multiple"<#rt/>
+<#if parameters.doubleMultiple!false>
+ multiple="multiple"<#rt/>
 </#if>
-<#if parameters.doubleDisabled?default(false)>
-        disabled="disabled"<#rt/>
+<#if parameters.doubleDisabled!false>
+ disabled="disabled"<#rt/>
 </#if>
-        >
+>
 </select>
-<#if parameters.doubleMultiple?default(false)>
-<input type="hidden" id="__multiselect_${parameters.doubleId}"
-       name="__multiselect_${parameters.doubleName?default("")}" value=""<#rt/>
-    <#if parameters.doubleDisabled?default(false)>
-       disabled="disabled"<#rt/>
-    </#if>
-        />
+<#if parameters.doubleMultiple!false>
+<input type="hidden" id="__multiselect_${parameters.doubleId}"<#rt/>
+ name="__multiselect_${parameters.doubleName!""}" value=""<#rt/>
+<#if parameters.doubleDisabled!false>
+ disabled="disabled"<#rt/>
 </#if>
-<script type="text/javascript">
+/>
+</#if>
+<@s.script>
     <#assign itemCount = startCount/>
     var ${parameters.id}Group = new Array(${parameters.listSize} + ${startCount});
     for (i = 0; i < (${parameters.listSize} + ${startCount}); i++)
-        ${parameters.id}Group[i] = new Array();
+        ${parameters.id}Group[i] = [];
 
     <@s.iterator value="parameters.list">
         <#if parameters.listKey??>
@@ -134,13 +134,13 @@
                 </#if>
             </#if>
         ${parameters.id}Group[${itemCount}][${doubleItemCount}] = new Option("${doubleItemValue?js_string}", "${doubleItemKeyStr?js_string}");
-            <#if itemDoubleCssClass?if_exists != "">
+            <#if itemDoubleCssClass?has_content>
             ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("class", "${itemDoubleCssClass}");
             </#if>
-            <#if itemDoubleCssStyle?if_exists != "">
+            <#if itemDoubleCssStyle?has_content>
             ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("style", "${itemDoubleCssStyle}");
             </#if>
-            <#if itemDoubleTitle?if_exists != "">
+            <#if itemDoubleTitle?has_content>
             ${parameters.id}Group[${itemCount}][${doubleItemCount}].setAttribute("title", "${itemDoubleTitle}");
             </#if>
 
@@ -172,20 +172,20 @@
 
         for (i = 0; i < ${parameters.id}Group[x].length; i++) {
             ${parameters.id}Temp.options[i] = new Option(${parameters.id}Group[x][i].text, ${parameters.id}Group[x][i].value);
-        <#if parameters.doubleNameValue?exists>
-            <#if parameters.doubleMultiple?exists>
+        <#if parameters.doubleNameValue??>
+            <#if parameters.doubleMultiple??>
                 for (j = 0; j < ${parameters.doubleNameValue}.
                 length;
                 j++
             )
                 {
-                    if (${parameters.id}Temp.options[i].value == ${parameters.doubleNameValue?js_string}[j]) {
+                    if (${parameters.id}Temp.options[i].value === ${parameters.doubleNameValue?js_string}[j]) {
                         ${parameters.id}Temp.options[i].selected = true;
                         selected = true;
                     }
                 }
             <#else>
-                if (${parameters.id}Temp.options[i].value == '${parameters.doubleNameValue?js_string}') {
+                if (${parameters.id}Temp.options[i].value === '${parameters.doubleNameValue?js_string}') {
                     ${parameters.id}Temp.options[i].selected = true;
                     selected = true;
                 }
@@ -197,4 +197,4 @@
             ${parameters.id}Temp.options[0].selected = true;
         }
     }
-</script>
+</@s.script>

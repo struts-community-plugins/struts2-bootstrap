@@ -24,10 +24,10 @@
     <#if parameters.nameValue?? && parameters.nameValue>
         checked="checked" <#t/>
     </#if>
-    <#if parameters.disabled?default(false)>
+    <#if parameters.disabled!false>
         disabled="disabled" <#t/>
     </#if>
-    <#if parameters.readonly?default(false)>
+    <#if parameters.readonly!false>
         readonly="readonly" <#t/>
     </#if>
     <#if parameters.tabindex??>
@@ -46,7 +46,7 @@
 />
 <input type="hidden" id="__checkbox_${parameters.id}" name="__checkbox_${parameters.name}" <#rt/>
     value="${parameters.fieldValue}" <#t/>
-    <#if parameters.disabled?default(false)>
+    <#if parameters.disabled!false>
         disabled="disabled"<#rt/>
     </#if>
 />
