@@ -18,11 +18,12 @@
  * under the License.
  */
 -->
-${parameters.after?if_exists}<#t/>
-<#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
+${parameters.after!}<#rt/>
+<#assign hasFieldErrors = parameters.name?has_content && fieldErrors?has_content && fieldErrors.get("${parameters.name?j_string}")?has_content/><#rt/>
 <#if hasFieldErrors>
-    <#list fieldErrors[parameters.name] as error>
-<div class="invalid-feedback">${error}</div><#t/>
+    <#assign errors = fieldErrors.get(parameters.name?j_string) /><#rt/>
+    <#list errors as error>
+<div class="invalid-feedback">${error}</div>
     </#list>
 </#if>
 <#if helpText??>

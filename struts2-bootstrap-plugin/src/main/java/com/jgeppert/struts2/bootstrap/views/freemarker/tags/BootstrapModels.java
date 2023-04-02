@@ -19,36 +19,33 @@
 
 package com.jgeppert.struts2.bootstrap.views.freemarker.tags;
 
+import com.opensymphony.xwork2.util.ValueStack;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opensymphony.xwork2.util.ValueStack;
-
 /**
- * 
  * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
- * 
  */
 public class BootstrapModels {
-  protected HeadModel          head;
 
-  private ValueStack           stack;
-  private HttpServletRequest   req;
-  private HttpServletResponse  res;
+    protected HeadModel head;
 
-  public BootstrapModels(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
-    this.stack = stack;
-    this.req = req;
-    this.res = res;
-  }
+    private final ValueStack stack;
+    private final HttpServletRequest req;
+    private final HttpServletResponse res;
 
-  public HeadModel getHead()
-  {
-    if (head == null)
-    {
-      head = new HeadModel(stack, req, res);
+    public BootstrapModels(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {
+        this.stack = stack;
+        this.req = req;
+        this.res = res;
     }
 
-    return head;
-  }
+    public HeadModel getHead() {
+        if (head == null) {
+            head = new HeadModel(stack, req, res);
+        }
+
+        return head;
+    }
 }

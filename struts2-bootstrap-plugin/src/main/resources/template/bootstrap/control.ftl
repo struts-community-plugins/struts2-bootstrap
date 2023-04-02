@@ -20,5 +20,5 @@
 -->
 <fieldset>
 <#if parameters.label??>
-    <legend>${parameters.label?default("")}</legend>
+    <legend>${parameters.label!""}</legend>
 </#if>
