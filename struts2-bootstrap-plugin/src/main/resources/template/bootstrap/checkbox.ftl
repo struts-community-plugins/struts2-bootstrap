@@ -29,11 +29,11 @@
         <#assign formGroupCssClass ></#assign><#rt/>
     </@s.else><#rt/>
 </#if><#rt/>
-<div class="form-group ${formGroupCssClass?html} <#t/>
-    <#if hasFieldErrors> 
+<div class="form-group ${formGroupCssClass} <#t/>
+    <#if hasFieldErrors>
         is-invalid invalid-feedback <#t/>
     </#if>
-    ${parameters.cssClass?default('')}" <#t/>
+    ${parameters.cssClass!''}" <#t/>
     <#if parameters.cssStyle??>
         style="${parameters.cssStyle}" <#t/>
     </#if>
@@ -41,7 +41,7 @@
     <div class="<@s.property value="#s2b_form_label_class" />"></div>
     <div class="<@s.property value="#s2b_form_element_class" /> controls">
     <#lt/>
-    <#if parameters.labelposition?default("") == 'inline'>
+    <#if (parameters.labelPosition!"") == 'left'>
     <div class="form-check-inline">
     <#else>
     <div class="form-check">
@@ -53,14 +53,14 @@
                     for="${parameters.id}" <#t/>
                 </#if>
                 class="form-check-label"><#lt/>
-            <#if parameters.required?default(false) && parameters.requiredposition?default("right") != 'right'>
+            <#if (parameters.required!false) && ((parameters.requiredPosition!"right") != 'right')>
                 <span class="required">*</span><#rt/>
             </#if>
         ${parameters.label}<#t/>
-        <#if parameters.required?default(false) && parameters.requiredposition?default("right") == 'right'>
+        <#if (parameters.required!false) && ((parameters.requiredPosition!"right") == 'right')>
             <span class="required">*</span><#t/>
         </#if>
-        ${parameters.labelseparator?default("")}<#t/>
+        ${parameters.labelseparator!""}<#t/>
         <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
     </#if>
     <#if parameters.label??>
