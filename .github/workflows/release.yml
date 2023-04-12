@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3.5.0
+      uses: actions/checkout@v3.5.1
     - name: Configure Git User
       run: |
         git config user.email "actions@github.com"
