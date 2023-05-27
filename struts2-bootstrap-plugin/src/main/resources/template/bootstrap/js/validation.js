@@ -6,7 +6,7 @@
  * Requires use of jQuery.
  * Tested with jQuery 1.7
  *
- * Copyright (c) 2021 Johannes Geppert http://www.jgeppert.com
+ * Copyright (c) 2021 Johannes Geppert https://www.jgeppert.com
  *
  * Dual licensed under the MIT and GPL licenses:
  *   http://www.opensource.org/licenses/mit-license.php

@@ -30,7 +30,7 @@ import com.opensymphony.xwork2.util.ValueStack;
 
 /**
  * @see Head
- * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
+ * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>
  */
 public class HeadModel extends TagModel {
   public HeadModel(ValueStack stack, HttpServletRequest req, HttpServletResponse res) {

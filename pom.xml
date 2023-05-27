@@ -40,15 +40,15 @@
         <developer>
             <id>jogep</id>
             <name>Johannes Geppert</name>
-            <url>http://www.jgeppert.com</url>
-            <email>http://www.jgeppert.com/kontakt</email>
+            <url>https://www.jgeppert.com</url>
+            <email>https://www.jgeppert.com/kontakt</email>
         </developer>
     </developers>
 
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>

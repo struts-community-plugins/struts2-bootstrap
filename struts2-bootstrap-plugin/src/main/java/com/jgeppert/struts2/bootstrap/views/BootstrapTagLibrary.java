@@ -34,7 +34,7 @@ import org.apache.struts2.views.TagLibraryModelProvider;
 import com.opensymphony.xwork2.util.ValueStack;
 
 /**
- * @author <a href="http://www.jgeppert.com">Johannes Geppert</a>
+ * @author <a href="https://www.jgeppert.com">Johannes Geppert</a>
  */
 
 public class BootstrapTagLibrary implements TagLibraryDirectiveProvider, TagLibraryModelProvider {
