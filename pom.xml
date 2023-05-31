@@ -3,7 +3,7 @@
 
     <groupId>com.jgeppert.struts2.bootstrap</groupId>
     <artifactId>bootstrap</artifactId>
-    <version>5.0.2-SNAPSHOT</version>
+    <version>5.0.2</version>
 
     <packaging>pom</packaging>
     <name>Struts2 Bootstrap Plugin Parent Module</name>
