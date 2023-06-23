@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>bootstrap</artifactId>
-        <version>5.0.2</version>
+        <version>5.0.3-SNAPSHOT</version>
     </parent>
 
     <artifactId>struts2-bootstrap-showcase</artifactId>

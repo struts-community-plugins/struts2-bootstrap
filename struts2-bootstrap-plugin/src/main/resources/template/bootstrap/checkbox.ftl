@@ -18,7 +18,7 @@
  * under the License.
  */
 -->
-<#assign hasFieldErrors = fieldErrors?? && fieldErrors[parameters.name]??/>
+<#assign hasFieldErrors = fieldErrors?? && fieldErrors.get(parameters.name?j_string)??/>
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formGroupCssClass"]??)><#rt/>
     <#assign formGroupCssClass = parameters.dynamicAttributes.remove("formGroupCssClass")/><#rt/>
 <#else>
