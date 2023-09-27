@@ -14,6 +14,10 @@ on:
         description: "Default version to use for new local working copy."
         required: true
         default: "X.Y.Z-SNAPSHOT"
+      ref:
+        required: false
+        type: string
+        description: Git ref to checkout the source code
 
 permissions: write-all
 
@@ -23,6 +27,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4.1.0
+      with:
+        ref: ${{ inputs.ref }}
     - name: Configure Git User
       run: |
         git config user.email "actions@github.com"

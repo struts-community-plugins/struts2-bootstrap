@@ -8,10 +8,12 @@ on:
     branches:
       - master
       - release/5.0.x
+      - release/4.0.x
   pull_request:
     branches:
       - master
       - release/5.0.x
+      - release/4.0.x
 
 permissions: write-all
 
