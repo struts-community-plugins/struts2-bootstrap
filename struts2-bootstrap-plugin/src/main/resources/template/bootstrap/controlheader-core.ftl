@@ -46,6 +46,16 @@
         <#assign formGroupCssClass ></#assign><#rt/>
     </@s.else><#rt/>
 </#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formLabelCssClass"]??)><#rt/>
+    <#assign formLabelCssClass = parameters.dynamicAttributes.remove("formLabelCssClass")/><#rt/>
+<#else>
+    <@s.if test="#s2b_form_class == 'form-horizontal'">
+        <#assign formLabelCssClass >col-form-label</#assign><#rt/>
+    </@s.if><#rt/>
+    <@s.else>
+        <#assign formLabelCssClass >form-label</#assign><#rt/>
+    </@s.else><#rt/>
+</#if><#rt/>
 
 <@s.if test="#s2b_form_element_class != 'form-inline'">
 <div class="form-group ${formGroupCssClass} <#rt/>
@@ -69,6 +79,8 @@
     ${parameters.labelseparator!""}
         <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
     </label><#rt/>
+<#else>
+    <div class="${formLabelCssClass} ${labelCssClass}"></div>
 </#if>
 <#lt/>
     <div class="${elementCssClass}">
