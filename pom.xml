@@ -75,7 +75,7 @@
         <!-- dependencies -->
         <struts2.version>6.3.0.1</struts2.version>
         <log4j2.version>2.20.0</log4j2.version>
-        <freemarker.version>2.3.31</freemarker.version>
+        <freemarker.version>2.3.32</freemarker.version>
         <commons-io.version>2.8.0</commons-io.version>
         <velocity.version>1.7</velocity.version>
     </properties>
