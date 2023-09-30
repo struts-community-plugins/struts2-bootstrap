@@ -34,7 +34,7 @@
                         <#assign doneStartUlTag=true><#t/>
                     </#if><#t/>
                 <div
-                    <#if parameters.id?if_exists != "">
+                    <#if parameters.id?has_content>
                             id="${parameters.id}"<#rt/>
                     </#if>
                     <#if parameters.cssClass??>
@@ -47,7 +47,7 @@
                     </#if>
                         >
                     <#list eValue as eEachValue><#t/>
-                        <#if eEachValue?if_exists != "">
+                        <#if eEachValue?has_content>
                             <div><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
                         </#if>
                     </#list>
@@ -61,7 +61,7 @@
     <#else><#t/>
         <#if (eKeysSize > 0)><#t/>
         <div
-            <#if parameters.id?if_exists != "">
+            <#if parameters.id?has_content>
                     id="${parameters.id}"<#rt/>
             </#if>
             <#if parameters.cssClass??>
@@ -74,9 +74,9 @@
             </#if>
                 >
             <#list eKeys as eKey><#t/>
-                <#assign eValue = fieldErrors[eKey]><#t/>
+                <#assign eValue = fieldErrors.get(eKey?j_string)><#t/>
                 <#list eValue as eEachValue><#t/>
-                    <#if eEachValue?if_exists != "">
+                    <#if eEachValue?has_content>
                         <div class="mb-0"><#if parameters.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
                     </#if>
                 </#list>

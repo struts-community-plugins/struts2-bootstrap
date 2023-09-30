@@ -46,15 +46,25 @@
         <#assign formGroupCssClass ></#assign><#rt/>
     </@s.else><#rt/>
 </#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formLabelCssClass"]??)><#rt/>
+    <#assign formLabelCssClass = parameters.dynamicAttributes.remove("formLabelCssClass")/><#rt/>
+<#else>
+    <@s.if test="#s2b_form_class == 'form-horizontal'">
+        <#assign formLabelCssClass >col-form-label</#assign><#rt/>
+    </@s.if><#rt/>
+    <@s.else>
+        <#assign formLabelCssClass >form-label</#assign><#rt/>
+    </@s.else><#rt/>
+</#if><#rt/>
 
 <@s.if test="#s2b_form_element_class != 'form-inline'">
-<div class="form-group ${formGroupCssClass?html} <#rt/>
+<div class="${formGroupCssClass} <#rt/>
 <#if hasFieldErrors>
  is-invalid <#rt/>
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="${labelCssClass?html}" <#t/>
+    <label class="${formLabelCssClass} ${labelCssClass}" <#t/>
         <#if parameters.id??>
            for="${parameters.id}" <#rt/>
         </#if>
@@ -69,9 +79,11 @@
     ${parameters.labelseparator!""}
         <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
     </label><#rt/>
+<#else>
+    <div class="${formLabelCssClass} ${labelCssClass}"></div>
 </#if>
 <#lt/>
-    <div class="${elementCssClass?html}">
+    <div class="${elementCssClass}">
     <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["helpText"]??)><#rt/>
         <#assign helpText = parameters.dynamicAttributes.remove("helpText")/><#rt/>
     </#if><#rt/>

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>bootstrap</artifactId>
-        <version>4.0.1</version>
+        <version>4.0.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>struts2-bootstrap-plugin</artifactId>
@@ -100,9 +100,11 @@
             <artifactId>struts2-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.velocity</groupId>
-            <artifactId>velocity</artifactId>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-velocity-plugin</artifactId>
+            <version>${struts2.version}</version>
             <optional>true</optional>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

@@ -28,7 +28,7 @@
             <#assign itemKey = stack.findValue('top')/>
         </#if>
         <#if parameters.listValue??>
-            <#assign itemValue = stack.findString(parameters.listValue)?default("")/>
+            <#assign itemValue = stack.findString(parameters.listValue)!""/>
         <#else>
             <#assign itemValue = stack.findString('top')/>
         </#if>
@@ -43,7 +43,7 @@
                 <#if tag.contains(parameters.nameValue, itemKey)>
                    checked="checked" <#t/>
                 </#if>
-                <#if parameters.disabled?default(false)>
+                <#if parameters.disabled!false>
                    disabled="disabled" <#t/>
                 </#if>
                 <#if parameters.title??>
