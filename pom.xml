@@ -69,7 +69,7 @@
         <maven-site-plugin.version>3.12.1</maven-site-plugin.version>
         <maven-project-info-reports-plugin.version>2.9</maven-project-info-reports-plugin.version>
         <maven-surefire-plugin.version>2.20</maven-surefire-plugin.version>
-        <maven-war-plugin.version>3.1.0</maven-war-plugin.version>
+        <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
 
         <tlib.version>2.3</tlib.version>
         <!-- dependencies -->
