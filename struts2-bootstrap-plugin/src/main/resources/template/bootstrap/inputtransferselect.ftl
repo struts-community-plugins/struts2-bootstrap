@@ -22,7 +22,7 @@
 
 <#if !stack.findValue("#inputtransferselect_js_included")??><#t/>
 <script type="text/javascript"
-        src="<@s.url value="/struts/inputtransferselect.js" encode='false' includeParams='none'/>"></script>
+        src="<@s.url value="${parameters.staticContentPath}/inputtransferselect.js" encode='false' includeParams='none'/>"></script>
     <#assign temporaryVariable = stack.setValue("#inputtransferselect_js_included", "true") /><#t/>
 </#if><#t/>
 <div class="row">

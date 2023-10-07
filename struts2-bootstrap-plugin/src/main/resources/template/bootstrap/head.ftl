@@ -18,27 +18,27 @@
  * under the License.
  */
 -->
-<#assign struts2BootstrapVersion="${version}">
+<#assign struts2BootstrapVersion="${version}"><#rt/>
 <#if parameters.compressed!true>
-    <#assign jsFile="bootstrap.bundle.min.js">
-    <#assign cssFile="bootstrap.min.css">
-    <#assign cssIconsFile="bootstrap-icons.css">
-    <#assign validationFile="validation.min.js">
+    <#assign jsFile="bootstrap.bundle.min.js"><#rt/>
+    <#assign cssFile="bootstrap.min.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign validationFile="validation.min.js"><#rt/>
 <#else>
-    <#assign jsFile="bootstrap.bundle.js">
-    <#assign cssFile="bootstrap.css">
-    <#assign cssIconsFile="bootstrap-icons.css">
-    <#assign validationFile="validation.js">
+    <#assign jsFile="bootstrap.bundle.js"><#rt/>
+    <#assign cssFile="bootstrap.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if parameters.includeScripts!true>
-<script src="${base}/struts/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<script src="${base}${parameters.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"></script>
 </#if>
 <#if parameters.includeScriptsValidation!true>
-<script src="${base}/struts/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
+<script src="${base}${parameters.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"></script>
 </#if>
 <#if parameters.includeStyles!true>
 <link id="bootstrap_styles" rel="stylesheet"
-      href="${base}/struts/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}${parameters.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 <link id="bootstrap_styles_icons" rel="stylesheet"
-      href="${base}/struts/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}${parameters.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>
