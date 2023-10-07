@@ -31,14 +31,14 @@
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if parameters.includeScripts!true>
-<@s.script type="text/javascript" src="${base}/static/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<@s.script src="${base}${parameters.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if parameters.includeScriptsValidation!true>
-<@s.script type="text/javascript" src="${base}/static/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
+<@s.script src="${base}${parameters.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if parameters.includeStyles!true>
 <@s.link id="bootstrap_styles" rel="stylesheet"
-      href="${base}/static/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}${parameters.staticContentPath}bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 <@s.link id="bootstrap_styles_icons" rel="stylesheet"
-      href="${base}/static/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}${parameters.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>

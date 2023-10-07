@@ -21,8 +21,7 @@
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#inputtransferselect_js_included")??><#t/>
-<script type="text/javascript"
-        src="<@s.url value="${parameters.staticContentPath}/inputtransferselect.js" encode='false' includeParams='none'/>"></script>
+<@s.script type="text/javascript" src="${parameters.staticContentPath}/inputtransferselect.js"/>
     <#assign temporaryVariable = stack.setValue("#inputtransferselect_js_included", "true") /><#t/>
 </#if><#t/>
 <div class="row">

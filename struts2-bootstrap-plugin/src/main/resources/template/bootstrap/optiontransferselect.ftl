@@ -23,8 +23,7 @@
 <#include "/${parameters.templateDir}/${parameters.expandTheme}/controlheader.ftl" />
 
 <#if !stack.findValue("#optiontransferselect_js_included")??><#t/>
-<script type="text/javascript"
-        src="<@s.url value="${parameters.staticContentPath}/optiontransferselect.js" encode='false' includeParams='none'/>"></script>
+<@s.script type="text/javascript" src="${parameters.staticContentPath}/optiontransferselect.js">
     <#assign temporaryVariable = stack.setValue("#optiontransferselect_js_included", "true") /><#t/>
 </#if><#t/>
 <div class="row">
