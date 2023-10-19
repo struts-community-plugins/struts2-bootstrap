@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags" %>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html lang="en">
 <head>
@@ -16,7 +17,8 @@
     <![endif]-->
 
     <s:head />
-    <sb:head includeScripts="true" />
+    <sj:head jqueryui="true"/>
+    <sb:head includeScripts="true" compressed="false" />
     <style type="text/css">
         body {
             padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
@@ -30,7 +32,7 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-  
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -85,7 +87,7 @@
                             <s:url var="customlayout_url" action="customlayout"/>
                             <s:a href="%{customlayout_url}" cssClass="nav-link">Multi Column Forms</s:a>
                         </li>
-                    </ul> 
+                    </ul>
                 </div>
             </div>
         </div>
