@@ -38,7 +38,7 @@
 </#if>
 <#if parameters.includeStyles!true>
 <@s.link id="bootstrap_styles" rel="stylesheet"
-      href="${base}${parameters.staticContentPath}bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+      href="${base}${parameters.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 <@s.link id="bootstrap_styles_icons" rel="stylesheet"
       href="${base}${parameters.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
 </#if>
