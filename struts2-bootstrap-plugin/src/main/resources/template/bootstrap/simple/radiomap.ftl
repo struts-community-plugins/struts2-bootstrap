@@ -32,13 +32,13 @@
     <#else>
         <#assign itemValue = stack.findString('top')/>
     </#if>
-    <#if (parameters.labelposition?default("")) == 'inline'>
-        <#assign inline="form-check-inline"/><#lt/>
+    <#if (parameters.labelposition!"") == 'inline'>
+        <#assign inlineAttr="form-check-inline"/><#lt/>
     </#if>
-    <#if parameters.disabled!false>
-        <#assign disabled="disabled"/><#lt/>
+    <#if parameters.get("disabled")!false>
+        <#assign disabledAttr="disabled"/><#lt/>
     </#if>
-<div class="form-check ${inline!""} ${disabled!""}"><#lt/>
+<div class="form-check ${inlineAttr!""} ${disabledAttr!""}"><#lt/>
         <input type="radio" class="form-check-input" <#t/>
             <#if parameters.name??>
                name="${parameters.name}" <#t/>
