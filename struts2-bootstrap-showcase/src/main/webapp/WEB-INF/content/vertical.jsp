@@ -14,6 +14,7 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <s:head />
     <sb:head includeScripts="false"/>
     <style type="text/css">
         body {
@@ -91,7 +92,7 @@
 
             <h1>Vertical Form Example</h1>
 
-            <s:form enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical" label="A sample vertical Form">
+            <s:form enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-vertical" label="A sample vertical Form">
                 <s:textfield
                         label="Name"
                         name="name"

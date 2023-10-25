@@ -17,7 +17,7 @@
     <![endif]-->
 
     <s:head />
-    <sj:head jqueryui="true"/>
+    <sj:head jquery="true"/>
     <sb:head includeScripts="true" compressed="false" />
     <style type="text/css">
         body {
@@ -102,7 +102,7 @@
             <s:fielderror theme="bootstrap"/>
 
 
-            <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"
+            <s:form action="index" enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-horizontal"
                     label="A sample horizontal Form">
                 <s:textfield
                         label="Name"

@@ -31,10 +31,10 @@
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if parameters.includeScripts!true>
-<@s.script src="${base}${parameters.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<@s.script type="text/javascript" src="${base}${parameters.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if parameters.includeScriptsValidation!true>
-<@s.script src="${base}${parameters.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
+<@s.script type="text/javascript" src="${base}${parameters.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if parameters.includeStyles!true>
 <@s.link id="bootstrap_styles" rel="stylesheet"
