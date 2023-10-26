@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ taglib prefix="sj" uri="/struts-jquery-tags" %>
 <%@ taglib prefix="sb" uri="/struts-bootstrap-tags" %>
 <html lang="en">
 <head>
@@ -14,6 +15,8 @@
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <s:head />
+    <sj:head jquery="true"/>
     <sb:head includeScripts="true" includeStyles="true"/>
     <link rel="stylesheet" href="<s:url value="/styles/bootstrap-superhero.css" />" type="text/css"/>
     <style type="text/css">
@@ -104,7 +107,7 @@
             <s:fielderror theme="bootstrap"/>
 
 
-            <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"
+            <s:form action="index" enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-horizontal"
                     label="A sample horizontal Form">
                 <s:textfield
                         label="Name"

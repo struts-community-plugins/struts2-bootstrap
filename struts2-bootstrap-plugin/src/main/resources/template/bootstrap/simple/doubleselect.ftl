@@ -74,7 +74,7 @@
 </#if>
 />
 </#if>
-<script type="text/javascript">
+<@s.script>
     <#assign itemCount = startCount/>
     var ${parameters.id}Group = new Array(${parameters.listSize} + ${startCount});
     for (i = 0; i < (${parameters.listSize} + ${startCount}); i++)
@@ -197,4 +197,4 @@
             ${parameters.id}Temp.options[0].selected = true;
         }
     }
-</script>
+</@s.script>

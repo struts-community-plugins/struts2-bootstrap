@@ -27,9 +27,9 @@
     <#if (fieldErrorFieldNames?size > 0) ><#t/>
         <#list fieldErrorFieldNames as fieldErrorFieldName><#t/>
             <#list eKeys as eKey><#t/>
-                <#if (eKey = fieldErrorFieldName)><#t/>
+                <#if eKey == fieldErrorFieldName?j_string><#t/>
                     <#assign haveMatchedErrorField=true><#t/>
-                    <#assign eValue = fieldErrors[fieldErrorFieldName]><#t/>
+                    <#assign eValue = fieldErrors.get(fieldErrorFieldName?j_string)><#t/>
                     <#if (haveMatchedErrorField && (!doneStartUlTag))><#t/>
                         <#assign doneStartUlTag=true><#t/>
                     </#if><#t/>

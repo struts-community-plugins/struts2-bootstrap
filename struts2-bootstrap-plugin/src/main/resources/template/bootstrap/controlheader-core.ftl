@@ -23,7 +23,7 @@
 	This will be done if ActionSupport is used.
 -->
 
-<#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors[parameters.name]??/>
+<#assign hasFieldErrors = parameters.name?? && fieldErrors?? && fieldErrors.get(parameters.name?j_string)??/>
 <#assign formControlClass = "form-control"/>
 
 <#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["labelCssClass"]??)><#rt/>
@@ -46,6 +46,16 @@
         <#assign formGroupCssClass ></#assign><#rt/>
     </@s.else><#rt/>
 </#if><#rt/>
+<#if (parameters.dynamicAttributes?? && parameters.dynamicAttributes?size > 0 && parameters.dynamicAttributes["formLabelCssClass"]??)><#rt/>
+    <#assign formLabelCssClass = parameters.dynamicAttributes.remove("formLabelCssClass")/><#rt/>
+<#else>
+    <@s.if test="#s2b_form_class == 'form-horizontal'">
+        <#assign formLabelCssClass >col-form-label</#assign><#rt/>
+    </@s.if><#rt/>
+    <@s.else>
+        <#assign formLabelCssClass >form-label</#assign><#rt/>
+    </@s.else><#rt/>
+</#if><#rt/>
 
 <@s.if test="#s2b_form_element_class != 'form-inline'">
 <div class="form-group ${formGroupCssClass} <#rt/>
@@ -54,7 +64,7 @@
 </#if>
 "><#rt/>
 <#if parameters.label??>
-    <label class="${labelCssClass}" <#t/>
+    <label class="${formLabelCssClass} ${labelCssClass}" <#t/>
         <#if parameters.id??>
            for="${parameters.id}" <#rt/>
         </#if>
@@ -69,6 +79,8 @@
     ${parameters.labelseparator!""}
         <#include "/${parameters.templateDir}/${parameters.expandTheme}/tooltip.ftl" />
     </label><#rt/>
+<#else>
+    <div class="${formLabelCssClass} ${labelCssClass}"></div>
 </#if>
 <#lt/>
     <div class="${elementCssClass}">
