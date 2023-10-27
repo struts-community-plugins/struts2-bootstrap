@@ -33,7 +33,6 @@ public class Index extends ActionSupport {
         addActionError("A sample Action Error Message!");
         addActionMessage("A sample Action Message.");
         addFieldError("error", "A sample Field Error!");
-        addFieldError("clone", "A sample Field Error!");
         return SUCCESS;
     }
 }

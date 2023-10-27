@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<c:set var="activeMenu" value="${param.active}" scope="page"/>
+<s:set var="activeMenu" scope="page">${param.active}</s:set>
 
 <header class="p-3 text-bg-dark  sticky-top">
   <div class="container">
