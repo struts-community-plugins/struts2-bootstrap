@@ -13,8 +13,6 @@
     <packaging>jar</packaging>
 
     <properties>
-        <taglibs-standard.version>1.1.2</taglibs-standard.version>
-        <jstl.version>1.1.2</jstl.version>
         <struts-annotations.version>1.0.8</struts-annotations.version>
     </properties>
 
@@ -80,16 +78,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>taglibs</groupId>
-            <artifactId>standard</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>jstl</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts-annotations</artifactId>
         </dependency>
@@ -109,18 +97,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>taglibs</groupId>
-                <artifactId>standard</artifactId>
-                <version>${taglibs-standard.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>jstl</artifactId>
-                <version>${jstl.version}</version>
-                <scope>test</scope>
-            </dependency>
             <!-- struts-annotations must be in compile scope for maven-apt-plugin to
                  function correctly. Marking it optional to exclude it from transitive dependency resolution -->
             <dependency>
