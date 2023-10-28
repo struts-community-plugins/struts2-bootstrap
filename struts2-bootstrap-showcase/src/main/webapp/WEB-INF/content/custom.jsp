@@ -10,6 +10,7 @@
     <meta name="description" content="Customized Layouts - A Showcase for the Struts2 Bootstrap Plugin - About" />
     <title>Customized Layouts - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
+    <s:head />
     <sb:head includeScripts="true" includeStyles="true"/>
     <link rel="stylesheet" href="<s:url value="/styles/bootstrap-superhero.css" />" type="text/css"/>
 </head>
@@ -40,7 +41,7 @@
             <s:fielderror theme="bootstrap"/>
 
 
-            <s:form action="index" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal"
+            <s:form action="index" enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-horizontal"
                     label="A sample horizontal Form">
                 <s:textfield
                         label="Name"

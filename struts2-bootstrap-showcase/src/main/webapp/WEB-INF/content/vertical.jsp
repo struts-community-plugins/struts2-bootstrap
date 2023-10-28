@@ -10,6 +10,7 @@
     <meta name="description" content="Vertical Form - A Showcase for the Struts2 Bootstrap Plugin" />
     <title>Vertical Form - Struts2 Bootstrap Plugin Showcase - <s:text name="showcase.version"/></title>
 
+    <s:head />
     <sb:head includeScripts="false"/>
 </head>
 <body>
@@ -28,7 +29,7 @@
 
             <h1>Vertical Form Example</h1>
 
-            <s:form enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical" label="A sample vertical Form">
+            <s:form enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-vertical" label="A sample vertical Form">
                 <s:textfield
                         label="Name"
                         name="name"

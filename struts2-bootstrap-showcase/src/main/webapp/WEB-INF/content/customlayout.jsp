@@ -32,7 +32,7 @@
             <s:actionerror theme="bootstrap"/>
             <s:actionmessage theme="bootstrap"/>
             <s:fielderror theme="bootstrap"/>
-            <s:form action="customlayout" enctype="multipart/form-data" theme="bootstrap" cssClass="form-horizontal well"
+            <s:form action="customlayout" enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-horizontal well"
                     label="Muilti Column Custom Horizontal Layout">
                 <div class="row">
                     <div class="col-md-6">
@@ -95,7 +95,7 @@
                 </div>
             </s:form>
             <br>
-            <s:form action="customlayout" enctype="multipart/form-data" theme="bootstrap" cssClass="form-vertical well"
+            <s:form action="customlayout" enctype="multipart/form-data" method="POST" theme="bootstrap" cssClass="form-vertical well"
                     label="Muilti Column Custom Vertical Layout">
                 <div class="row">
                     <div class="col-md-6">
