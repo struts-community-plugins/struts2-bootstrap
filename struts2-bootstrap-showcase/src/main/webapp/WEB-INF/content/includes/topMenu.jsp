@@ -13,7 +13,7 @@
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
         <li>
           <s:url var="index_url" action="index"/>
-          <s:if test='%{#attr.activeMenu == "home"}'>
+          <s:if test='#attr.activeMenu == "home"'>
             <s:a href="%{index_url}" cssClass="nav-link px-2 text-secondary" aria-current="page"><i class="bi bi-house"></i> Home</s:a>
           </s:if>
           <s:else>
@@ -22,7 +22,7 @@
         </li>
         <li>
           <s:url var="about_url" action="about"/>
-          <s:if test='%{#attr.activeMenu == "about"}'>
+          <s:if test='#attr.activeMenu == "about"'>
             <s:a href="%{about_url}" cssClass="nav-link px-2 text-secondary" aria-current="page"><i class="bi bi-postcard"></i> About</s:a>
           </s:if>
           <s:else>
