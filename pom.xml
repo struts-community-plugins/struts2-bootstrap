@@ -3,7 +3,7 @@
 
     <groupId>com.jgeppert.struts2.bootstrap</groupId>
     <artifactId>bootstrap</artifactId>
-    <version>5.0.3-SNAPSHOT</version>
+    <version>5.0.3</version>
 
     <packaging>pom</packaging>
     <name>Struts2 Bootstrap Plugin Parent Module</name>
@@ -19,7 +19,7 @@
         <connection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</connection>
         <developerConnection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</developerConnection>
         <url>https://github.com/struts-community-plugins/struts2-bootstrap/</url>
-        <tag>HEAD</tag>
+        <tag>5.0.3</tag>
     </scm>
 
     <distributionManagement>
