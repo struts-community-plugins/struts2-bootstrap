@@ -16,13 +16,6 @@
         <struts-annotations.version>1.0.8</struts-annotations.version>
     </properties>
 
-    <scm>
-        <connection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</connection>
-        <url>https://github.com/struts-community-plugins/struts2-bootstrap</url>
-        <developerConnection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-
     <build>
         <resources>
             <resource>
