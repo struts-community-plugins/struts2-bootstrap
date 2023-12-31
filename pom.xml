@@ -17,9 +17,10 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/struts-community-plugins/struts2-bootstrap.git</connection>
-        <developerConnection>scm:git:[fetch=]https://github.com/struts-community-plugins/struts2-bootstrap.git[push=]https://github.com/struts-community-plugins/struts2-bootstrap.git</developerConnection>
+        <connection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</connection>
+        <developerConnection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</developerConnection>
         <url>https://github.com/struts-community-plugins/struts2-bootstrap/</url>
+        <tag>HEAD</tag>
     </scm>
 
     <distributionManagement>
@@ -40,8 +41,8 @@
         <developer>
             <id>jogep</id>
             <name>Johannes Geppert</name>
-            <url>http://www.jgeppert.com</url>
-            <email>http://www.jgeppert.com/kontakt</email>
+            <url>https://www.jgeppert.com</url>
+            <email>https://www.jgeppert.com/kontakt</email>
         </developer>
     </developers>
 
@@ -70,13 +71,12 @@
         <maven-project-info-reports-plugin.version>3.5.0</maven-project-info-reports-plugin.version>
         <maven-surefire-plugin.version>3.2.3</maven-surefire-plugin.version>
         <maven-war-plugin.version>3.4.0</maven-war-plugin.version>
+        <maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
 
         <tlib.version>2.3</tlib.version>
         <!-- dependencies -->
         <struts2.version>6.3.0.2</struts2.version>
         <log4j2.version>2.22.1</log4j2.version>
-        <freemarker.version>2.3.32</freemarker.version>
-        <commons-io.version>2.15.1</commons-io.version>
         <velocity.version>1.7</velocity.version>
     </properties>
 
@@ -124,6 +124,10 @@
                 <!-- Attach source jar to builds -->
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
             </plugin>
         </plugins>
         <defaultGoal>install</defaultGoal>
@@ -207,6 +211,16 @@
                     <artifactId>maven-war-plugin</artifactId>
                     <version>${maven-war-plugin.version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${maven-release-plugin.version}</version>
+                    <configuration>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <goals>deploy</goals>
+                        <arguments>-Prelease ${arguments}</arguments>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
     </build>
@@ -225,6 +239,10 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
                     </plugin>
                 </plugins>
                 <pluginManagement>
@@ -264,16 +282,6 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>org.freemarker</groupId>
-                <artifactId>freemarker</artifactId>
-                <version>${freemarker.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
                 <version>${log4j2.version}</version>
@@ -296,11 +304,6 @@
                 <artifactId>jsp-api</artifactId>
                 <version>2.2</version>
                 <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.velocity</groupId>
-                <artifactId>velocity</artifactId>
-                <version>${velocity.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
