@@ -16,11 +16,11 @@
     </issueManagement>
 
     <scm>
-        <connection>scm:git:https://github.com/struts-community-plugins/struts2-bootstrap.git</connection>
-        <developerConnection>scm:git:[fetch=]https://github.com/struts-community-plugins/struts2-bootstrap.git[push=]https://github.com/struts-community-plugins/struts2-bootstrap.git</developerConnection>
+        <connection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</connection>
+        <developerConnection>scm:git:git@github.com:struts-community-plugins/struts2-bootstrap.git</developerConnection>
         <url>https://github.com/struts-community-plugins/struts2-bootstrap/</url>
-      <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
 
     <distributionManagement>
         <repository>
