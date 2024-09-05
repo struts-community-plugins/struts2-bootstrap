@@ -21,6 +21,7 @@
  */
 -->
 <#setting number_format="#.#####">
+<#assign formControlClass = "form-select"/>
 <select<#rt/>
  name="${(parameters.name!"")}"<#rt/>
 <#if parameters.get("size")?has_content>
