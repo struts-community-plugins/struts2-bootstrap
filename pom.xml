@@ -74,7 +74,7 @@
 
         <tlib.version>2.3</tlib.version>
         <!-- dependencies -->
-        <struts2.version>6.6.1</struts2.version>
+        <struts2.version>6.7.0</struts2.version>
         <log4j2.version>2.24.2</log4j2.version>
         <velocity.version>1.7</velocity.version>
     </properties>
