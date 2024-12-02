@@ -15,7 +15,7 @@
     <properties>
         <struts2-jquery-plugin.version>5.0.6</struts2-jquery-plugin.version>
         <asm.version>5.2</asm.version>
-        <jetty-maven-plugin.version>9.4.56.v20240826</jetty-maven-plugin.version>
+        <jetty-maven-plugin.version>11.0.24</jetty-maven-plugin.version>
     </properties>
 
     <build>
