@@ -13,7 +13,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <struts2-jquery-plugin.version>6.0.0-SNAPSHOT</struts2-jquery-plugin.version>
+        <struts2-jquery-plugin.version>6.0.0</struts2-jquery-plugin.version>
         <jetty-maven-plugin.version>11.0.24</jetty-maven-plugin.version>
     </properties>
 
