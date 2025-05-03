@@ -23,7 +23,7 @@ public class CustomerDAO {
 
     public static List<Customer> findNotById(List<Customer> list, int id,
                                              int from, int to) {
-        List<Customer> sResult = new ArrayList<Customer>();
+        List<Customer> sResult = new ArrayList<>();
 
         for (Customer customer : list) {
             if (customer.getId() != id)
@@ -35,7 +35,7 @@ public class CustomerDAO {
 
     public static List<Customer> findGreaterAsId(List<Customer> list, int id,
                                                  int from, int to) {
-        List<Customer> sResult = new ArrayList<Customer>();
+        List<Customer> sResult = new ArrayList<>();
 
         for (Customer customer : list) {
             if (customer.getId() > id)
@@ -47,7 +47,7 @@ public class CustomerDAO {
 
     public static List<Customer> findLesserAsId(List<Customer> list, int id,
                                                 int from, int to) {
-        List<Customer> sResult = new ArrayList<Customer>();
+        List<Customer> sResult = new ArrayList<>();
 
         for (Customer customer : list) {
             if (customer.getId() < id)
@@ -57,13 +57,13 @@ public class CustomerDAO {
         return sResult.subList(from, to);
     }
 
-    public static Integer getCustomersCount(List<Customer> list) {
+    public static int getCustomersCount(List<Customer> list) {
 
         return list.size();
     }
 
     public static List<Customer> buildList() {
-        List<Customer> customers = new ArrayList<Customer>();
+        List<Customer> customers = new ArrayList<>();
         customers.add(new Customer(103, "Atelier graphique", "Schmitt",
                 "Carine ", "40.32.2555", "54, rue Royale", "", "Nantes", "",
                 "44000", "France", 1370, 21000.0));

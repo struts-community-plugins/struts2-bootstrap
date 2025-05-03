@@ -24,6 +24,7 @@ import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 
 import java.util.ArrayList;
 
@@ -31,7 +32,7 @@ import java.util.ArrayList;
 public class Languages extends ActionSupport {
 
     private static final long serialVersionUID = -3066791113091431706L;
-    private static String[] staticLanguages =
+    private static final String[] staticLanguages =
             {
                     "Actionscript (Flash)",
                     "ABAP Objects",
@@ -120,6 +121,7 @@ public class Languages extends ActionSupport {
         return languages;
     }
 
+    @StrutsParameter
     public void setTerm(String term) {
         this.term = term;
     }

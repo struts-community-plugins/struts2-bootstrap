@@ -21,6 +21,7 @@ package com.jgeppert.struts2.bootstrap.showcase;
 
 import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.ParentPackage;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 
 @ParentPackage(value = "showcase")
 public class Echo extends ActionSupport {
@@ -38,6 +39,7 @@ public class Echo extends ActionSupport {
         return echo;
     }
 
+    @StrutsParameter
     public void setEcho(String echo) {
         this.echo = echo;
     }

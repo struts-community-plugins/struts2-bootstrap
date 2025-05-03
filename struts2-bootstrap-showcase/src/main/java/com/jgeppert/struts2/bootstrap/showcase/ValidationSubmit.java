@@ -23,6 +23,7 @@ import org.apache.struts2.ActionSupport;
 import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 import org.apache.struts2.validator.annotations.ExpressionValidator;
 import org.apache.struts2.validator.annotations.FieldExpressionValidator;
 import org.apache.struts2.validator.annotations.RequiredStringValidator;
@@ -69,6 +70,7 @@ public class ValidationSubmit extends ActionSupport {
         return user;
     }
 
+    @StrutsParameter
     public void setUser(String user) {
         this.user = user;
     }
@@ -77,6 +79,7 @@ public class ValidationSubmit extends ActionSupport {
         return password;
     }
 
+    @StrutsParameter
     public void setPassword(String password) {
         this.password = password;
     }
@@ -85,6 +88,7 @@ public class ValidationSubmit extends ActionSupport {
         return agree;
     }
 
+    @StrutsParameter
     public void setAgree(boolean agree) {
         this.agree = agree;
     }
@@ -93,6 +97,7 @@ public class ValidationSubmit extends ActionSupport {
         return biograhy;
     }
 
+    @StrutsParameter
     public void setBiograhy(String biograhy) {
         this.biograhy = biograhy;
     }
@@ -101,6 +106,7 @@ public class ValidationSubmit extends ActionSupport {
         return favourite;
     }
 
+    @StrutsParameter
     public void setFavourite(String favourite) {
         this.favourite = favourite;
     }

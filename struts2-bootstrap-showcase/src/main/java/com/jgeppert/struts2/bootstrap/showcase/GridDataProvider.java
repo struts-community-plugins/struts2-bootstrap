@@ -27,6 +27,7 @@ import org.apache.struts2.ActionSupport;
 import org.apache.struts2.action.SessionAware;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
+import org.apache.struts2.interceptor.parameter.StrutsParameter;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -119,11 +120,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
             to = records;
 
         if (loadonce) if (totalrows != null && totalrows > 0) {
-            Collections.sort(myCustomers, new Comparator<Customer>() {
-                public int compare(Customer o1, Customer o2) {
-                    return o1.getCountry().compareToIgnoreCase(o2.getCountry());
-                }
-            });
+            myCustomers.sort((o1, o2) -> o1.getCountry().compareToIgnoreCase(o2.getCountry()));
             setGridModel(myCustomers.subList(0, totalrows));
         } else {
             // All Customer
@@ -175,12 +172,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     }
 
     private List<Customer> sortListByCountry(List<Customer> customers) {
-        Collections.sort(customers, new Comparator<Customer>() {
-            public int compare(Customer o1, Customer o2) {
-                return o1.getCountry().compareTo(o2.getCountry());
-            }
-        });
-
+        customers.sort(Comparator.comparing(Customer::getCountry));
         return customers;
     }
 
@@ -198,6 +190,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     /**
      * @param rows how many rows we want to have into the grid
      */
+    @StrutsParameter
     public void setRows(Integer rows) {
         this.rows = rows;
     }
@@ -212,6 +205,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     /**
      * @param page current page of the query
      */
+    @StrutsParameter
     public void setPage(Integer page) {
         this.page = page;
     }
@@ -226,6 +220,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     /**
      * @param total total pages for the query
      */
+    @StrutsParameter
     public void setTotal(Integer total) {
         this.total = total;
     }
@@ -242,6 +237,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
      * @param records total number of records for the query. e.g. select count(*)
      *                from table
      */
+    @StrutsParameter
     public void setRecords(Integer records) {
 
         this.records = records;
@@ -264,6 +260,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     /**
      * @param gridModel an collection that contains the actual data
      */
+    @StrutsParameter
     public void setGridModel(List<Customer> gridModel) {
         this.gridModel = gridModel;
     }
@@ -278,6 +275,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     /**
      * @param sord sorting order
      */
+    @StrutsParameter
     public void setSord(String sord) {
         this.sord = sord;
     }
@@ -292,22 +290,27 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
     /**
      * @param sidx get index row - i.e. user click to sort.
      */
+    @StrutsParameter
     public void setSidx(String sidx) {
         this.sidx = sidx;
     }
 
+    @StrutsParameter
     public void setSearchField(String searchField) {
         this.searchField = searchField;
     }
 
+    @StrutsParameter
     public void setSearchString(String searchString) {
         this.searchString = searchString;
     }
 
+    @StrutsParameter
     public void setSearchOper(String searchOper) {
         this.searchOper = searchOper;
     }
 
+    @StrutsParameter
     public void setLoadonce(boolean loadonce) {
         this.loadonce = loadonce;
     }
@@ -316,6 +319,7 @@ public class GridDataProvider extends ActionSupport implements SessionAware {
         this.session = session;
     }
 
+    @StrutsParameter
     public void setTotalrows(Integer totalrows) {
         this.totalrows = totalrows;
     }
