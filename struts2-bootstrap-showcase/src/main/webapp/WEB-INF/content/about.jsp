@@ -25,8 +25,8 @@
 
     <h2>Project</h2>
     <ul>
-        <li><a href="https://github.com/struts-community-plugins/struts2-bootstrap/">Project @ Github</a></li>
-        <li><a href="https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/">Download</a></li>
+        <li><a href="https://github.com/struts-community-plugins/struts2-bootstrap/"><i class="bi bi-github"></i> Project @ Github</a></li>
+        <li><a href="https://oss.sonatype.org/content/groups/staging/com/jgeppert/struts2/bootstrap/"><i class="bi bi-download"></i> Download</a></li>
     </ul>
 
     <h2>Installation via Maven</h2>
