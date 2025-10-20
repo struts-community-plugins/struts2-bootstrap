@@ -48,7 +48,7 @@
                         >
                     <#list eValue as eEachValue><#t/>
                         <#if eEachValue?has_content>
-                            <div><#if attributes.escape>${eEachValue!}<#else>${eEachValue!}</#if></div>
+                            <div><#if attributes.escape>${eEachValue!}<#else>${eEachValue!?no_esc}</#if></div>
                         </#if>
                     </#list>
                 </div>
