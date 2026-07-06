@@ -20,25 +20,26 @@
 -->
 <#assign struts2BootstrapVersion="${version}"><#rt/>
 <#if attributes.compressed!true>
-    <#assign jsFile="bootstrap.bundle.min.js"><#rt/>
-    <#assign cssFile="bootstrap.min.css"><#rt/>
-    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign jsFile="bootstrap/js/bootstrap.bundle.min.js"><#rt/>
+    <#assign cssFile="bootstrap/css/bootstrap.min.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons/font/bootstrap-icons.min.css"><#rt/>
     <#assign validationFile="validation.min.js"><#rt/>
 <#else>
-    <#assign jsFile="bootstrap.bundle.js"><#rt/>
-    <#assign cssFile="bootstrap.css"><#rt/>
-    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign jsFile="bootstrap/js/bootstrap.bundle.js"><#rt/>
+    <#assign cssFile="bootstrap/css/bootstrap.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons/font/bootstrap-icons.css"><#rt/>
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if attributes.includeScripts!true>
-<@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<#assign s2bJsUrl><@s.webjar path="${jsFile}"/></#assign><#rt/>
+<@s.script src="${s2bJsUrl?trim}"/>
 </#if>
 <#if attributes.includeScriptsValidation!true>
 <@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if attributes.includeStyles!true>
-<@s.link id="bootstrap_styles" rel="stylesheet"
-    href="${base}${attributes.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
-<@s.link id="bootstrap_styles_icons" rel="stylesheet"
-    href="${base}${attributes.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+<#assign s2bCssUrl><@s.webjar path="${cssFile}"/></#assign><#rt/>
+<@s.link id="bootstrap_styles" rel="stylesheet" href="${s2bCssUrl?trim}" type="text/css"/>
+<#assign s2bIconsUrl><@s.webjar path="${cssIconsFile}"/></#assign><#rt/>
+<@s.link id="bootstrap_styles_icons" rel="stylesheet" href="${s2bIconsUrl?trim}" type="text/css"/>
 </#if>
