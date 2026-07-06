@@ -17,6 +17,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
 ### Versions and compatibility
 | `struts2-bootstrap` version | `struts2` version  | `Java` version |
 |-----------------------------|--------------------|----------------|
+| `6.1.1`                     | version >= `7.2.2` | Java 17        |
 | `6.0.0`                     | version >= `7.0.0` | Java 17        |
 | `5.0.6`                     | version >= `6.7.0` | Java 8         |
 | `5.0.5`                     | version >= `6.6.0` | Java 7         |
@@ -31,7 +32,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
     <dependency>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>struts2-bootstrap-plugin</artifactId>
-        <version>6.0.0</version>
+        <version>6.1.1</version>
     </dependency>
     ...
 </dependencies>
