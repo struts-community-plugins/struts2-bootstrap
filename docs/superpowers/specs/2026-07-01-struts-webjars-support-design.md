@@ -106,15 +106,30 @@ updates, this aligns the Bootstrap upgrade cadence with every other dependency.
 - Add `org.webjars:webjars-locator-lite` to Struts core.
 - Confirm license compatibility (MIT) and transitive footprint during planning.
 
+## Part 1 status — DELIVERED (2026-07-06)
+
+Merged in apache/struts **PR #1765 / WW-5640**, in `main` = **7.2.2-SNAPSHOT**
+(latest release still 7.2.1 — not yet in a published release). Delivered API:
+
+- Macro **`<@s.webjar path="<webjar>/<path>" var="…"/>`** and JSP tag `<s:webjar>`,
+  emitting the **resolved URL string** (composes with `<s:script>`/`<s:link>`).
+- Served at **`<ctx>/static/webjars/<name>/<version>/<path>`**.
+- Constants `struts.webjars.enabled` (default `true`), `struts.webjars.allowlist`.
+- Resolver `org.webjars:webjars-locator-lite:1.1.3`.
+
 ## Part 2 — struts2-bootstrap plugin consumer changes
 
-Depends on Part 1 shipping in a Struts release.
+Depends on Struts **7.2.2** (buildable now against `7.2.2-SNAPSHOT`).
 
 1. Add WebJar dependencies to the plugin `pom.xml`:
    - `org.webjars:bootstrap` (target 5.3.8 or newest at implementation time)
    - `org.webjars:bootstrap-icons` (or the NPM-flavoured
      `org.webjars.npm:bootstrap-icons` — **verify which artifact carries the
-     expected `font/` + `fonts/` layout** during planning; target 1.13.1).
+     expected `font/` + `fonts/` layout**; target 1.13.1).
+   - **Verify each webjar's internal layout first** — the classic `org.webjars:bootstrap`
+     webjar nests dist files (e.g. path may be `bootstrap/css/bootstrap.min.css` vs
+     `bootstrap/dist/css/bootstrap.min.css`). The exact `path=` for `<@s.webjar>`
+     depends on this and must be confirmed against the resolved jar.
 2. Update `template/bootstrap/head.ftl` to use `<@s.webjar>` for:
    - `bootstrap.bundle.min.js` / `bootstrap.bundle.js`
    - `bootstrap.min.css` / `bootstrap.css`
@@ -124,7 +139,7 @@ Depends on Part 1 shipping in a Struts release.
 3. Delete the vendored asset tree under `template/bootstrap/css/`,
    `template/bootstrap/js/` (Bootstrap files only), and
    `template/bootstrap/bootstrap-icons/**`.
-4. Bump the plugin's minimum Struts version to the release containing Part 1 and
+4. Bump the plugin's minimum Struts version to **7.2.2** (`struts2.version`) and
    update the README compatibility table.
 5. Verify the bootstrap-icons CSS `@font-face` `src` path still resolves when served
    from the webjar's own directory layout (the current vendored copy rewired it to
