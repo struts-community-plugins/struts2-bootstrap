@@ -155,22 +155,23 @@ Keep the existing Apache license header comment block unchanged. Replace everyth
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if attributes.includeScripts!true>
-<#assign s2bJsUrl><@s.webjar path="${jsFile}"/></#assign><#rt/>
-<@s.script src="${s2bJsUrl?trim}"/>
+<@s.webjar path="${jsFile}" var="s2bJsUrl"/><#rt/>
+<@s.script src="%{#s2bJsUrl}"/>
 </#if>
 <#if attributes.includeScriptsValidation!true>
 <@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if attributes.includeStyles!true>
-<#assign s2bCssUrl><@s.webjar path="${cssFile}"/></#assign><#rt/>
-<@s.link id="bootstrap_styles" rel="stylesheet" href="${s2bCssUrl?trim}" type="text/css"/>
-<#assign s2bIconsUrl><@s.webjar path="${cssIconsFile}"/></#assign><#rt/>
-<@s.link id="bootstrap_styles_icons" rel="stylesheet" href="${s2bIconsUrl?trim}" type="text/css"/>
+<@s.webjar path="${cssFile}" var="s2bCssUrl"/><#rt/>
+<@s.link id="bootstrap_styles" rel="stylesheet" href="%{#s2bCssUrl}" type="text/css"/>
+<@s.webjar path="${cssIconsFile}" var="s2bIconsUrl"/><#rt/>
+<@s.link id="bootstrap_styles_icons" rel="stylesheet" href="%{#s2bIconsUrl}" type="text/css"/>
 </#if>
 ```
 
 Notes for the implementer:
-- `<#assign name>…</#assign>` **captures** the macro's printed URL into a variable; `?trim` strips the trailing newline from the captured block. This avoids relying on the macro's `var` value-stack semantics.
+- Use the `<@s.webjar var="…">` attribute: the tag stores the resolved URL in the value-stack context (`putInContext`). Reference it in `<@s.script>`/`<@s.link>` via OGNL `%{#var}` — both components OGNL-evaluate `src`/`href` through `findString`, so the context var resolves.
+- Do **not** try to capture the macro output with `<#assign name>…</#assign>`: in an HTML-output template that yields a FreeMarker `markup_output`, which `?trim`/string built-ins reject.
 - The `validation.js` link is intentionally left on the old vendored `${staticContentPath}/bootstrap/js/…` path with `?s2b=` — it stays vendored (Task 3 keeps it).
 - Icons now honour `compressed` (min vs non-min); the previous template always used the non-min icons CSS.
 
