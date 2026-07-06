@@ -31,15 +31,15 @@
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if attributes.includeScripts!true>
-<#assign s2bJsUrl><@s.webjar path="${jsFile}"/></#assign><#rt/>
-<@s.script src="${s2bJsUrl?trim}"/>
+<@s.webjar path="${jsFile}" var="s2bJsUrl"/><#rt/>
+<@s.script src="%{#s2bJsUrl}"/>
 </#if>
 <#if attributes.includeScriptsValidation!true>
 <@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if attributes.includeStyles!true>
-<#assign s2bCssUrl><@s.webjar path="${cssFile}"/></#assign><#rt/>
-<@s.link id="bootstrap_styles" rel="stylesheet" href="${s2bCssUrl?trim}" type="text/css"/>
-<#assign s2bIconsUrl><@s.webjar path="${cssIconsFile}"/></#assign><#rt/>
-<@s.link id="bootstrap_styles_icons" rel="stylesheet" href="${s2bIconsUrl?trim}" type="text/css"/>
+<@s.webjar path="${cssFile}" var="s2bCssUrl"/><#rt/>
+<@s.link id="bootstrap_styles" rel="stylesheet" href="%{#s2bCssUrl}" type="text/css"/>
+<@s.webjar path="${cssIconsFile}" var="s2bIconsUrl"/><#rt/>
+<@s.link id="bootstrap_styles_icons" rel="stylesheet" href="%{#s2bIconsUrl}" type="text/css"/>
 </#if>
