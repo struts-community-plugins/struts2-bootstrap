@@ -20,25 +20,26 @@
 -->
 <#assign struts2BootstrapVersion="${version}"><#rt/>
 <#if attributes.compressed!true>
-    <#assign jsFile="bootstrap.bundle.min.js"><#rt/>
-    <#assign cssFile="bootstrap.min.css"><#rt/>
-    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign jsFile="bootstrap/js/bootstrap.bundle.min.js"><#rt/>
+    <#assign cssFile="bootstrap/css/bootstrap.min.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons/font/bootstrap-icons.min.css"><#rt/>
     <#assign validationFile="validation.min.js"><#rt/>
 <#else>
-    <#assign jsFile="bootstrap.bundle.js"><#rt/>
-    <#assign cssFile="bootstrap.css"><#rt/>
-    <#assign cssIconsFile="bootstrap-icons.css"><#rt/>
+    <#assign jsFile="bootstrap/js/bootstrap.bundle.js"><#rt/>
+    <#assign cssFile="bootstrap/css/bootstrap.css"><#rt/>
+    <#assign cssIconsFile="bootstrap-icons/font/bootstrap-icons.css"><#rt/>
     <#assign validationFile="validation.js"><#rt/>
 </#if>
 <#if attributes.includeScripts!true>
-<@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${jsFile}?s2b=${struts2BootstrapVersion}"/>
+<@s.webjar path="${jsFile}" var="s2bJsUrl"/><#rt/>
+<@s.script src="%{#s2bJsUrl}"/>
 </#if>
 <#if attributes.includeScriptsValidation!true>
 <@s.script src="${base}${attributes.staticContentPath}/bootstrap/js/${validationFile}?s2b=${struts2BootstrapVersion}"/>
 </#if>
 <#if attributes.includeStyles!true>
-<@s.link id="bootstrap_styles" rel="stylesheet"
-    href="${base}${attributes.staticContentPath}/bootstrap/css/${cssFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
-<@s.link id="bootstrap_styles_icons" rel="stylesheet"
-    href="${base}${attributes.staticContentPath}/bootstrap/bootstrap-icons/${cssIconsFile}?s2b=${struts2BootstrapVersion}" type="text/css"/>
+<@s.webjar path="${cssFile}" var="s2bCssUrl"/><#rt/>
+<@s.link id="bootstrap_styles" rel="stylesheet" href="%{#s2bCssUrl}" type="text/css"/>
+<@s.webjar path="${cssIconsFile}" var="s2bIconsUrl"/><#rt/>
+<@s.link id="bootstrap_styles_icons" rel="stylesheet" href="%{#s2bIconsUrl}" type="text/css"/>
 </#if>
