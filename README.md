@@ -20,7 +20,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
 | `struts2-bootstrap` version | `struts2` version  | `Java` version |
 |-----------------------------|--------------------|----------------|
 | `6.2.0`                     | version >= `7.3.0` | Java 17        |
-| `6.1.1`                     | version >= `7.2.2` | Java 17        |
+| `6.1.0`                     | version >= `7.2.2` | Java 17        |
 | `6.0.0`                     | version >= `7.0.0` | Java 17        |
 | `5.0.6`                     | version >= `6.7.0` | Java 8         |
 | `5.0.5`                     | version >= `6.6.0` | Java 7         |
