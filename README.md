@@ -4,10 +4,12 @@
 
 A Plugin for simple Bootstrap CSS Framework integration into Struts2.
 
-### [Download] (https://repo1.maven.org/maven2/com/jgeppert/struts2/bootstrap/)
-### [News and Developer Blog] (https://www.jgeppert.com)
-### [Showcase] (https://struts.jgeppert.com/struts2-bootstrap-showcase/)
-### [Sample TODO app based on Bootstrap, jQuery and jQuery Mobile] (https://github.com/jogep/struts2-todo-examples/)
+## Links
+
+- [Download](https://repo1.maven.org/maven2/com/jgeppert/struts2/bootstrap/) - releases on Maven Central
+- [Showcase](https://struts.jgeppert.com/struts2-bootstrap-showcase/) - live demo of the plugin
+- [News and Developer Blog](https://www.jgeppert.com)
+- [Sample TODO app](https://github.com/jogep/struts2-todo-examples/) - based on Bootstrap, jQuery and jQuery Mobile
 
 ## Installation
 
