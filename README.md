@@ -4,10 +4,12 @@
 
 A Plugin for simple Bootstrap CSS Framework integration into Struts2.
 
-### [Download] (https://repo1.maven.org/maven2/com/jgeppert/struts2/bootstrap/)
-### [News and Developer Blog] (https://www.jgeppert.com)
-### [Showcase] (https://struts.jgeppert.com/struts2-bootstrap-showcase/)
-### [Sample TODO app based on Bootstrap, jQuery and jQuery Mobile] (https://github.com/jogep/struts2-todo-examples/)
+## Links
+
+- [Download](https://repo1.maven.org/maven2/com/jgeppert/struts2/bootstrap/) - releases on Maven Central
+- [Showcase](https://struts.jgeppert.com/struts2-bootstrap-showcase/) - live demo of the plugin
+- [News and Developer Blog](https://www.jgeppert.com)
+- [Sample TODO app](https://github.com/jogep/struts2-todo-examples/) - based on Bootstrap, jQuery and jQuery Mobile
 
 ## Installation
 
@@ -17,12 +19,17 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
 ### Versions and compatibility
 | `struts2-bootstrap` version | `struts2` version  | `Java` version |
 |-----------------------------|--------------------|----------------|
+| `6.2.0`                     | version >= `7.3.0` | Java 17        |
 | `6.1.1`                     | version >= `7.2.2` | Java 17        |
 | `6.0.0`                     | version >= `7.0.0` | Java 17        |
 | `5.0.6`                     | version >= `6.7.0` | Java 8         |
 | `5.0.5`                     | version >= `6.6.0` | Java 7         |
 | `5.0.2`                     | version >= `6.1`   | Java 7         |
 | `5.0.0`                     | version >= `6.0`   | Java 7         |
+
+Starting with `6.2.0` the plugin no longer bundles Bootstrap and Bootstrap Icons. The assets are
+pulled in as [WebJars](https://www.webjars.org/) and served by Struts' built-in WebJars support,
+which is why Struts `7.3.0` or newer is required.
 
 ### Maven
 
@@ -32,7 +39,7 @@ Copy the struts2-bootstrap-plugin.jar into your WEB-INF/lib path.
     <dependency>
         <groupId>com.jgeppert.struts2.bootstrap</groupId>
         <artifactId>struts2-bootstrap-plugin</artifactId>
-        <version>6.1.1</version>
+        <version>6.2.0</version>
     </dependency>
     ...
 </dependencies>
