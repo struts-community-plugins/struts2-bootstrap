@@ -69,7 +69,7 @@
         <webjars-bootstrap-icons.version>1.13.1</webjars-bootstrap-icons.version>
         <log4j2.version>2.26.1</log4j2.version>
         <velocity.version>1.7</velocity.version>
-        <freemarker.version>2.3.34</freemarker.version>
+        <freemarker.version>2.3.35</freemarker.version>
     </properties>
 
     <modules>
