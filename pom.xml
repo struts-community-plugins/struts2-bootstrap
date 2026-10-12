@@ -66,7 +66,7 @@
         <!-- dependencies -->
         <struts2.version>7.4.0</struts2.version>
         <webjars-bootstrap.version>5.3.8</webjars-bootstrap.version>
-        <webjars-bootstrap-icons.version>1.13.1</webjars-bootstrap-icons.version>
+        <webjars-bootstrap-icons.version>1.13.2</webjars-bootstrap-icons.version>
         <log4j2.version>2.26.1</log4j2.version>
         <velocity.version>1.7</velocity.version>
         <freemarker.version>2.3.35</freemarker.version>
